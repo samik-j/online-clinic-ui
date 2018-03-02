@@ -15,9 +15,10 @@ class DoctorListPage extends React.Component {
 
         this.state = {
             doctors: [],
-            firstName: '',
-            lastName: ''
+            specialty: null
         };
+
+        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
     }
 
     componentDidMount() {
@@ -28,9 +29,32 @@ class DoctorListPage extends React.Component {
         );
     }
 
+    handleSpecialtyChange(event) {
+        const newSpecialty = event.target.value;
+
+        axios.get(`${DOCTORS_URL}?specialty=${newSpecialty}`).then(
+            response => {
+                this.setState({
+                    doctors: response.data,
+                    specialty: newSpecialty
+                })
+            }
+        )
+    }
+
     render() {
         return (
             <div>
+                <select id="specialty" name="specialty" className="form-control"
+                        value={this.state.specialty} onChange={this.handleSpecialtyChange}>
+                    <option value=""></option>
+                    <option value="GYNAECOLOGIST">gynaecologist</option>
+                    <option value="DERMATOLOGIST">dermatologist</option>
+                    <option value="PEDIATRICIAN">pediatrician</option>
+                    <option value="INTERNIST">internist</option>
+                    <option value="ENDOCRINOLOGIST">endocrinologist</option>
+                    <option value="GENERAL_PHYSICIAN">general physician</option>
+                </select>
                 <DoctorList doctors={this.state.doctors}/>
             </div>
         )
