@@ -29,7 +29,13 @@ nav ul {
 }
 
 article {
+    min-height: 200px;
     overflow: hidden;
+}
+
+.specialtyDropDown {
+    text-align: center;
+    margin: 20px;
 }
 
 .pageMargin {
