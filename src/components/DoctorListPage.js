@@ -19,6 +19,7 @@ class DoctorListPage extends React.Component {
         };
 
         this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
+        this.refresh = this.refresh.bind(this);
     }
 
     componentDidMount() {
@@ -29,17 +30,37 @@ class DoctorListPage extends React.Component {
         );
     }
 
+    refresh() {
+        axios.get(DOCTORS_URL).then(
+            response => {
+                this.setState({doctors: response.data})
+            }
+        );
+    }
+
     handleSpecialtyChange(event) {
         const newSpecialty = event.target.value;
 
-        axios.get(`${DOCTORS_URL}?specialty=${newSpecialty}`).then(
-            response => {
-                this.setState({
-                    doctors: response.data,
-                    specialty: newSpecialty
-                })
-            }
-        )
+        if (newSpecialty === "all") {
+            axios.get(DOCTORS_URL).then(
+                response => {
+                    this.setState({doctors: response.data,
+                        specialty: newSpecialty
+                    })
+
+                }
+            );
+        } else {
+
+            axios.get(`${DOCTORS_URL}?specialty=${newSpecialty}`).then(
+                response => {
+                    this.setState({
+                        doctors: response.data,
+                        specialty: newSpecialty
+                    })
+                }
+            )
+        }
     }
 
     render() {
@@ -48,7 +69,8 @@ class DoctorListPage extends React.Component {
                 <div className="specialtyDropDown">
                     <select id="specialty" name="specialty" className="form-control"
                             value={this.state.specialty} onChange={this.handleSpecialtyChange}>
-                        <option>search by specialty</option>
+                        <option disabled selected hidden>search by specialty</option>
+                        <option value="all">all</option>
                         <option value="GYNAECOLOGIST">gynaecologist</option>
                         <option value="DERMATOLOGIST">dermatologist</option>
                         <option value="PEDIATRICIAN">pediatrician</option>
