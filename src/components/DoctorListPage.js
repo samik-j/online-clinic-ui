@@ -70,13 +70,13 @@ class DoctorListPage extends React.Component {
                     <select id="specialty" name="specialty" className="form-control"
                             value={this.state.specialty} onChange={this.handleSpecialtyChange}>
                         <option disabled selected hidden>search by specialty</option>
-                        <option value="all">all</option>
                         <option value="GYNAECOLOGIST">gynaecologist</option>
                         <option value="DERMATOLOGIST">dermatologist</option>
                         <option value="PEDIATRICIAN">pediatrician</option>
                         <option value="INTERNIST">internist</option>
                         <option value="ENDOCRINOLOGIST">endocrinologist</option>
                         <option value="GENERAL_PHYSICIAN">general physician</option>
+                        <option value="all">all</option>
                     </select>
                 </div>
                 <DoctorList doctors={this.state.doctors}/>
