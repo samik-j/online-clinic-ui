@@ -4,17 +4,47 @@ header {
     color: white;
     font-family: 'Vollkorn';
     text-align: center;
+}
+
+footer {
+    background: dimgrey;
+    font-size: 20px;
+    color: white;
+    font-family: 'Vollkorn';
+    text-align: center;
+}
+
+nav {
+    float: left;
+    font-weight: bolder;
+    font-size: 15px;
+    color: black;
+    max-width: 150px;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+article {
+    overflow: hidden;
+}
+
+.pageMargin {
     margin: 20px;
 }
 
 .doctor {
-    margin: 50px;
-    border-bottom: 1px solid grey;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid dimgrey;
 }
 
 .doctorName {
     font-size: 20px;
     font-weight: bolder;
-    display:inline-block;
-    margin-right: 3px;
+    display: inline-block;
+    padding-right: 5px;
 }

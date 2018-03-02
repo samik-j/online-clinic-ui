@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import{BrowserRouter, Route} from 'react-router-dom';
+import{BrowserRouter, Route, Link} from 'react-router-dom';
 
 //COMPONENTS
 import DoctorListPage from './components/DoctorListPage';
@@ -12,9 +12,17 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <div>
+            <div className="pageMargin">
                 <Header/>
+                <nav>
+                    <ul>
+                        <Link to="/doctorCreationPage">ADD DOCTOR</Link>
+                    </ul>
+                </nav>
+                <article>
                 <Route path="/doctorlist" component={DoctorListPage}/>
+                </article>
+                <footer>Created by Joanna</footer>
             </div>
         </BrowserRouter>
     )
