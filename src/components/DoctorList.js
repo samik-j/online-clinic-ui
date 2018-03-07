@@ -1,11 +1,11 @@
 import React from 'react';
-import Doctor from './Doctor';
+import DoctorListItem from './DoctorListItem';
 
 const DoctorList = (props) => {
 
     const doctors = props.doctors.map((doctor) => {
             return (
-                <Doctor key={doctor.id} doctor={doctor}/>
+                <DoctorListItem key={doctor.id} doctor={doctor}/>
             )
         }
     );

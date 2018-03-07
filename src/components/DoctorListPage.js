@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from "axios";
 
 //COMPONENTS
-import Doctor from './Doctor';
+import Doctor from './DoctorListItem';
 import DoctorList from './DoctorList'
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
