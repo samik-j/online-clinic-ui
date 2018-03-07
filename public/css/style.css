@@ -1,5 +1,5 @@
 header {
-    background: dimgrey;
+    background: #297399;
     font-size: 50px;
     color: white;
     font-family: 'Vollkorn';
@@ -7,7 +7,7 @@ header {
 }
 
 footer {
-    background: dimgrey;
+    background: #297399;
     font-size: 20px;
     color: white;
     font-family: 'Vollkorn';
@@ -47,7 +47,8 @@ article {
 .doctor {
     padding: 10px;
     margin: 20px;
-    border: 1px solid black;
+    border: 1px solid #297399;
+    max-height: 200px;
 }
 
 .doctorName {
@@ -55,4 +56,14 @@ article {
     font-weight: bolder;
     display: inline-block;
     padding-right: 5px;
+}
+
+.doctorListAvatar {
+    height: 100px;
+    padding: 10px;
+}
+
+.doctorListInfo {
+    padding-left: 10px;
+    display: inline-block;
 }
