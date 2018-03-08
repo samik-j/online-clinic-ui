@@ -15,6 +15,7 @@ const App = () => {
         <BrowserRouter>
             <div>
                 <Header/>
+                <div className="page-width">
                 <nav>
                     <ul>
                         <Link to="/doctor-list">SEARCH DOCTORS</Link>
@@ -27,6 +28,7 @@ const App = () => {
                     <Route exact path="/doctor-list" component={DoctorListPage}/>
                     <Route exact path="/doctors/:doctorId/appointments" component={AppointmentsPage}/>
                 </article>
+            </div>
                 <footer>Created by Joanna Senczuk</footer>
             </div>
         </BrowserRouter>

@@ -5,9 +5,9 @@ header {
     font-family: 'Arial Narrow';
     font-weight: bold;
     text-align: left;
-    padding-left: 200px;
     padding-top: 10px;
     padding-bottom: 10px;
+    height: 100px;
 }
 
 footer {
@@ -16,6 +16,7 @@ footer {
     color: white;
     font-family: 'Arial Narrow';
     text-align: center;
+    z-index: 1;
 }
 
 nav {
@@ -23,8 +24,9 @@ nav {
     font-weight: bolder;
     font-size: 15px;
     color: black;
-    max-width: 2000px;
+    width: 200px;
     padding: 20px;
+    background: aqua;
 }
 
 nav ul {
@@ -35,13 +37,25 @@ nav ul {
 article {
     min-height: 200px;
     margin: 0 auto;
-    max-width: 1000px;
     overflow: hidden;
 }
 
 .logo {
-    max-height: 80px;
+    height: 80px;
     padding: 10px;
+}
+
+.header-width {
+    padding-left: 200px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-width {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .specialtyDropDown {
