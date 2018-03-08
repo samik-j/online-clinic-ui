@@ -4,7 +4,10 @@ const Header = () => {
 
     return (
         <header>
-            <div>ONLINE CLINIC</div>
+            <img className="logo inline"
+                 src={"https://preview.ibb.co/nAHNf7/caduceus.png"}
+                 alt="Caduceus"/>
+            <div className="inline">Online Clinic</div>
         </header>
     )
 };

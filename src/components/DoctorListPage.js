@@ -1,9 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import axios from "axios";
 
 //COMPONENTS
-import Doctor from './DoctorListItem';
 import DoctorList from './DoctorList'
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
@@ -15,22 +13,13 @@ class DoctorListPage extends React.Component {
 
         this.state = {
             doctors: [],
-            specialty: null
+            specialty: ''
         };
 
         this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
-        this.refresh = this.refresh.bind(this);
     }
 
     componentDidMount() {
-        axios.get(DOCTORS_URL).then(
-            response => {
-                this.setState({doctors: response.data})
-            }
-        );
-    }
-
-    refresh() {
         axios.get(DOCTORS_URL).then(
             response => {
                 this.setState({doctors: response.data})
@@ -69,7 +58,7 @@ class DoctorListPage extends React.Component {
                 <div className="specialtyDropDown">
                     <select id="specialty" name="specialty" className="form-control"
                             value={this.state.specialty} onChange={this.handleSpecialtyChange}>
-                        <option disabled selected hidden>search by specialty</option>
+                        <option hidden value="">search by specialty</option>
                         <option value="GYNAECOLOGIST">gynaecologist</option>
                         <option value="DERMATOLOGIST">dermatologist</option>
                         <option value="PEDIATRICIAN">pediatrician</option>

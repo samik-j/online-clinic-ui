@@ -1,16 +1,20 @@
 header {
-    background: #297399;
-    font-size: 50px;
+    background: #2da2a1;
+    font-size: 30px;
     color: white;
-    font-family: 'Vollkorn';
-    text-align: center;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    text-align: left;
+    padding-left: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 footer {
-    background: #297399;
-    font-size: 20px;
+    background: #2da2a1;
+    font-size: 10px;
     color: white;
-    font-family: 'Vollkorn';
+    font-family: 'Arial Narrow';
     text-align: center;
 }
 
@@ -35,19 +39,20 @@ article {
     overflow: hidden;
 }
 
+.logo {
+    max-height: 80px;
+    padding: 10px;
+}
+
 .specialtyDropDown {
     text-align: center;
     margin: 20px;
 }
 
-.pageMargin {
-    margin: 20px;
-}
-
 .doctor {
-    padding: 10px;
+    padding: 15px;
     margin: 20px;
-    border: 1px solid #297399;
+    border: 1px solid #2da2a1;
     max-height: 200px;
 }
 
@@ -60,10 +65,15 @@ article {
 
 .doctorListAvatar {
     height: 100px;
-    padding: 10px;
+    border-radius: 50%;
+    border-width: 2px;
 }
 
 .doctorListInfo {
     padding-left: 10px;
+    display: inline-block;
+}
+
+.inline {
     display: inline-block;
 }
