@@ -18,17 +18,17 @@ const App = () => {
         <BrowserRouter>
             <div>
                 <Header/>
-                    <article>
-                        <Switch>
-                            <Route path="/doctors/:doctorId/appointments" component={AppointmentsPage}/>
-                            <Route path="/doctors/:doctorId" component={DoctorPage}/>
-                            <Route path="/doctors" component={DoctorListPage}/>
-                            <Route path="/" component={Home}/>
-                            <Route path="*" component={NotFound}/>
-                        </Switch>
-                    </article>
+                <article>
+                    <Switch>
+                        <Route path="/doctors/:doctorId/appointments" component={AppointmentsPage}/>
+                        <Route path="/doctors/:doctorId" component={DoctorPage}/>
+                        <Route path="/doctors" component={DoctorListPage}/>
+                        <Route path="/" component={Home}/>
+                        <Route path="*" component={NotFound}/>
+                    </Switch>
+                </article>
                 <div className="page-width">
-                <nav>
+                    <nav>
                         <ul>
                             <Link to="/doctors">SEARCH DOCTORS</Link>
                         </ul>

@@ -36,8 +36,22 @@ article {
     overflow: hidden;
 }
 
+/*
+HEADER
+ */
+.logo {
+    vertical-align: center;
+    height: 70px;
+    padding: 10px;
+}
+
+/*
+HOME
+ */
+
 .home {
     background: #2da2a1;
+    position: relative;
     height: 300px;
     text-align: center;
     font-size: 20px;
@@ -45,25 +59,16 @@ article {
     font-family: 'Roboto', serif;
 }
 
-.home-text {
-    position: relative;
-    float: left;
+.home .home-text {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.logo {
-    vertical-align: center;
-    height: 70px;
-    padding: 10px;
-}
-
-.page-width {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/*
+DOCTOR LIST
+ */
 
 .specialty-drop-down {
     text-align: center;
@@ -94,6 +99,16 @@ article {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
+}
+
+/*
+OTHER
+ */
+
+.page-width {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .inline {
