@@ -36,7 +36,7 @@ class AppointmentsPage extends React.Component {
                     </thead>
                     <tbody>
                     {
-                        this.state.appointments.map(appointment => {
+                        this.state.appointmentsAvailable.map(appointment => {
                             return (
                                 <tr key={appointment.id}>
                                     <td>{appointment.date}</td>

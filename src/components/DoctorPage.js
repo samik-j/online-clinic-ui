@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import AppointmentList from "./AppointmentList";
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
@@ -11,7 +12,7 @@ class DoctorPage extends React.Component {
 
         this.state = {
             doctor: '',
-            appointments: []
+            appointmentsAvailable: [],
         }
     }
 
@@ -24,13 +25,22 @@ class DoctorPage extends React.Component {
                     })
                 }
             );
+        axios.get(`${DOCTORS_URL}/${this.props.match.params.doctorId}/appointments?available=true`)
+            .then(
+                response => {
+                    this.setState({
+                        appointmentsAvailable: response.data
+                    })
+                }
+            );
         axios.get(`${DOCTORS_URL}/${this.props.match.params.doctorId}/appointments`)
             .then(
                 response => {
                     this.setState({
                         appointments: response.data
                     })
-                });
+                }
+            );
     }
 
     render() {
@@ -44,31 +54,8 @@ class DoctorPage extends React.Component {
                         <div className="doctor-name">{this.state.doctor.firstName}</div>
                         <div className="doctor-name">{this.state.doctor.lastName}</div>
                         <div className="doctor-specialty">{this.state.doctor.specialty}</div>
-                        <Link className="btn btn-primary book-btn" to={`/doctors/${this.state.doctor.id}/appointments`}>Book
-                            appointment</Link>
                     </div>
-                    <div className="container">
-                        <table className="table">
-                            <thead>
-                            <tr>
-                                <th>dATE</th>
-                                <th>TIME</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                this.state.appointments.map(appointment => {
-                                    return (
-                                        <tr key={appointment.id}>
-                                            <td>{appointment.date}</td>
-                                            <td>{appointment.time}</td>
-                                        </tr>)
-                                })
-                            }
-                            </tbody>
-                        </table>
-
-                    </div>
+                    <AppointmentList appointmentsAvailable={this.state.appointmentsAvailable}/>
                 </div>
             </div>
         )

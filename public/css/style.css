@@ -1,5 +1,9 @@
+:root {
+    --main-color: #2cc0a6;
+}
+
 header {
-    background: #2da2a1;
+    background: var(--main-color);
     font-size: 30px;
     color: white;
     font-family: 'Roboto', serif;
@@ -9,7 +13,7 @@ header {
 }
 
 footer {
-    background: #2da2a1;
+    background: var(--main-color);
     font-size: 10px;
     color: white;
     font-family: 'Roboto', serif;
@@ -46,7 +50,7 @@ article {
 /* HOME */
 
 .home {
-    background: #2da2a1;
+    background: var(--main-color);
     position: relative;
     height: 300px;
     text-align: center;
@@ -72,7 +76,7 @@ article {
 .doctor-list {
     padding: 15px;
     margin: 20px;
-    border: 1px solid #2da2a1;
+    border: 1px solid var(--main-color);
     max-height: 200px;
 }
 
@@ -100,7 +104,7 @@ article {
 .doctor {
     padding: 15px;
     margin: 20px;
-    border: 1px solid #2da2a1;
+    border: 1px solid var(--main-color);
 }
 
 .doctor .doctor-avatar {
@@ -131,6 +135,21 @@ article {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/* APPOINTMENT LIST */
+
+.appointment-list {
+    padding: 15px;
+    margin: 20px;
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.appointment-list .appointment-book-btn {
+    margin: 10px;
+    border: white;
+}
+
 
 /* OTHER */
 
