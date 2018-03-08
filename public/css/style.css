@@ -66,6 +66,10 @@ article {
     transform: translate(-50%, -50%);
 }
 
+.search-icon {
+    height: 80px;
+}
+
 /* DOCTOR LIST */
 
 .specialty-drop-down {
@@ -149,7 +153,6 @@ article {
     margin: 10px;
     border: white;
 }
-
 
 /* OTHER */
 
