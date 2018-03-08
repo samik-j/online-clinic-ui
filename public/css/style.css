@@ -36,18 +36,14 @@ article {
     overflow: hidden;
 }
 
-/*
-HEADER
- */
+/* HEADER */
 .logo {
     vertical-align: center;
     height: 70px;
     padding: 10px;
 }
 
-/*
-HOME
- */
+/* HOME */
 
 .home {
     background: #2da2a1;
@@ -66,44 +62,77 @@ HOME
     transform: translate(-50%, -50%);
 }
 
-/*
-DOCTOR LIST
- */
+/* DOCTOR LIST */
 
 .specialty-drop-down {
     text-align: center;
     margin: 20px;
 }
 
-.doctor {
+.doctor-list {
     padding: 15px;
     margin: 20px;
     border: 1px solid #2da2a1;
     max-height: 200px;
 }
 
-.doctor-name {
+.doctor-list .doctor-name {
     font-size: 20px;
     font-weight: bolder;
     display: inline-block;
     padding-right: 5px;
 }
 
-.doctor-list-avatar {
+.doctor-list .doctor-avatar {
     height: 100px;
     border-radius: 50%;
     border-width: 2px;
 }
 
-.doctor-list-info {
+.doctor-list .doctor-info {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
 }
 
-/*
-OTHER
- */
+/* DOCTOR */
+
+.doctor {
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #2da2a1;
+}
+
+.doctor .doctor-avatar {
+    height: 200px;
+    border-radius: 50%;
+    border-width: 2px;
+}
+
+.doctor .doctor-name {
+    font-size: 30px;
+    font-weight: bolder;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.doctor .doctor-specialty {
+    font-size: 20px;
+}
+
+.doctor .doctor-info {
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.doctor .book-btn {
+    vertical-align: bottom;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* OTHER */
 
 .page-width {
     max-width: 1000px;

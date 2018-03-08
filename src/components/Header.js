@@ -8,7 +8,7 @@ const Header = () => {
             <div className="page-width">
                 <Link to="/">
             <img className="logo inline"
-                 src={"https://preview.ibb.co/nAHNf7/caduceus.png"}
+                 src={"/img/caduceus2.png"}
                  alt="Caduceus"/>
                 </Link>
                 <div className="inline">Online Clinic</div>

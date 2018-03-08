@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 const DoctorListItem = ({doctor}) => {
 
     return (
-        <div className="doctor">
-            <img className="doctor-list-avatar"
-                 src={"https://image.freepik.com/free-icon/medical-doctor-specialist_318-61706.jpg"}
+        <div className="doctor-list">
+            <img className="doctor-avatar"
+                 src={"/img/doctor_avatar.jpg"}
                  alt="Doctor"/>
-            <div className="doctor-list-info">
+            <div className="doctor-info">
                 <Link to={`/doctors/${doctor.id}`}>
                     <div className="doctor-name">{doctor.firstName}</div>
                     <div className="doctor-name">{doctor.lastName}</div>
