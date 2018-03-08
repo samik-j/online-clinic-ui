@@ -8,7 +8,7 @@ class DoctorPage extends React.Component {
 
     render() {
         return (
-            <div>doctor page</div>
+            <div className="page-width">doctor page</div>
         )
     }
 }

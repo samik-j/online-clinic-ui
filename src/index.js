@@ -18,15 +18,6 @@ const App = () => {
         <BrowserRouter>
             <div>
                 <Header/>
-                <div className="page-width">
-                    <nav>
-                        <ul>
-                            <Link to="/doctors">SEARCH DOCTORS</Link>
-                        </ul>
-                        <ul>
-                            <Link to="/doctorCreationPage">ADD DOCTOR</Link>
-                        </ul>
-                    </nav>
                     <article>
                         <Switch>
                             <Route path="/doctors/:doctorId/appointments" component={AppointmentsPage}/>
@@ -36,6 +27,15 @@ const App = () => {
                             <Route path="*" component={NotFound}/>
                         </Switch>
                     </article>
+                <div className="page-width">
+                <nav>
+                        <ul>
+                            <Link to="/doctors">SEARCH DOCTORS</Link>
+                        </ul>
+                        <ul>
+                            <Link to="/doctorCreationPage">ADD DOCTOR</Link>
+                        </ul>
+                    </nav>
                 </div>
                 <footer>Created by Joanna Senczuk</footer>
             </div>

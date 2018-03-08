@@ -5,7 +5,6 @@ header {
     font-family: 'Roboto', serif;
     font-weight: bold;
     text-align: left;
-    vertical-align: text-top;
     height: 70px;
 }
 
@@ -19,7 +18,6 @@ footer {
 }
 
 nav {
-    float: left;
     font-weight: bolder;
     font-size: 15px;
     color: black;
@@ -38,17 +36,27 @@ article {
     overflow: hidden;
 }
 
+.home {
+    background: #2da2a1;
+    height: 300px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-family: 'Roboto', serif;
+}
+
+.home-text {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .logo {
     vertical-align: center;
     height: 70px;
     padding: 10px;
-}
-
-.header-width {
-    padding-left: 200px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .page-width {
