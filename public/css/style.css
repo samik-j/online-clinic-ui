@@ -5,9 +5,8 @@ header {
     font-family: 'Arial Narrow', serif;
     font-weight: bold;
     text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 100px;
+    vertical-align: text-top;
+    height: 70px;
 }
 
 footer {
@@ -39,7 +38,8 @@ article {
 }
 
 .logo {
-    height: 80px;
+    vertical-align: center;
+    height: 70px;
     padding: 10px;
 }
 
