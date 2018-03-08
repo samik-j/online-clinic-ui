@@ -2,7 +2,7 @@ header {
     background: #2da2a1;
     font-size: 30px;
     color: white;
-    font-family: 'Arial Narrow', serif;
+    font-family: 'Roboto', serif;
     font-weight: bold;
     text-align: left;
     vertical-align: text-top;
@@ -13,7 +13,8 @@ footer {
     background: #2da2a1;
     font-size: 10px;
     color: white;
-    font-family: 'Arial Narrow', serif;
+    font-family: 'Roboto', serif;
+    font-weight: lighter;
     text-align: center;
 }
 
