@@ -55,7 +55,7 @@ class DoctorListPage extends React.Component {
     render() {
         return (
             <div>
-                <div className="specialtyDropDown">
+                <div className="specialty-drop-down">
                     <select id="specialty" name="specialty" className="form-control"
                             value={this.state.specialty} onChange={this.handleSpecialtyChange}>
                         <option hidden value="">search by specialty</option>
