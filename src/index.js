@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 //COMPONENTS
 import Header from './components/Header';
 import DoctorListPage from './components/DoctorListPage';
+import DoctorPage from './components/DoctorPage';
 import AppointmentsPage from './components/AppointmentsPage';
 import NotFound from './components/NotFound';
 
@@ -28,6 +29,7 @@ const App = () => {
                     <article>
                         <Switch>
                             <Route path="/doctors/:doctorId/appointments" component={AppointmentsPage}/>
+                            <Route path="/doctors/:doctorId" component={DoctorPage}/>
                             <Route path="/doctors" component={DoctorListPage}/>
                             <Route path="*" component={NotFound}/>
                         </Switch>
