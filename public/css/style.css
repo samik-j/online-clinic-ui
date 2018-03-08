@@ -41,10 +41,16 @@ article {
 }
 
 /* HEADER */
-.logo {
+header .logo {
     vertical-align: center;
     height: 70px;
     padding: 10px;
+    display: inline-block;
+}
+
+header .text {
+    color: white;
+    display: inline-block;
 }
 
 /* HOME */

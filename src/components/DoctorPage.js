@@ -33,14 +33,6 @@ class DoctorPage extends React.Component {
                     })
                 }
             );
-        axios.get(`${DOCTORS_URL}/${this.props.match.params.doctorId}/appointments`)
-            .then(
-                response => {
-                    this.setState({
-                        appointments: response.data
-                    })
-                }
-            );
     }
 
     render() {
