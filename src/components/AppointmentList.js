@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const AppointmentList = ({appointmentsAvailable}) => {
 
@@ -10,7 +11,7 @@ const AppointmentList = ({appointmentsAvailable}) => {
                     appointmentsAvailable.map(appointment => {
                         return (
                             <div className="btn btn-default appointment-book-btn" key={appointment.id}>
-                                <div>{appointment.date}</div>
+                                <div>{moment(appointment.date).format("DD.MM")}</div>
                                 <div>{appointment.time}</div>
                             </div>)
                     })
