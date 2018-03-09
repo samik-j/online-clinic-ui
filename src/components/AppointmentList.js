@@ -2,6 +2,7 @@ import React from 'react';
 
 const AppointmentList = ({appointmentsAvailable}) => {
 
+  const dateFormat = {month: 'short', day: 'numeric'}
     return (
         <div>
             <div className="appointment-list">

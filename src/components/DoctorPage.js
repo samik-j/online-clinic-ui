@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import AppointmentList from "./AppointmentList";
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';

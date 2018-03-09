@@ -140,12 +140,6 @@ header .text {
     padding-left: 10px;
 }
 
-.doctor .book-btn {
-    vertical-align: bottom;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 /* APPOINTMENT LIST */
 
 .appointment-list {
@@ -166,8 +160,4 @@ header .text {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.inline {
-    display: inline-block;
 }
