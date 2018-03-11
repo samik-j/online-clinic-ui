@@ -1,25 +1,67 @@
-import React from 'react';
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
+import AppointmentsOnDay from './AppointmentsOnDay'
 
-const AppointmentList = ({appointmentsAvailable}) => {
+class AppointmentList extends React.Component {
 
-  const dateFormat = {month: 'short', day: 'numeric'}
-    return (
-        <div>
-            <div className="appointment-list">
-                {
-                    appointmentsAvailable.map(appointment => {
-                        return (
-                            <div className="btn btn-default appointment-book-btn" key={appointment.id}>
-                                <div>{moment(appointment.date).format("DD.MM")}</div>
-                                <div>{appointment.time}</div>
-                            </div>)
-                    })
-                }
+    constructor (props) {
+        super(props)
+
+        this.state = {
+            doctorId: props.doctorId,
+            date1: moment(Date.now()),
+            date2: moment(Date.now()).add(1, 'days'),
+            date3: moment(Date.now()).add(2, 'days'),
+            date4: moment(Date.now()).add(3, 'days'),
+            date5: moment(Date.now()).add(4, 'days'),
+            date6: moment(Date.now()).add(5, 'days'),
+            date7: moment(Date.now()).add(6, 'days'),
+
+        }
+
+        this.handleDateIncrement = this.handleDateIncrement.bind(this)
+        this.handleDateSubtraction = this.handleDateSubtraction.bind(this)
+    }
+
+    handleDateIncrement (event) {
+        this.setState((prevState) => ({
+            date1: prevState.date1.add(3, 'days'),
+            date2: prevState.date2.add(3, 'days'),
+            date3: prevState.date3.add(3, 'days'),
+            date4: prevState.date4.add(3, 'days'),
+            date5: prevState.date5.add(3, 'days'),
+            date6: prevState.date6.add(3, 'days'),
+            date7: prevState.date7.add(3, 'days'),
+        }))
+    }
+
+    handleDateSubtraction (event) {
+        this.setState((prevState) => ({
+            date1: prevState.date1.subtract(3, 'days'),
+            date2: prevState.date2.subtract(3, 'days'),
+            date3: prevState.date3.subtract(3, 'days'),
+            date4: prevState.date4.subtract(3, 'days'),
+            date5: prevState.date5.subtract(3, 'days'),
+            date6: prevState.date6.subtract(3, 'days'),
+            date7: prevState.date7.subtract(3, 'days'),
+        }))
+    }
+
+    render () {
+        return (
+            <div>
+                <div onClick={this.handleDateSubtraction} className="btn tbn-primary">previous</div>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
+                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
+                <div onClick={this.handleDateIncrement} className="btn tbn-primary">next</div>
             </div>
-        </div>
-    )
+        )
+    }
+}
 
-};
-
-export default AppointmentList;
+export default AppointmentList
