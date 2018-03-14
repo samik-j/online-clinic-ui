@@ -49,8 +49,10 @@ class AppointmentList extends React.Component {
 
     render () {
         return (
-            <div>
-                <div onClick={this.handleDateSubtraction} className="btn tbn-primary">previous</div>
+            <div className="appointment-list">
+                <div className="appointment-list-title">Book appointment</div>
+                <img className="arrows" onClick={this.handleDateSubtraction}
+                     src={'/img/arrows_left.png'} alt="Arrows Left"/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
@@ -58,7 +60,8 @@ class AppointmentList extends React.Component {
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
-                <div onClick={this.handleDateIncrement} className="btn tbn-primary">next</div>
+                <img className="arrows" onClick={this.handleDateIncrement}
+                     src={'/img/arrows_right.png'} alt="Arrows Right"/>
             </div>
         )
     }

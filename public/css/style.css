@@ -1,5 +1,8 @@
 :root {
     --main-color: #2cc0a6;
+    --main-border: 1px solid var(--border-color);
+    --border-color: lightgrey;
+    --background-color: #f1f1f1;
     --main-font: 'Roboto', serif;
 }
 
@@ -55,7 +58,6 @@ header .text {
 }
 
 /* HOME */
-
 .home {
     background: var(--main-color);
     position: relative;
@@ -78,7 +80,6 @@ header .text {
 }
 
 /* DOCTOR LIST */
-
 .specialty-drop-down {
     text-align: center;
     margin: 20px;
@@ -87,7 +88,7 @@ header .text {
 .doctor-list {
     padding: 15px;
     margin: 20px;
-    border: 1px solid var(--main-color);
+    border: var(--main-border);
     max-height: 200px;
 }
 
@@ -111,13 +112,6 @@ header .text {
 }
 
 /* DOCTOR */
-
-.doctor {
-    padding: 15px;
-    margin: 20px;
-    border: 1px solid var(--main-color);
-}
-
 .doctor .doctor-avatar {
     height: 200px;
     border-radius: 50%;
@@ -142,30 +136,30 @@ header .text {
 }
 
 /* APPOINTMENT LIST */
-
 .appointment-list {
-    padding: 15px;
-    margin: 20px;
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.appointment-list .appointment-book-btn {
-    margin: 10px;
-    border: white;
-    width: 70px;
-}
-
-/* APPOINTMENTS */
-.appointments-element {
-    margin: 0 auto;
+    margin: auto;
     display: table;
 }
 
+.appointment-list .appointment-list-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--border-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.appointment-list .arrows {
+    height: 20px;
+    margin-top: 15px;
+}
+
+/* APPOINTMENTS */
 .appointments-on-day {
     display: inline-block;
     text-align: center;
     vertical-align: top;
+    margin: 5px;
 }
 
 .appointments-on-day .title {
@@ -177,20 +171,16 @@ header .text {
 
 .appointments-on-day .item {
     padding: 5px;
-    margin: 5px;
     width: 90px;
     min-height: 200px;
-    background: #f1f1f1;
-    border-radius: 4px;
+    background: var(--background-color);
 }
 
 .appointments-on-day .item-inactive {
     padding: 5px;
-    margin: 5px;
     width: 90px;
-    min-height: 200px;
     background: darkgray;
-    border-radius: 4px;
+    min-height: 200px;
 }
 
 .appointments-on-day .item .book-btn {
@@ -198,12 +188,18 @@ header .text {
     border: white;
     width: 70px;
     horiz-align: center;
+    border-radius: 0px;
 }
 
 /* OTHER */
-
 .page-width {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.border-box {
+    padding: 20px;
+    margin: 20px;
+    border: var(--main-border);
 }
