@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 
-const PATIENTS_URL = 'http://localhost:8080/doctors'
+const PATIENTS_URL = 'http://localhost:8080/patients'
 
 class PatientPage extends React.Component {
 
