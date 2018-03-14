@@ -112,24 +112,24 @@ header .text {
 }
 
 /* DOCTOR */
-.doctor .doctor-avatar {
+.doctor .avatar {
     height: 200px;
     border-radius: 50%;
     border-width: 2px;
 }
 
-.doctor .doctor-name {
+.doctor .name {
     font-size: 30px;
     font-weight: bolder;
     display: inline-block;
     padding-right: 10px;
 }
 
-.doctor .doctor-specialty {
+.doctor .specialty {
     font-size: 20px;
 }
 
-.doctor .doctor-info {
+.doctor .info {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
@@ -189,6 +189,26 @@ header .text {
     width: 70px;
     horiz-align: center;
     border-radius: 0px;
+}
+
+/* PATIENT */
+.patient .avatar {
+    height: 200px;
+    border-radius: 50%;
+    border-width: 2px;
+}
+
+.patient .name {
+    font-size: 30px;
+    font-weight: bolder;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.patient .info {
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 10px;
 }
 
 /* OTHER */

@@ -31,13 +31,13 @@ class DoctorPage extends React.Component {
             <div className="page-width">
                 <div className="doctor">
                     <div className="border-box">
-                        <img className="doctor-avatar"
+                        <img className="avatar"
                              src={'/img/doctor_avatar.jpg'}
                              alt="Doctor"/>
-                        <div className="doctor-info">
-                            <div className="doctor-name">{this.state.doctor.firstName}</div>
-                            <div className="doctor-name">{this.state.doctor.lastName}</div>
-                            <div className="doctor-specialty">{this.state.doctor.specialty}</div>
+                        <div className="info">
+                            <div className="name">{this.state.doctor.firstName}</div>
+                            <div className="name">{this.state.doctor.lastName}</div>
+                            <div className="specialty">{this.state.doctor.specialty}</div>
                         </div>
                     </div>
                     <div className="border-box">
