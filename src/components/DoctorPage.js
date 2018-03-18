@@ -41,6 +41,7 @@ class DoctorPage extends React.Component {
                         </div>
                     </div>
                     <div className="border-box">
+                        <div className="box-title">Book appointment</div>
                         <AppointmentList doctorId={this.state.doctorId}/>
                     </div>
                 </div>

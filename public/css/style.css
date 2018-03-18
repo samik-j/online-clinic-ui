@@ -141,14 +141,6 @@ header .text {
     display: table;
 }
 
-.appointment-list .appointment-list-title {
-    font-size: 20px;
-    font-weight: bolder;
-    color: var(--border-color);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 .appointment-list .arrows {
     height: 20px;
     margin-top: 15px;
@@ -163,7 +155,6 @@ header .text {
 }
 
 .appointments-on-day .title {
-    font-weight: bolder;
     font-size: 15px;
     font-stretch: expanded;
     font-family: var(--main-font);
@@ -188,7 +179,6 @@ header .text {
     border: white;
     width: 70px;
     horiz-align: center;
-    border-radius: 0px;
 }
 
 /* PATIENT */
@@ -222,4 +212,13 @@ header .text {
     padding: 20px;
     margin: 20px;
     border: var(--main-border);
+}
+
+.border-box .box-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--border-color);
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: var(--main-border);
 }

@@ -50,7 +50,6 @@ class AppointmentList extends React.Component {
     render () {
         return (
             <div className="appointment-list">
-                <div className="appointment-list-title">Book appointment</div>
                 <img className="arrows" onClick={this.handleDateSubtraction}
                      src={'/img/arrows_left.png'} alt="Arrows Left"/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
