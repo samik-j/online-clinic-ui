@@ -39,8 +39,10 @@ class PatientProfilePage extends React.Component {
                         </div>
                     </div>
                     <div className="border-box">
-                        <div className="box-title">Booked appointments</div>
-                        <PatientAppointmentsList patientId={this.state.patientId}/>
+                        <div className="box-title">Current appointments</div>
+                        <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
+                        <div className="box-title">Past appointments</div>
+                        <PatientAppointmentsList patientId={this.state.patientId} current={false}/>
                     </div>
 
                 </div>

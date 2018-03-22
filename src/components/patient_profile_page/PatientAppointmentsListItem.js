@@ -32,6 +32,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
     return (
         <div className="appointment">
         <table id="appointment">
+            <tbody>
             <tr>
                 <td className="date">{moment(appointment.date).format('ddd DD.MM.YYYY')}</td>
                 <td className="time">{appointment.time}</td>
@@ -40,6 +41,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
                 <td className={style}>{status}</td>
                 <td className="status-img"><img className="status-img" src={imgSrc} alt="status"/></td>
             </tr>
+            </tbody>
         </table>
         </div>
     )
