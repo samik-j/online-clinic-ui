@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import PatientAppointmentsList from './PatientAppointmentsList'
 
 const PATIENTS_URL = 'http://localhost:8080/patients'
 
@@ -34,9 +35,12 @@ class PatientPage extends React.Component {
                              src={'/img/patient_avatar.jpg'}
                              alt="Patient"/>
                         <div className="info">
-                            <div className="name">{this.state.patient.firstName}</div>
-                            <div className="name">{this.state.patient.lastName}</div>
+                            <div className="name">{this.state.patient.firstName}&nbsp;{this.state.patient.lastName}</div>
                         </div>
+                    </div>
+                    <div className="border-box">
+                        <div className="box-title">Booked appointments</div>
+                        <PatientAppointmentsList patientId={this.state.patientId}/>
                     </div>
 
                 </div>
