@@ -4,7 +4,7 @@ import PatientAppointmentsList from './PatientAppointmentsList'
 
 const PATIENTS_URL = 'http://localhost:8080/patients'
 
-class PatientPage extends React.Component {
+class PatientProfilePage extends React.Component {
 
     constructor (props) {
         super(props)
@@ -50,4 +50,4 @@ class PatientPage extends React.Component {
 
 }
 
-export default PatientPage;
+export default PatientProfilePage;

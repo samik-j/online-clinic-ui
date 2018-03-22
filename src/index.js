@@ -5,9 +5,9 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 //COMPONENTS
 import Header from './components/Header';
 import Home from './components/Home';
-import DoctorListPage from './components/DoctorListPage';
-import DoctorPage from './components/DoctorPage';
-import PatientPage from './components/PatientPage';
+import DoctorListPage from './components/doctor_list_page/DoctorListPage';
+import DoctorPage from './components/doctor_page/DoctorPage';
+import PatientProfilePage from './components/patient_profile_page/PatientProfilePage';
 import NotFound from './components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +22,7 @@ const App = () => {
                     <Switch>
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
-                        <Route path="/patients/:patientId" component={PatientPage}/>
+                        <Route path="/patients/:patientId" component={PatientProfilePage}/>
                         <Route path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>
                     </Switch>
