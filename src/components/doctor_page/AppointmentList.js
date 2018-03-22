@@ -49,7 +49,7 @@ class AppointmentList extends React.Component {
 
     render () {
         return (
-            <div className="appointment-list">
+            <div className="doctor-appointment-list">
                 <img className="arrows" onClick={this.handleDateSubtraction}
                      src={'/img/arrows_left.png'} alt="Arrows Left"/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>

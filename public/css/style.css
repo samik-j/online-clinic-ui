@@ -58,7 +58,7 @@ header .text {
     display: inline-block;
 }
 
-/* HOME */
+/* HOME PAGE */
 .home {
     background: var(--main-color);
     position: relative;
@@ -80,7 +80,7 @@ header .text {
     height: 80px;
 }
 
-/* DOCTOR LIST */
+/* DOCTOR LIST PAGE */
 .specialty-drop-down {
     text-align: center;
     margin: 20px;
@@ -111,7 +111,7 @@ header .text {
     padding-left: 10px;
 }
 
-/* DOCTOR */
+/* DOCTOR PAGE */
 .doctor .avatar {
     height: 200px;
     border-radius: 50%;
@@ -134,18 +134,17 @@ header .text {
     padding-left: 10px;
 }
 
-/* APPOINTMENT LIST */
-.appointment-list {
+/* DOCTOR PAGE APPOINTMENT LIST */
+.doctor-appointment-list {
     margin: auto;
     display: table;
 }
 
-.appointment-list .arrows {
+.doctor-appointment-list .arrows {
     height: 20px;
     margin-top: 15px;
 }
 
-/* APPOINTMENTS */
 .appointments-on-day {
     display: inline-block;
     text-align: center;
@@ -182,69 +181,77 @@ header .text {
     font-weight: bolder;
 }
 
-/* PATIENT */
-.patient .avatar {
+/* PROFILE PAGE*/
+.profile .avatar {
     height: 200px;
     border-radius: 50%;
     border-width: 2px;
 }
 
-.patient .name {
+.profile .name {
     font-size: 30px;
     font-weight: bolder;
     display: inline-block;
     padding-right: 10px;
 }
 
-.patient .info {
+.profile .info {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
 }
 
-/* PATIENT APPOINTMENT LIST */
-.appointment {
-    border: var(--main-border);
-    padding: 5px;
-    margin-bottom: 10px;
-    width:100%;
+/* PROFILE PAGE APPOINTMENT LIST */
+.profile .appointment-list {
+    background: var(--background-color);
+    padding: 20px;
+    width: 100%;
 }
 
-table#appointment {
+.profile .appointment-list .appointment {
+    padding: 5px;
+    width:100%;
+    background: white;
+}
+.profile .appointment-list .appointment:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+table#profile-appointment {
     width :100%;
 }
-table#appointment td.date {
+table#profile-appointment td.date {
     width: 150px;
     vertical-align: top;
     font-family: 'Roboto', serif;
     font-weight: bold;
 }
-table#appointment td.time {
+table#profile-appointment td.time {
     width: 70px;
     vertical-align: top;
     font-family: 'Roboto', serif;
     font-weight: bold;
 }
-table#appointment td.doctor {
+table#profile-appointment td.doctor {
     width: 150px;
     vertical-align: top;
 }
-table#appointment td.reason {
+table#profile-appointment td.reason {
     padding-left: 15px;
     padding-right: 15px;
     font-style: italic;
     vertical-align: top;
 }
-table#appointment td.status {
+table#profile-appointment td.status {
     vertical-align: top;
     width: 110px;
 }
-table#appointment td.status-img {
+table#profile-appointment td.status-img {
     vertical-align: top;
     width: 20px;
 }
 
-.status-img {
+.profile .appointment-list .status-img {
     height: 20px;
     width: 20px;
 }
@@ -252,6 +259,7 @@ table#appointment td.status-img {
 /* OTHER */
 .page-width {
     max-width: 1000px;
+    min-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }

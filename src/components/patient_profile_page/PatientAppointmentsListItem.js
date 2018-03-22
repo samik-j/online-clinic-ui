@@ -20,7 +20,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
 
     return (
         <div className="appointment">
-            <table id="appointment">
+            <table id="profile-appointment">
                 <tbody>
                 <tr>
                     <td className="date">{moment(appointment.date).format('ddd DD.MM.YYYY')}</td>

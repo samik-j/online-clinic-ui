@@ -32,14 +32,14 @@ class PatientAppointmentsList extends React.Component {
 
     render () {
         return (
-            <div>
-                {
-                    this.state.appointments.map((appointment) => {
-                        return (
-                            <PatientAppointmentsListItem key={appointment.id} appointment={appointment}/>
-                        )
-                    })
-                }
+            <div className="appointment-list">
+                    {
+                        this.state.appointments.map((appointment) => {
+                            return (
+                                <PatientAppointmentsListItem key={appointment.id} appointment={appointment}/>
+                            )
+                        })
+                    }
             </div>
         )
     }

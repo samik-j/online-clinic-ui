@@ -32,7 +32,7 @@ class AppointmentsPage extends React.Component {
 
         return (
             <div>
-                <div className="appointment-list">
+                <div className="doctor-appointment-list">
                     {
                         this.state.appointments.map(appointment => {
                             return (

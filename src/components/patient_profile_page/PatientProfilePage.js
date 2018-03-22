@@ -30,7 +30,7 @@ class PatientProfilePage extends React.Component {
     render() {
         return (
             <div className="page-width">
-                <div className="patient">
+                <div className="profile">
                     <div className="border-box">
                         <PatientInformation patient={this.state.patient}/>
                     </div>
