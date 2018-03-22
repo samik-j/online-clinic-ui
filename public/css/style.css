@@ -226,7 +226,7 @@ table#appointment td.time {
     font-weight: bold;
 }
 table#appointment td.doctor {
-    width: 200px;
+    width: 150px;
     vertical-align: top;
 }
 table#appointment td.reason {

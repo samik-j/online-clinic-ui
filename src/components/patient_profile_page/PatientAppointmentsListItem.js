@@ -35,7 +35,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
             <tr>
                 <td className="date">{moment(appointment.date).format('ddd DD.MM.YYYY')}</td>
                 <td className="time">{appointment.time}</td>
-                <td className="doctor"><Link to={`/doctors/${appointment.doctorId}`}>{appointment.doctorId}</Link></td>
+                <td className="doctor"><Link to={`/doctors/${appointment.doctorId}`}>{appointment.doctorName}</Link></td>
                 <td className="reason">{appointment.reason}</td>
                 <td className={style}>{status}</td>
                 <td className="status-img"><img className="status-img" src={imgSrc} alt="status"/></td>
