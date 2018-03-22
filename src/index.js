@@ -22,7 +22,7 @@ const App = () => {
                     <Switch>
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
-                        <Route path="/patients/:patientId" component={PatientProfilePage}/>
+                        <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>
                         <Route path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>
                     </Switch>

@@ -201,6 +201,14 @@ header .text {
     padding-left: 10px;
 }
 
+.profile .info .details {
+    color: var(--border-color);
+}
+
+.profile .info .details .title {
+    width: 120px;
+}
+
 /* PROFILE PAGE APPOINTMENT LIST */
 .profile .appointment-list {
     background: var(--background-color);
