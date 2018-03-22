@@ -35,8 +35,7 @@ class DoctorPage extends React.Component {
                              src={'/img/doctor_avatar.jpg'}
                              alt="Doctor"/>
                         <div className="info">
-                            <div className="name">{this.state.doctor.firstName}</div>
-                            <div className="name">{this.state.doctor.lastName}</div>
+                            <div className="name">{this.state.doctor.firstName}&nbsp;{this.state.doctor.lastName}</div>
                             <div className="specialty">{this.state.doctor.specialty}</div>
                         </div>
                     </div>

@@ -10,8 +10,7 @@ const DoctorListItem = ({doctor}) => {
                  alt="Doctor"/>
             <div className="doctor-info">
                 <Link to={`/doctors/${doctor.id}`}>
-                    <div className="doctor-name">{doctor.firstName}</div>
-                    <div className="doctor-name">{doctor.lastName}</div>
+                    <div className="doctor-name">{doctor.firstName}&nbsp;{doctor.lastName}</div>
                 </Link>
                 <div>{doctor.specialty}</div>
             </div>

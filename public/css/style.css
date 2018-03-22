@@ -1,5 +1,6 @@
 :root {
     --main-color: #2cc0a6;
+    --second-color: #337ab7;
     --main-border: 1px solid var(--border-color);
     --border-color: lightgrey;
     --background-color: #f1f1f1;
@@ -96,7 +97,6 @@ header .text {
     font-size: 20px;
     font-weight: bolder;
     display: inline-block;
-    padding-right: 5px;
 }
 
 .doctor-list .doctor-avatar {
@@ -122,7 +122,6 @@ header .text {
     font-size: 30px;
     font-weight: bolder;
     display: inline-block;
-    padding-right: 10px;
 }
 
 .doctor .specialty {
@@ -179,6 +178,8 @@ header .text {
     border: white;
     width: 70px;
     horiz-align: center;
+    color: var(--second-color);
+    font-weight: bolder;
 }
 
 /* PATIENT */
@@ -199,6 +200,53 @@ header .text {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
+}
+
+/* PATIENT APPOINTMENT LIST */
+.appointment {
+    border: var(--main-border);
+    padding: 5px;
+    margin-bottom: 10px;
+    width:100%;
+}
+
+table#appointment {
+    width :100%;
+}
+table#appointment td.date {
+    width: 150px;
+    vertical-align: top;
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+}
+table#appointment td.time {
+    width: 70px;
+    vertical-align: top;
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+}
+table#appointment td.doctor {
+    width: 200px;
+    vertical-align: top;
+}
+table#appointment td.reason {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
+    vertical-align: top;
+}
+table#appointment td.status {
+    vertical-align: top;
+    width: 110px;
+}
+table#appointment td.status-img {
+    vertical-align: top;
+    width: 20px;
+}
+
+.status-img {
+    height: 20px;
+    width: 20px;
 }
 
 /* OTHER */
