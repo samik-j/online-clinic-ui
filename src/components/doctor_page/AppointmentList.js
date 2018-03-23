@@ -9,21 +9,18 @@ class AppointmentList extends React.Component {
 
         this.state = {
             doctorId: props.doctorId,
-            date1: moment(Date.now()),
-            date2: moment(Date.now()).add(1, 'days'),
-            date3: moment(Date.now()).add(2, 'days'),
-            date4: moment(Date.now()).add(3, 'days'),
-            date5: moment(Date.now()).add(4, 'days'),
-            date6: moment(Date.now()).add(5, 'days'),
-            date7: moment(Date.now()).add(6, 'days'),
+            date1: moment(),
+            date2: moment().add(1, 'days'),
+            date3: moment().add(2, 'days'),
+            date4: moment().add(3, 'days'),
+            date5: moment().add(4, 'days'),
+            date6: moment().add(5, 'days'),
+            date7: moment().add(6, 'days'),
 
         }
-
-        this.handleDateIncrement = this.handleDateIncrement.bind(this)
-        this.handleDateSubtraction = this.handleDateSubtraction.bind(this)
     }
 
-    handleDateIncrement (event) {
+    handleDateIncrement = (event) => {
         this.setState((prevState) => ({
             date1: prevState.date1.add(3, 'days'),
             date2: prevState.date2.add(3, 'days'),
@@ -35,7 +32,7 @@ class AppointmentList extends React.Component {
         }))
     }
 
-    handleDateSubtraction (event) {
+    handleDateSubtraction = (event) => {
         this.setState((prevState) => ({
             date1: prevState.date1.subtract(3, 'days'),
             date2: prevState.date2.subtract(3, 'days'),
