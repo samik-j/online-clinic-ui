@@ -1,19 +1,19 @@
 import React from 'react';
-import axios from 'axios'
-import PatientAppointmentsList from './PatientAppointmentsList'
-import PatientInformation from './PatientInformation'
+import axios from 'axios';
+import PatientAppointmentsList from './PatientAppointmentsList';
+import PatientInformation from './PatientInformation';
 
-const PATIENTS_URL = 'http://localhost:8080/patients'
+const PATIENTS_URL = 'http://localhost:8080/patients';
 
 class PatientProfilePage extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
             patient: '',
             patientId: this.props.match.params.patientId
-        }
+        };
     }
 
     componentDidMount () {
@@ -22,12 +22,12 @@ class PatientProfilePage extends React.Component {
                 response => {
                     this.setState({
                         patient: response.data
-                    })
+                    });
                 }
-            )
+            );
     }
 
-    render() {
+    render () {
         return (
             <div className="page-width">
                 <div className="profile">
@@ -43,7 +43,7 @@ class PatientProfilePage extends React.Component {
 
                 </div>
             </div>
-        )
+        );
     }
 
 }

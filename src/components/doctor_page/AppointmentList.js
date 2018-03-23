@@ -1,11 +1,11 @@
-import React from 'react'
-import moment from 'moment'
-import AppointmentsOnDay from './AppointmentsOnDay'
+import React from 'react';
+import moment from 'moment';
+import AppointmentsOnDay from './AppointmentsOnDay';
 
 class AppointmentList extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
             doctorId: props.doctorId,
@@ -17,7 +17,7 @@ class AppointmentList extends React.Component {
             date6: moment().add(5, 'days'),
             date7: moment().add(6, 'days'),
 
-        }
+        };
     }
 
     handleDateIncrement = (event) => {
@@ -29,8 +29,8 @@ class AppointmentList extends React.Component {
             date5: prevState.date5.add(3, 'days'),
             date6: prevState.date6.add(3, 'days'),
             date7: prevState.date7.add(3, 'days'),
-        }))
-    }
+        }));
+    };
 
     handleDateSubtraction = (event) => {
         this.setState((prevState) => ({
@@ -41,8 +41,8 @@ class AppointmentList extends React.Component {
             date5: prevState.date5.subtract(3, 'days'),
             date6: prevState.date6.subtract(3, 'days'),
             date7: prevState.date7.subtract(3, 'days'),
-        }))
-    }
+        }));
+    };
 
     render () {
         return (
@@ -59,8 +59,8 @@ class AppointmentList extends React.Component {
                 <img className="arrows" onClick={this.handleDateIncrement}
                      src={'/img/arrows_right.png'} alt="Arrows Right"/>
             </div>
-        )
+        );
     }
 }
 
-export default AppointmentList
+export default AppointmentList;

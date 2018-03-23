@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 //COMPONENTS
 import Header from './components/Header';
@@ -40,7 +40,7 @@ const App = () => {
                 <footer>Created by Joanna Senczuk</footer>
             </div>
         </BrowserRouter>
-    )
+    );
 };
 
 ReactDOM.render(<App/>, document.getElementById('root'));

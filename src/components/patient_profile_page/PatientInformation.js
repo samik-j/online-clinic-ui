@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const PatientInformation = ({patient}) => {
 
@@ -30,7 +30,7 @@ const PatientInformation = ({patient}) => {
                 </table>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default PatientInformation
+export default PatientInformation;

@@ -1,46 +1,46 @@
-import React from 'react'
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
 
 //COMPONENTS
-import DoctorList from './DoctorList'
+import DoctorList from './DoctorList';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors'
+const DOCTORS_URL = 'http://localhost:8080/doctors';
 
 class DoctorListPage extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
             doctors: [],
             specialty: ''
-        }
+        };
 
-        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this)
+        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
     }
 
     componentDidMount () {
         axios.get(DOCTORS_URL).then(
             response => {
-                this.setState({doctors: response.data})
+                this.setState({doctors: response.data});
             }
-        )
+        );
     }
 
     handleSpecialtyChange (event) {
-        const newSpecialty = event.target.value
+        const newSpecialty = event.target.value;
 
-        const URL = newSpecialty === 'all' ? (DOCTORS_URL) : (`${DOCTORS_URL}?specialty=${newSpecialty}`)
+        const URL = newSpecialty === 'all' ? (DOCTORS_URL) : (`${DOCTORS_URL}?specialty=${newSpecialty}`);
 
         axios.get(URL).then(
             response => {
                 this.setState({
                     doctors: response.data,
                     specialty: newSpecialty
-                })
+                });
 
             }
-        )
+        );
     }
 
     render () {
@@ -61,8 +61,8 @@ class DoctorListPage extends React.Component {
                 </div>
                 <DoctorList doctors={this.state.doctors}/>
             </div>
-        )
+        );
     }
 }
 
-export default DoctorListPage
+export default DoctorListPage;

@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const DoctorListItem = ({doctor}) => {
 
     return (
         <div className="doctor-list">
             <img className="doctor-avatar"
-                 src={"/img/doctor_avatar.jpg"}
+                 src={'/img/doctor_avatar.jpg'}
                  alt="Doctor"/>
             <div className="doctor-info">
                 <Link to={`/doctors/${doctor.id}`}>
@@ -15,7 +15,7 @@ const DoctorListItem = ({doctor}) => {
                 <div>{doctor.specialty}</div>
             </div>
         </div>
-    )
+    );
 };
 
 export default DoctorListItem;

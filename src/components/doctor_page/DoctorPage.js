@@ -1,18 +1,18 @@
-import React from 'react'
-import axios from 'axios'
-import AppointmentList from './AppointmentList'
+import React from 'react';
+import axios from 'axios';
+import AppointmentList from './AppointmentList';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors'
+const DOCTORS_URL = 'http://localhost:8080/doctors';
 
 class DoctorPage extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
             doctor: '',
             doctorId: this.props.match.params.doctorId
-        }
+        };
     }
 
     componentDidMount () {
@@ -21,9 +21,9 @@ class DoctorPage extends React.Component {
                 response => {
                     this.setState({
                         doctor: response.data
-                    })
+                    });
                 }
-            )
+            );
     }
 
     render () {
@@ -45,8 +45,8 @@ class DoctorPage extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default DoctorPage
+export default DoctorPage;

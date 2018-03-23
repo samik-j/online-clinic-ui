@@ -1,53 +1,53 @@
-import React from 'react'
-import moment from 'moment/moment'
-import axios from 'axios/index'
+import React from 'react';
+import moment from 'moment/moment';
+import axios from 'axios/index';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors'
+const DOCTORS_URL = 'http://localhost:8080/doctors';
 
 class AppointmentsOnDay extends React.Component {
 
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
             doctorId: props.doctorId,
             date: props.date,
             appointments: []
-        }
+        };
     }
 
     componentDidMount () {
-        const DOCTOR_ID = this.state.doctorId
-        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD')
+        const DOCTOR_ID = this.state.doctorId;
+        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
 
         axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true&date=${DATE_URL}`)
             .then(
                 response => {
                     this.setState({
                         appointments: response.data
-                    })
+                    });
                 }
-            )
+            );
     }
 
     componentWillReceiveProps () {
-        const DOCTOR_ID = this.state.doctorId
-        const DATE_URL = '&date=' + moment(this.state.date).format('YYYY-MM-DD')
+        const DOCTOR_ID = this.state.doctorId;
+        const DATE_URL = '&date=' + moment(this.state.date).format('YYYY-MM-DD');
 
         axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true${DATE_URL}`)
             .then(
                 response => {
                     this.setState({
                         appointments: response.data
-                    })
+                    });
                 }
-            )
+            );
     }
 
     render () {
-        const isActiveDate = !moment(this.state.date).isBefore(moment().subtract(1, 'days'))
+        const isActiveDate = !moment(this.state.date).isBefore(moment().subtract(1, 'days'));
 
-        let item = ''
+        let item = '';
         if (isActiveDate) {
             item =
                 <div className="item">
@@ -55,13 +55,13 @@ class AppointmentsOnDay extends React.Component {
                         return (
                             <div className="btn btn-default book-btn" key={appointment.id}>
                                 <div>{appointment.time}</div>
-                            </div>)
+                            </div>);
 
                     })}
-                </div>
+                </div>;
         } else {
             item =
-                <div className="item-inactive"/>
+                <div className="item-inactive"/>;
         }
 
         return (
@@ -70,8 +70,8 @@ class AppointmentsOnDay extends React.Component {
                 <div className="title">{moment(this.state.date).format('ddd')}</div>
                 <div>{item}</div>
             </div>
-        )
+        );
     }
 }
 
-export default AppointmentsOnDay
+export default AppointmentsOnDay;
