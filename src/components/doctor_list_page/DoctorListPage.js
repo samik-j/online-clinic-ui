@@ -1,58 +1,49 @@
-import React from 'react';
-import axios from "axios";
+import React from 'react'
+import axios from 'axios'
 
 //COMPONENTS
 import DoctorList from './DoctorList'
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
+const DOCTORS_URL = 'http://localhost:8080/doctors'
 
 class DoctorListPage extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor (props) {
+        super(props)
 
         this.state = {
             doctors: [],
             specialty: ''
-        };
+        }
 
-        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
+        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this)
     }
 
-    componentDidMount() {
+    componentDidMount () {
         axios.get(DOCTORS_URL).then(
             response => {
                 this.setState({doctors: response.data})
             }
-        );
+        )
     }
 
-    handleSpecialtyChange(event) {
-        const newSpecialty = event.target.value;
+    handleSpecialtyChange (event) {
+        const newSpecialty = event.target.value
 
-        if (newSpecialty === "all") {
-            axios.get(DOCTORS_URL).then(
-                response => {
-                    this.setState({doctors: response.data,
-                        specialty: newSpecialty
-                    })
+        const URL = newSpecialty === 'all' ? (DOCTORS_URL) : (`${DOCTORS_URL}?specialty=${newSpecialty}`)
 
-                }
-            );
-        } else {
+        axios.get(URL).then(
+            response => {
+                this.setState({
+                    doctors: response.data,
+                    specialty: newSpecialty
+                })
 
-            axios.get(`${DOCTORS_URL}?specialty=${newSpecialty}`).then(
-                response => {
-                    this.setState({
-                        doctors: response.data,
-                        specialty: newSpecialty
-                    })
-                }
-            )
-        }
+            }
+        )
     }
 
-    render() {
+    render () {
         return (
             <div className="page-width">
                 <div className="specialty-drop-down">
@@ -74,4 +65,4 @@ class DoctorListPage extends React.Component {
     }
 }
 
-export default DoctorListPage;
+export default DoctorListPage
