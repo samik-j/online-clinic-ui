@@ -202,7 +202,6 @@ header .text {
 }
 
 .profile .info .details {
-    color: var(--border-color);
 }
 
 .profile .info .details .title {
