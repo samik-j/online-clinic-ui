@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const PatientAppointmentsListItem = ({appointment}) => {
 
-    var imgSrc = ''
     var status = ''
     var statusSymbol = ''
 
