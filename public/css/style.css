@@ -249,13 +249,29 @@ table#profile-appointment td.reason {
     font-style: italic;
     vertical-align: top;
 }
-table#profile-appointment td.status {
-    vertical-align: top;
-    width: 110px;
-}
 table#profile-appointment td.status-symbol {
     vertical-align: top;
     width: 20px;
+}
+
+/* PROFILE PAGE STATUS LEGEND */
+.status-legend {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.status-legend .legend {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.status-legend .item {
+    display: inline-block;
+    color: var(--border-color);
+}
+
+.status-legend .item:not(:last-child){
+    margin-right: 50px;
 }
 
 /* OTHER */

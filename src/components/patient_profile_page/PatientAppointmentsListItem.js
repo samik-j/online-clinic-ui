@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 
 const PatientAppointmentsListItem = ({appointment}) => {
 
-    var status = '';
-    var statusSymbol = '';
+    let statusSymbol = '';
 
     if (appointment.status === 'CANCELLED') {
-        status = 'Cancelled';
         statusSymbol =
             <svg fill="#c82424" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -17,7 +15,6 @@ const PatientAppointmentsListItem = ({appointment}) => {
             </svg>;
 
     } else if (appointment.status === 'NOT_CONFIRMED') {
-        status = 'Not Confirmed';
         statusSymbol =
             <svg fill="#ffde00" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -26,7 +23,6 @@ const PatientAppointmentsListItem = ({appointment}) => {
             </svg>;
 
     } else if (appointment.status === 'CONFIRMED') {
-        status = 'Confirmed';
         statusSymbol =
             <svg fill="#0e9700" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -45,7 +41,6 @@ const PatientAppointmentsListItem = ({appointment}) => {
                     <td className="doctor"><Link to={`/doctors/${appointment.doctorId}`}>{appointment.doctorName}</Link>
                     </td>
                     <td className="reason">{appointment.reason}</td>
-                    <td className="status">{status}</td>
                     <td className="status-symbol">{statusSymbol}</td>
                 </tr>
                 </tbody>
