@@ -45,33 +45,32 @@ class AppointmentsOnDay extends React.Component {
     }
 
     render () {
-        if (moment(this.state.date).isBefore(moment(Date.now()).subtract(1, 'days'))) {
-            return (
-                <div className="appointments-on-day">
-                    <div className="title">{moment(this.state.date).format('DD.MM')}</div>
-                    <div className="title">{moment(this.state.date).format('ddd')}</div>
-                    <div className="item-inactive"/>
-                </div>
-            )
-        } else {
-            return (
-                <div className="appointments-on-day">
-                    <div className="title">{moment(this.state.date).format('DD.MM')}</div>
-                    <div className="title">{moment(this.state.date).format('ddd')}</div>
-                    <div className="item">
-                        {
-                            this.state.appointments.map(appointment => {
-                                return (
-                                    <div className="btn btn-default book-btn" key={appointment.id}>
-                                        <div>{appointment.time}</div>
-                                    </div>)
+        const isActiveDate = !moment(this.state.date).isBefore(moment().subtract(1, 'days'))
 
-                            })
-                        }
-                    </div>
+        let item = ''
+        if (isActiveDate) {
+            item =
+                <div className="item">
+                    {this.state.appointments.map(appointment => {
+                        return (
+                            <div className="btn btn-default book-btn" key={appointment.id}>
+                                <div>{appointment.time}</div>
+                            </div>)
+
+                    })}
                 </div>
-            )
+        } else {
+            item =
+                <div className="item-inactive"/>
         }
+
+        return (
+            <div className="appointments-on-day">
+                <div className="title">{moment(this.state.date).format('DD.MM')}</div>
+                <div className="title">{moment(this.state.date).format('ddd')}</div>
+                <div>{item}</div>
+            </div>
+        )
     }
 }
 
