@@ -45,11 +45,10 @@ class AppointmentsOnDay extends React.Component {
     }
 
     render () {
-        const isActiveDate = !moment(this.state.date).isBefore(moment().subtract(1, 'days'));
-
-        let item = '';
-        if (isActiveDate) {
-            item =
+        return (
+            <div className="appointments-on-day">
+                <div className="title">{moment(this.state.date).format('DD.MM')}</div>
+                <div className="title">{moment(this.state.date).format('ddd')}</div>
                 <div className="item">
                     {this.state.appointments.map(appointment => {
                         return (
@@ -58,17 +57,7 @@ class AppointmentsOnDay extends React.Component {
                             </div>);
 
                     })}
-                </div>;
-        } else {
-            item =
-                <div className="item-inactive"/>;
-        }
-
-        return (
-            <div className="appointments-on-day">
-                <div className="title">{moment(this.state.date).format('DD.MM')}</div>
-                <div className="title">{moment(this.state.date).format('ddd')}</div>
-                <div>{item}</div>
+                </div>
             </div>
         );
     }

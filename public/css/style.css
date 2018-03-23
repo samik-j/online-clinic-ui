@@ -2,7 +2,7 @@
     --main-color: #2cc0a6;
     --second-color: #337ab7;
     --main-border: 1px solid var(--border-color);
-    --border-color: lightgrey;
+    --border-color: #c5c5c5;
     --background-color: #f1f1f1;
     --main-font: 'Roboto', serif;
 }
