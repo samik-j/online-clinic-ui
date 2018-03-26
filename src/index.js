@@ -8,6 +8,7 @@ import Home from './components/Home';
 import DoctorListPage from './components/doctor_list_page/DoctorListPage';
 import DoctorPage from './components/doctor_page/DoctorPage';
 import PatientProfilePage from './components/patient_profile_page/PatientProfilePage';
+import DoctorProfilePage from './components/DoctorProfilePage/DoctorProfilePage';
 import NotFound from './components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ const App = () => {
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
                         <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>
+                        <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage}/>
                         <Route path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>
                     </Switch>
