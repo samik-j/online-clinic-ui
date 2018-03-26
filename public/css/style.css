@@ -169,6 +169,13 @@ header .text {
     background: var(--background-color);
 }
 
+.appointments-on-day .item-weekend {
+    padding: 5px;
+    width: 90px;
+    min-height: 200px;
+    background: var(--border-color);
+}
+
 .appointments-on-day .item-inactive {
     padding: 5px;
     width: 90px;
