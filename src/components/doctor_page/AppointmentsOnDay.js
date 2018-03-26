@@ -32,9 +32,9 @@ class AppointmentsOnDay extends React.Component {
 
     componentWillReceiveProps () {
         const DOCTOR_ID = this.state.doctorId;
-        const DATE_URL = '&date=' + moment(this.state.date).format('YYYY-MM-DD');
+        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
 
-        axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true${DATE_URL}`)
+        axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true&date=${DATE_URL}`)
             .then(
                 response => {
                     this.setState({
@@ -55,7 +55,6 @@ class AppointmentsOnDay extends React.Component {
                             <div className="btn btn-default book-btn" key={appointment.id}>
                                 <div>{appointment.time}</div>
                             </div>);
-
                     })}
                 </div>
             </div>

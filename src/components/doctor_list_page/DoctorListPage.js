@@ -30,7 +30,7 @@ class DoctorListPage extends React.Component {
     handleSpecialtyChange (event) {
         const newSpecialty = event.target.value;
 
-        const URL = newSpecialty === 'all' ? (DOCTORS_URL) : (`${DOCTORS_URL}?specialty=${newSpecialty}`);
+        const URL = newSpecialty === 'all' ? DOCTORS_URL : `${DOCTORS_URL}?specialty=${newSpecialty}`;
 
         axios.get(URL).then(
             response => {

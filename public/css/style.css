@@ -274,6 +274,10 @@ table#profile-appointment td.status-symbol {
     margin-right: 50px;
 }
 
+.status-legend .item .icon{
+    height: 30px;
+}
+
 /* OTHER */
 .page-width {
     max-width: 1000px;

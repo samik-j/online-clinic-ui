@@ -44,21 +44,23 @@ class AppointmentList extends React.Component {
         }));
     };
 
-    render () {
-        let arrowLeft = '';
-
+    //moglby byc componet
+    leftArrow = () => {
         if(this.state.date1.dayOfYear() === moment().dayOfYear()) {
-            arrowLeft =
+            return(
                 <img className="arrows"
-                 src={'/img/arrows_left_inactive.png'} alt="Arrows Left"/>
+                     src={'/img/arrows_left_inactive.png'} alt="Arrows Left"/>
+            )
         } else {
-            arrowLeft =
-                <img className="arrows" onClick={this.handleDateSubtraction}
+            return <img className="arrows" onClick={this.handleDateSubtraction}
                      src={'/img/arrows_left.png'} alt="Arrows Left"/>
         }
+    };
+
+    render () {
         return (
             <div className="doctor-appointment-list">
-                {arrowLeft}
+                {this.leftArrow()}
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
                 <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>

@@ -1,3 +1,43 @@
 {
-  "extends": "react-app"
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "import/no-named-as-default": "off",
+    "linebreak-style": ["error", "unix"],
+    "no-tabs": "off",
+    "quotes": ["error", "double",  { "allowTemplateLiterals": true }],
+    "keyword-spacing": ["error"],
+    "class-methods-use-this": "off",
+    "padded-blocks": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "indent": ["error", "tab"],
+    "comma-dangle": ["error", "never"],
+    "react/jsx-indent": [2, "tab"],
+    "react/jsx-indent-props": [2, "tab"],
+    "react/jsx-closing-bracket-location": [1, "after-props"],
+    "react/forbid-prop-types": "off",
+    "react/jsx-boolean-value": "off",
+    "react/prefer-stateless-function": [1],
+    "react/prop-types": [2, { "ignore": ["intl"] }],
+    "react/jsx-no-bind": ["error", {}],
+    "max-len": ["error", 200]
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "#": "using node resolver instead of webpack since it wasn't working with intellij plugin for absolute imports like utils/dates",
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
+  }
 }
