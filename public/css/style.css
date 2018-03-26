@@ -134,7 +134,7 @@ header .text {
     padding-left: 10px;
 }
 
-/* DOCTOR PAGE APPOINTMENT LIST */
+/* APPOINTMENT LIST */
 .doctor-appointment-list {
     margin: auto;
     display: table;
@@ -143,6 +143,10 @@ header .text {
 .doctor-appointment-list .arrows {
     height: 20px;
     margin-top: 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .appointments-on-day {
@@ -179,6 +183,45 @@ header .text {
     horiz-align: center;
     color: var(--second-color);
     font-weight: bolder;
+}
+
+.appointments-on-day .item .appointment {
+    display: inline-block;
+    padding: 1px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.appointments-on-day .item .available {
+    margin: 5px;
+    width: 70px;
+    horiz-align: center;
+    color: var(--second-color);
+    background: white;
+    font-weight: bolder;
+}
+
+.appointments-on-day .item .not-available {
+    margin: 5px;
+    width: 70px;
+    horiz-align: center;
+    color: white;
+    background: var(--second-color);
+    font-weight: bolder;
+}
+
+.appointments-on-day .add-btn {
+    margin-top: 10px;
+    height: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /* PROFILE PAGE*/

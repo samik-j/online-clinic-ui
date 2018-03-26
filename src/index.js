@@ -8,7 +8,7 @@ import Home from './components/Home';
 import DoctorListPage from './components/doctor_list_page/DoctorListPage';
 import DoctorPage from './components/doctor_page/DoctorPage';
 import PatientProfilePage from './components/patient_profile_page/PatientProfilePage';
-import DoctorProfilePage from './components/DoctorProfilePage/DoctorProfilePage';
+import DoctorProfilePage from './components/doctor_profile_page/DoctorProfilePage';
 import NotFound from './components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
