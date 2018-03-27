@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PatientAppointmentsList from './PatientAppointmentsList';
 import PatientInformation from './PatientInformation';
-import StatusLegend from './StatusLegend';
+import StatusLegend from '../StatusLegend';
 
 const PATIENTS_URL = 'http://localhost:8080/patients';
 

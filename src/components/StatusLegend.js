@@ -1,5 +1,5 @@
 import React from 'react';
-import AppointmentStatusIcon from '../AppointmentStatusIcon';
+import AppointmentStatusIcon from './AppointmentStatusIcon';
 
 const StatusLegend = () => {
     return (
