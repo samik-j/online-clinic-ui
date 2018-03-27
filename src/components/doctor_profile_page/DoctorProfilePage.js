@@ -40,14 +40,14 @@ class DoctorProfilePage extends React.Component {
         if (this.state.expandedPastAppointments) {
             return (
                 <div>
-                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
                     <DoctorAppointmentsList doctorId={this.state.doctorId} current={false}/>
-                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
                 </div>
             );
         } else {
             return (
-                <img className="expand-hide arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'}
+                <img className="expand-hide clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'}
                      alt="Expand"/>
             );
         }

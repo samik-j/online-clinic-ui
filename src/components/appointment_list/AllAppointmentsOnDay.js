@@ -63,7 +63,7 @@ class AllAppointmentsOnDay extends React.Component {
                         );
                     })}
                 </div>
-                <img className="add-btn" src={'/img/add.svg'} alt="add"/>
+                <img className="clickable add-btn" src={'/img/add.svg'} alt="add"/>
             </div>
         );
     }

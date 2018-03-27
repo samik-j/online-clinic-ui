@@ -50,11 +50,11 @@ class AppointmentList extends React.Component {
     leftArrow = () => {
         if (this.state.date1.dayOfYear() === moment().dayOfYear()) {
             return (
-                <img className="arrows"
+                <img className="clickable arrows"
                      src={'/img/arrows_left_inactive.png'} alt="Arrows Left"/>
             );
         } else {
-            return <img className="arrows" onClick={this.handleDateSubtraction}
+            return <img className="clickable arrows" onClick={this.handleDateSubtraction}
                         src={'/img/arrows_left.png'} alt="Arrows Left"/>;
         }
     };
@@ -92,7 +92,7 @@ class AppointmentList extends React.Component {
             <div className="doctor-appointment-list">
                 {this.leftArrow()}
                 {this.appointments()}
-                <img className="arrows" onClick={this.handleDateIncrement}
+                <img className="clickable arrows" onClick={this.handleDateIncrement}
                      src={'/img/arrows_right.png'} alt="Arrows Right"/>
             </div>
         );
