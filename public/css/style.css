@@ -149,6 +149,10 @@ header .text {
     -ms-user-select: none;
 }
 
+.doctor-appointment-list .appointments {
+    display: inline-block;
+}
+
 .appointments-on-day {
     display: inline-block;
     text-align: center;

@@ -1,10 +1,10 @@
 import React from 'react';
-import moment from 'moment/moment';
-import axios from 'axios/index';
+import moment from 'moment';
+import axios from 'axios';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
-class AppointmentsOnDay extends React.Component {
+class AvailableAppointmentsOnDay extends React.Component {
 
     constructor (props) {
         super(props);
@@ -68,4 +68,4 @@ class AppointmentsOnDay extends React.Component {
     }
 }
 
-export default AppointmentsOnDay;
+export default AvailableAppointmentsOnDay;

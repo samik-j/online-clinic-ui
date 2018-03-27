@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AppointmentsOnDayItem = ({appointment}) => {
+const AllAppointmentsOnDayItem = ({appointment}) => {
 
     if (appointment.available === true) {
         return (
@@ -17,4 +17,4 @@ const AppointmentsOnDayItem = ({appointment}) => {
     }
 };
 
-export default AppointmentsOnDayItem;
+export default AllAppointmentsOnDayItem;
