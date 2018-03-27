@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment/moment';
 import axios from 'axios/index';
+import { Link } from 'react-router-dom';
 import AppointmentsOnDayItem from './AllAppointmentsOnDayItem';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
@@ -63,7 +64,10 @@ class AllAppointmentsOnDay extends React.Component {
                         );
                     })}
                 </div>
-                <img className="clickable add-btn" src={'/img/add.svg'} alt="add"/>
+                <Link
+                    to={`/profiles/doctors/${this.state.doctorId}/add-appointment/${moment(this.state.date).format('YYYY-MM-DD')}`}>
+                    <img className="clickable add-btn" src={'/img/add.svg'} alt="add"/>
+                </Link>
             </div>
         );
     }

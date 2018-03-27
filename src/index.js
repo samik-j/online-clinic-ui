@@ -25,7 +25,7 @@ const App = () => {
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
                         <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>
-                        <Route path="/profiles/doctors/:doctorId/add-appointment" component={AddAppointmentPage}/>
+                        <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage}/>
                         <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage}/>
                         <Route path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>
