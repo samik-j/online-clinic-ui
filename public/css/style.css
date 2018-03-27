@@ -325,7 +325,9 @@ table#profile-appointment td.status-symbol {
 }
 
 .status-legend .item .icon{
-    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
 }
 
 /* OTHER */

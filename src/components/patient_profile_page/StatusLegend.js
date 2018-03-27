@@ -1,4 +1,5 @@
 import React from 'react';
+import AppointmentStatusIcon from '../AppointmentStatusIcon';
 
 const StatusLegend = () => {
     return (
@@ -6,15 +7,21 @@ const StatusLegend = () => {
             <div>
                 <div className="item">
                     <div>Cancelled</div>
-                    <img className="icon" src={'/img/status_cancelled.svg'} alt="status_cancelled"/>
+                    <div className="icon">
+                        <AppointmentStatusIcon status={'CANCELLED'}/>
+                    </div>
                 </div>
                 <div className="item">
-                <div>Not Confirmed</div>
-                    <img className="icon" src={'/img/status_not_confirmed.svg'} alt="status_cancelled"/>
+                    <div>Not Confirmed</div>
+                    <div className="icon">
+                        <AppointmentStatusIcon status={'NOT_CONFIRMED'}/>
+                    </div>
                 </div>
                 <div className="item">
                     <div>Confirmed</div>
-                    <img className="icon" src={'/img/status_confirmed.svg'} alt="status_cancelled"/>
+                    <div className="icon">
+                        <AppointmentStatusIcon status={'CONFIRMED'}/>
+                    </div>
                 </div>
             </div>
         </div>

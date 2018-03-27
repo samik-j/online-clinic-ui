@@ -2,20 +2,9 @@ import React from 'react';
 import moment from 'moment/moment';
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
+import AppointmentStatusIcon from '../AppointmentStatusIcon';
 
 const PatientAppointmentsListItem = ({appointment}) => {
-
-    let statusSymbol = '';
-
-    if (appointment.status === 'CANCELLED') {
-        statusSymbol = <img src={'/img/status_cancelled.svg'} alt="status_cancelled"/>;
-
-    } else if (appointment.status === 'NOT_CONFIRMED') {
-        statusSymbol = <img src={'/img/status_not_confirmed.svg'} alt="status_cancelled"/>;
-
-    } else if (appointment.status === 'CONFIRMED') {
-        statusSymbol = <img src={'/img/status_confirmed.svg'} alt="status_cancelled"/>;
-    }
 
     return (
         <div className="appointment">
@@ -27,7 +16,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
                     <td className="doctor"><Link to={`/doctors/${appointment.doctorId}`}>{appointment.doctorName}</Link>
                     </td>
                     <td className="reason">{appointment.reason}</td>
-                    <td className="status-symbol">{statusSymbol}</td>
+                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.status}/></td>
                 </tr>
                 </tbody>
             </table>
