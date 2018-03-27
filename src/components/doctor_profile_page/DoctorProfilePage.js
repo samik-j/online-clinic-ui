@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import DoctorInformation from './DoctorInformation';
+import StatusLegend from '../StatusLegend';
+import DoctorAppointmentsList from './DoctorAppointmentList';
 import AppointmentList from '../appointment_list/AppointmentList';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
@@ -12,7 +14,8 @@ class DoctorProfilePage extends React.Component {
 
         this.state = {
             doctor: '',
-            doctorId: this.props.match.params.doctorId
+            doctorId: this.props.match.params.doctorId,
+            expandedPastAppointments: false
         };
     }
 
@@ -27,6 +30,29 @@ class DoctorProfilePage extends React.Component {
             );
     }
 
+    togglePastAppointments = () => {
+        this.setState({
+            expandedPastAppointments: !this.state.expandedPastAppointments
+        });
+    };
+
+    pastAppointments = () => {
+        if (this.state.expandedPastAppointments) {
+            return (
+                <div>
+                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <DoctorAppointmentsList doctorId={this.state.doctorId} current={false}/>
+                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                </div>
+            );
+        } else {
+            return (
+                <img className="expand-hide arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'}
+                     alt="Expand"/>
+            );
+        }
+    };
+
     render () {
         return (
             <div className="page-width">
@@ -37,6 +63,13 @@ class DoctorProfilePage extends React.Component {
                     <div className="border-box">
                         <div className="box-title">Appointments</div>
                         <AppointmentList doctorId={this.state.doctorId} display={'all'}/>
+                    </div>
+                    <div className="border-box">
+                        <StatusLegend/>
+                        <div className="box-title">Current booked appointments</div>
+                        <DoctorAppointmentsList doctorId={this.state.doctorId} current={true}/>
+                        <div className="box-title">Past booked appointments</div>
+                        {this.pastAppointments()}
                     </div>
                 </div>
             </div>

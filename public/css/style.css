@@ -271,41 +271,54 @@ header .text {
 
 .profile .appointment-list .appointment {
     padding: 5px;
-    width:100%;
+    width: 100%;
     background: white;
 }
+
 .profile .appointment-list .appointment:not(:last-of-type) {
     margin-bottom: 10px;
 }
 
 table#profile-appointment {
-    width :100%;
+    width: 100%;
 }
+
 table#profile-appointment td.date {
     width: 150px;
     vertical-align: top;
     font-family: 'Roboto', serif;
     font-weight: bold;
 }
+
 table#profile-appointment td.time {
     width: 70px;
     vertical-align: top;
     font-family: 'Roboto', serif;
     font-weight: bold;
 }
+
 table#profile-appointment td.doctor {
     width: 150px;
     vertical-align: top;
 }
+
 table#profile-appointment td.reason {
     padding-left: 15px;
     padding-right: 15px;
     font-style: italic;
     vertical-align: top;
 }
+
 table#profile-appointment td.status-symbol {
     vertical-align: top;
     width: 20px;
+}
+
+.arrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
 }
 
 /* PROFILE PAGE STATUS LEGEND */
@@ -324,13 +337,12 @@ table#profile-appointment td.status-symbol {
     color: var(--border-color);
 }
 
-.status-legend .item:not(:last-child){
+.status-legend .item:not(:last-child) {
     margin-right: 50px;
 }
 
-.status-legend .item .icon{
+.status-legend .item .icon {
     display: inline-block;
-    vertical-align: middle;
     width: 25px;
 }
 
@@ -355,4 +367,8 @@ table#profile-appointment td.status-symbol {
     margin-bottom: 20px;
     text-align: center;
     border-bottom: var(--main-border);
+}
+
+.border-box .box-title:not(:first-child) {
+    margin-top: 20px;
 }
