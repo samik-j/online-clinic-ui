@@ -13,7 +13,8 @@ class PatientProfilePage extends React.Component {
 
         this.state = {
             patient: '',
-            patientId: this.props.match.params.patientId
+            patientId: this.props.match.params.patientId,
+            expandedPastAppointments: false
         };
     }
 
@@ -28,6 +29,29 @@ class PatientProfilePage extends React.Component {
             );
     }
 
+    togglePastAppointments = () => {
+        this.setState({
+            expandedPastAppointments: !this.state.expandedPastAppointments
+        });
+    };
+
+    pastAppointments = () => {
+        if (this.state.expandedPastAppointments) {
+            return (
+                <div>
+                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <PatientAppointmentsList patientId={this.state.patientId} current={false}/>
+                    <img className="arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                </div>
+            );
+        } else {
+            return (
+                <img className="expand-hide arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'}
+                     alt="Expand"/>
+            );
+        }
+    };
+
     render () {
         return (
             <div className="page-width">
@@ -40,7 +64,7 @@ class PatientProfilePage extends React.Component {
                         <div className="box-title">Current appointments</div>
                         <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
                         <div className="box-title">Past appointments</div>
-                        <PatientAppointmentsList patientId={this.state.patientId} current={false}/>
+                        {this.pastAppointments()}
                     </div>
                 </div>
             </div>
