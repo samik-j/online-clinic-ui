@@ -51,13 +51,13 @@ class AllAppointmentsOnDay extends React.Component {
     };
 
     render () {
-        let itemStyle = this.isOnWeekend() ? 'item-weekend' : 'item';
+        let itemStyle = this.isOnWeekend() ? 'appointments-on-day with-add weekend' : 'appointments-on-day with-add weekday';
 
         return (
-            <div className="appointments-on-day">
+            <div className={itemStyle}>
                 <div className="title">{moment(this.state.date).format('DD.MM')}</div>
                 <div className="title">{moment(this.state.date).format('ddd')}</div>
-                <div className={itemStyle}>
+                <div>
                     {this.state.appointments.map(appointment => {
                         return (
                             <AppointmentsOnDayItem key={appointment.id} appointment={appointment}/>
