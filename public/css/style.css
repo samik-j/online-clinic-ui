@@ -183,7 +183,7 @@ header .text {
     min-height: 200px;
 }
 
-.appointments-on-day .item .book-btn {
+.appointments-on-day .book-btn {
     margin: 5px;
     border: white;
     width: 70px;
@@ -204,7 +204,7 @@ header .text {
     border-radius: 4px;
 }
 
-.appointments-on-day .item .available {
+.appointments-on-day .available {
     margin: 5px;
     width: 70px;
     horiz-align: center;
@@ -213,7 +213,7 @@ header .text {
     font-weight: bolder;
 }
 
-.appointments-on-day .item .not-available {
+.appointments-on-day .not-available {
     margin: 5px;
     width: 70px;
     horiz-align: center;
