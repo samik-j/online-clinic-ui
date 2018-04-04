@@ -147,7 +147,6 @@ header .text {
 
 .doctor-appointment-list .appointments {
     display: inline-flex;
-    align-items: stretch;
 }
 
 .appointments-on-day {
@@ -156,30 +155,34 @@ header .text {
     margin: 5px;
     width: 90px;
     min-height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
-.with-add {
-    padding-bottom: 42px;
-    position: relative;
-}
-
-.appointments-on-day .title {
+.appointments-on-day .date {
     font-size: 15px;
     font-stretch: expanded;
     font-family: var(--main-font);
-    background: white;
+    padding: 10px;
+    flex: 1 auto;
 }
 
-.weekday {
+.appointments-on-day .day {
+    height: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.appointments-on-day .weekday {
     background: var(--background-color);
 }
 
-.weekend {
+.appointments-on-day .weekend {
     background: var(--border-color);
 }
 
 .appointments-on-day .book-btn {
-    margin: 5px;
+    margin: 3px;
     border: white;
     width: 70px;
     horiz-align: center;
@@ -201,10 +204,6 @@ header .text {
     font-weight: bolder;
 }
 
-.appointments-on-day .appointment:first-child {
-    margin-top: 5px;
-}
-
 .appointments-on-day .available {
     color: var(--second-color);
     background: white;
@@ -215,21 +214,10 @@ header .text {
     background: var(--second-color);
 }
 
-.container {
-    background: white;
+.appointments-on-day .add-btn {
     height: 30px;
-}
-.add-btn {
-    padding-top: 10px;
-    height: 40px;
-    width: 100%;
-    background: white;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0px;
+    flex: 1 auto;
+    margin: 10px;
 }
 
 /* PROFILE PAGE*/
