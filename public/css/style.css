@@ -192,34 +192,28 @@ header .text {
     font-weight: bolder;
 }
 
-.appointments-on-day .item .appointment {
+.appointments-on-day .appointment {
     display: inline-block;
     padding: 1px 12px;
-    margin-bottom: 0;
     font-size: 14px;
-    font-weight: normal;
     line-height: 1.42857143;
     text-align: center;
     border: 1px solid transparent;
     border-radius: 4px;
+    margin: 2px;
+    width: 70px;
+    horiz-align: center;
+    font-weight: bolder;
 }
 
 .appointments-on-day .available {
-    margin: 5px;
-    width: 70px;
-    horiz-align: center;
     color: var(--second-color);
     background: white;
-    font-weight: bolder;
 }
 
 .appointments-on-day .not-available {
-    margin: 5px;
-    width: 70px;
-    horiz-align: center;
     color: white;
     background: var(--second-color);
-    font-weight: bolder;
 }
 
 .appointments-on-day .add-btn {
