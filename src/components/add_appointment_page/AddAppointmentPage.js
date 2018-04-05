@@ -11,40 +11,31 @@ class AddAppointmentPage extends React.Component {
 
         this.state = {
             date: this.props.match.params.date,
-            time: ''
+            hour: '',
+            minutes: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleSubmit2 = this.handleSubmit2.bind(this);
     }
 
-    handleTimeChange = (event) => {
+    handleHourChange = (event) => {
         this.setState({
-            time: event.target.value
+            hour: event.target.value
         });
     };
 
-    handleSubmit () {
-        console.log(this.state.date);
-        fetch(`${URL}/${this.props.match.params.doctorId}/appointments`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                date: this.state.date,
-                time: this.state.time,
-            })
-        }).then(
-            this.props.history.push(`/profiles/doctors/${this.props.match.params.doctorId}`)
-        );
-    }
+    handleMinutesChange = (event) => {
+        this.setState({
+            minutes: event.target.value
+        });
+    };
 
-    handleSubmit2 (event) {
+    handleSubmit (event) {
+        let time = "" + this.state.hour + ":" + this.state.minutes;
+        console.log(time);
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
             date: this.state.date,
-            time: this.state.time,
+            time: time,
         }).then(
             this.props.history.push(`/profiles/doctors/${this.props.match.params.doctorId}`)
         );
@@ -63,11 +54,19 @@ class AddAppointmentPage extends React.Component {
                             <br/>
                             <small>{moment(this.state.date).format('dddd')}</small>
                         </h3>
-                        <form onSubmit={this.handleSubmit2}>
-                            <div className="form-group">
-                                <input type="text" name="time" value={this.state.time}
-                                       onChange={this.handleTimeChange}/>
+
+                        <form onSubmit={this.handleSubmit}>
+                            <div>
+                            <div className="time-input">
+                                <input className="input" type="text" name="hour" value={this.state.hour}
+                                       onChange={this.handleHourChange}/>
                             </div>
+                            :
+                            <div className="time-input">
+                                <input className="input" type="text" name="minutes" value={this.state.minutes}
+                                       onChange={this.handleMinutesChange}/>
+                            </div>
+                        </div>
                             <input className="btn btn-primary" type="submit" value="Add"/>
 
                         </form>

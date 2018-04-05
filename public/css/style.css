@@ -309,6 +309,17 @@ table#profile-appointment td.status-symbol {
     text-align: center;
 }
 
+.add-appointment .time-input {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.add-appointment .time-input .input {
+    width: 30px;
+    margin: 5px;
+}
+
+
 /* OTHER */
 .page-width {
     max-width: 1000px;
