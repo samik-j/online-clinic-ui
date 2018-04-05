@@ -56,13 +56,22 @@ class AddAppointmentPage extends React.Component {
         return (
             <div className="page-width">
                 <div className="border-box">
-                    <div>{moment(this.state.date).format('DD-MM-YYYY')}</div>
-                    <form onSubmit={this.handleSubmit2}>
-                        <div className="form-group">
-                            <input type="text" name="time" value={this.state.time} onChange={this.handleTimeChange}/>
-                        </div>
-                        <input type="submit" value="Add"/>
-                    </form>
+                    <div className="box-title">Add appointment</div>
+                    <div className="add-appointment">
+                        <h3>
+                            {moment(this.state.date).format('DD MMMM YYYY')}
+                            <br/>
+                            <small>{moment(this.state.date).format('dddd')}</small>
+                        </h3>
+                        <form onSubmit={this.handleSubmit2}>
+                            <div className="form-group">
+                                <input type="text" name="time" value={this.state.time}
+                                       onChange={this.handleTimeChange}/>
+                            </div>
+                            <input className="btn btn-primary" type="submit" value="Add"/>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         );

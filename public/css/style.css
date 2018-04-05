@@ -331,6 +331,11 @@ table#profile-appointment td.status-symbol {
     width: 25px;
 }
 
+/* ADD APPOINTMENT PAGE */
+.add-appointment {
+    text-align: center;
+}
+
 /* OTHER */
 .page-width {
     max-width: 1000px;
