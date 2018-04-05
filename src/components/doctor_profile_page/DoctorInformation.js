@@ -15,6 +15,10 @@ const DoctorInformation = ({doctor}) => {
                     </colgroup>
                     <tbody>
                     <tr>
+                        <th>SPECIALTY</th>
+                        <td>{doctor.specialty}</td>
+                    </tr>
+                    <tr>
                         <th>EMAIL</th>
                         <td>{doctor.email}</td>
                     </tr>

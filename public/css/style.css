@@ -111,29 +111,6 @@ header .text {
     padding-left: 10px;
 }
 
-/* DOCTOR PAGE */
-.doctor .avatar {
-    height: 200px;
-    border-radius: 50%;
-    border-width: 2px;
-}
-
-.doctor .name {
-    font-size: 30px;
-    font-weight: bolder;
-    display: inline-block;
-}
-
-.doctor .specialty {
-    font-size: 20px;
-}
-
-.doctor .info {
-    vertical-align: top;
-    display: inline-block;
-    padding-left: 10px;
-}
-
 /* APPOINTMENT LIST */
 .doctor-appointment-list {
     margin: auto;
@@ -245,6 +222,11 @@ header .text {
 
 .profile .info .details .title {
     width: 120px;
+}
+
+/* DOCTOR PROFILE PAGE */
+.doctor .specialty {
+    font-size: 20px;
 }
 
 /* PROFILE PAGE APPOINTMENT LIST */

@@ -29,7 +29,7 @@ class DoctorPage extends React.Component {
     render () {
         return (
             <div className="page-width">
-                <div className="doctor">
+                <div className="profile doctor">
                     <div className="border-box">
                         <img className="avatar"
                              src={'/img/doctor_avatar.jpg'}
