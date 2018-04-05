@@ -11,6 +11,7 @@ import PatientProfilePage from './components/patient_profile_page/PatientProfile
 import DoctorProfilePage from './components/doctor_profile_page/DoctorProfilePage';
 import AddAppointmentPage from './components/add_appointment_page/AddAppointmentPage';
 import BookAppointmentPage from './components/book_appointment_page/BookAppointmentPage';
+import BookedAppointmentSuccess from './components/book_appointment_page/BookedAppointmentSuccess';
 import NotFound from './components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -29,6 +30,7 @@ const App = () => {
                         <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>
                         <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage}/>
                         <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage}/>
+                        <Route path="/appointments-booked/:appointmentId" component={BookedAppointmentSuccess}/>
                         <Route path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>
                     </Switch>
