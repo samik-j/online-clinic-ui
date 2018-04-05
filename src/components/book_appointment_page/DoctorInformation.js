@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios/index';
+import { Link } from 'react-router-dom';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
@@ -31,7 +32,9 @@ class DoctorInformation extends React.Component {
                      src={'/img/doctor_avatar.jpg'}
                      alt="Doctor"/>
                 <div className="info">
-                    <div className="name">{this.state.doctor.firstName}&nbsp;{this.state.doctor.lastName}</div>
+                    <Link to={`/doctors/${this.state.doctor.id}`}>
+                        <div className="name">{this.state.doctor.firstName}&nbsp;{this.state.doctor.lastName}</div>
+                    </Link>
                     <small>{this.state.doctor.specialty}</small>
                 </div>
             </div>

@@ -321,6 +321,7 @@ table#profile-appointment td.status-symbol {
 .doctor-info .avatar {
     height: 50px;
     border-radius: 50%;
+    vertical-align: top;
 }
 
 .doctor-info .info {
