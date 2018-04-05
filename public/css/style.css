@@ -141,7 +141,6 @@ header .text {
     font-stretch: expanded;
     font-family: var(--main-font);
     padding: 10px;
-    flex: 1 auto;
 }
 
 .appointments-on-day .weekday {
@@ -193,7 +192,6 @@ header .text {
 
 .appointments-on-day .add-btn {
     height: 30px;
-    flex: 1 auto;
     margin: 10px;
 }
 
@@ -319,19 +317,20 @@ table#profile-appointment td.status-symbol {
     margin: 5px;
 }
 
-
-/* OTHER */
-.page-width {
-    max-width: 1000px;
-    min-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* BORDER BOX */
 .border-box {
     padding: 20px;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: var(--main-border);
+}
+
+.inline-box {
+    display: inline-block;
+}
+
+.inline-box:not(:last-of-type) {
+    margin-right: 20px;
 }
 
 .border-box .box-title {
@@ -345,6 +344,26 @@ table#profile-appointment td.status-symbol {
 
 .border-box .box-title:not(:first-child) {
     margin-top: 20px;
+}
+
+/* OTHER */
+.page-width {
+    max-width: 1000px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.width-400px {
+    width: 400px;
+}
+
+.width-auto {
+    width: 100%;
 }
 
 .clickable {
