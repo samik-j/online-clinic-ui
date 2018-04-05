@@ -197,7 +197,7 @@ header .text {
 
 /* PROFILE PAGE*/
 .profile .avatar {
-    height: 200px;
+    height: 150px;
     border-radius: 50%;
     border-width: 2px;
 }
@@ -338,7 +338,7 @@ table#profile-appointment td.status-symbol {
     font-weight: bolder;
     color: var(--border-color);
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
     border-bottom: var(--main-border);
 }
 
