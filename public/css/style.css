@@ -317,6 +317,21 @@ table#profile-appointment td.status-symbol {
     margin: 5px;
 }
 
+/* DOCTOR INFORMATION */
+.doctor-info .avatar {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.doctor-info .info {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.doctor-info .name {
+    font-weight: bolder;
+}
+
 /* BORDER BOX */
 .border-box {
     padding: 20px;
