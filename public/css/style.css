@@ -332,6 +332,35 @@ table#profile-appointment td.status-symbol {
     font-weight: bolder;
 }
 
+/* APPOINTMENT INFORMATION */
+.appointment-info {
+    text-align: center;
+}
+
+.appointment-info .info .link {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.appointment-info .icon {
+    height: 90px;
+    vertical-align: top;
+}
+
+.appointment-info .info {
+    display: inline-block;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.appointment-info .info .weekday {
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--border-color);
+}
+
 /* BORDER BOX */
 .border-box {
     padding: 20px;
