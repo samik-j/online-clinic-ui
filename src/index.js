@@ -10,6 +10,7 @@ import DoctorPage from './components/doctor_page/DoctorPage';
 import PatientProfilePage from './components/patient_profile_page/PatientProfilePage';
 import DoctorProfilePage from './components/doctor_profile_page/DoctorProfilePage';
 import AddAppointmentPage from './components/add_appointment_page/AddAppointmentPage';
+import BookAppointmentPage from './components/book_appointment_page/BookAppointmentPage';
 import NotFound from './components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -22,6 +23,7 @@ const App = () => {
                 <Header/>
                 <article>
                     <Switch>
+                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointmentPage}/>
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
                         <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>

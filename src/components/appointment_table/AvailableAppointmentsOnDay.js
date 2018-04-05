@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
@@ -61,7 +62,10 @@ class AvailableAppointmentsOnDay extends React.Component {
                     {this.state.appointments.map(appointment => {
                         return (
                             <div className="btn btn-default book-btn" key={appointment.id}>
-                                <div>{appointment.time}</div>
+                                <Link
+                                    to={`/doctors/${this.state.doctorId}/book-appointment/${appointment.id}`}>
+                                    {appointment.time}
+                                </Link>
                             </div>);
                     })}
                 </div>
