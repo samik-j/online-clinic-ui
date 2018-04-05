@@ -51,7 +51,7 @@ class AllAppointmentsOnDay extends React.Component {
     };
 
     render () {
-        let dayStyle = this.isOnWeekend() ? 'day weekend' : 'day weekday';
+        let dayStyle = this.isOnWeekend() ? 'weekend' : 'weekday';
 
         return (
             <div className="appointments-on-day">

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import AppointmentList from '../appointment_list/AppointmentList';
+import AppointmentList from '../appointment_table/AppointmentTable';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 

@@ -112,17 +112,17 @@ header .text {
 }
 
 /* APPOINTMENT LIST */
-.doctor-appointment-list {
+.appointment-table {
     margin: auto;
     display: table;
 }
 
-.doctor-appointment-list .arrows {
+.appointment-table .arrows {
     height: 20px;
     margin-top: 15px;
 }
 
-.doctor-appointment-list .appointments {
+.appointment-table .appointments {
     display: inline-flex;
 }
 
@@ -144,17 +144,17 @@ header .text {
     flex: 1 auto;
 }
 
-.appointments-on-day .day {
+.appointments-on-day .weekday {
     height: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-.appointments-on-day .weekday {
     background: var(--background-color);
 }
 
 .appointments-on-day .weekend {
+    height: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
     background: var(--border-color);
 }
 
@@ -207,7 +207,6 @@ header .text {
 .profile .name {
     font-size: 30px;
     font-weight: bolder;
-    display: inline-block;
     padding-right: 10px;
 }
 
@@ -217,10 +216,7 @@ header .text {
     padding-left: 10px;
 }
 
-.profile .info .details {
-}
-
-.profile .info .details .title {
+.profile .info .title {
     width: 120px;
 }
 
@@ -292,11 +288,6 @@ table#profile-appointment td.status-symbol {
 .status-legend {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.status-legend .legend {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .status-legend .item {

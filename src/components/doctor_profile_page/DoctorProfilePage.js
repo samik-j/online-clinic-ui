@@ -3,7 +3,7 @@ import axios from 'axios';
 import DoctorInformation from './DoctorInformation';
 import StatusLegend from '../StatusLegend';
 import DoctorAppointmentsList from './DoctorAppointmentList';
-import AppointmentList from '../appointment_list/AppointmentList';
+import AppointmentList from '../appointment_table/AppointmentTable';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 

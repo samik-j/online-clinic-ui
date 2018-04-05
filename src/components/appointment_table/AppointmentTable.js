@@ -3,7 +3,7 @@ import moment from 'moment';
 import AllAppointmentsOnDay from './AllAppointmentsOnDay';
 import AvailableAppointmentsOnDay from './AvailableAppointmentsOnDay';
 
-class AppointmentList extends React.Component {
+class AppointmentTable extends React.Component {
 
     constructor (props) {
         super(props);
@@ -89,7 +89,7 @@ class AppointmentList extends React.Component {
 
     render () {
         return (
-            <div className="doctor-appointment-list">
+            <div className="appointment-table">
                 {this.leftArrow()}
                 {this.appointments()}
                 <img className="clickable arrows" onClick={this.handleDateIncrement}
@@ -99,4 +99,4 @@ class AppointmentList extends React.Component {
     }
 }
 
-export default AppointmentList;
+export default AppointmentTable;

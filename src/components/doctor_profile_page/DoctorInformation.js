@@ -9,7 +9,7 @@ const DoctorInformation = ({doctor}) => {
                  alt="Doctor"/>
             <div className="info">
                 <div className="name">{doctor.firstName}&nbsp;{doctor.lastName}</div>
-                <table className="details">
+                <table>
                     <colgroup>
                         <col className="title"/>
                     </colgroup>
