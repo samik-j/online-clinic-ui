@@ -31,8 +31,8 @@ class AddAppointmentPage extends React.Component {
     };
 
     handleSubmit (event) {
-        let time = "" + this.state.hour + ":" + this.state.minutes;
-        console.log(time);
+        let time = '' + this.state.hour + ':' + this.state.minutes;
+
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
             date: this.state.date,
             time: time,
@@ -49,27 +49,30 @@ class AddAppointmentPage extends React.Component {
                 <div className="border-box">
                     <div className="box-title">Add appointment</div>
                     <div className="add-appointment">
-                        <h3>
-                            {moment(this.state.date).format('DD MMMM YYYY')}
-                            <br/>
-                            <small>{moment(this.state.date).format('dddd')}</small>
-                        </h3>
-
-                        <form onSubmit={this.handleSubmit}>
-                            <div>
-                            <div className="time-input">
-                                <input className="input" type="text" name="hour" value={this.state.hour}
-                                       onChange={this.handleHourChange}/>
-                            </div>
-                            :
-                            <div className="time-input">
-                                <input className="input" type="text" name="minutes" value={this.state.minutes}
-                                       onChange={this.handleMinutesChange}/>
+                        <div className="appointment-info">
+                            <img className="icon"
+                                 src={'/img/calendar.svg'}
+                                 alt="callendar"/>
+                            <div className="info">
+                                <div className="weekday">{moment(this.state.date).format('dddd')}</div>
+                                <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div>
+                                        <div className="time-input">
+                                            <input className="input" type="text" name="hour" value={this.state.hour}
+                                                   onChange={this.handleHourChange}/>
+                                        </div>
+                                        :
+                                        <div className="time-input">
+                                            <input className="input" type="text" name="minutes"
+                                                   value={this.state.minutes}
+                                                   onChange={this.handleMinutesChange}/>
+                                        </div>
+                                    </div>
+                                    <input className="btn btn-primary" type="submit" value="Add"/>
+                                </form>
                             </div>
                         </div>
-                            <input className="btn btn-primary" type="submit" value="Add"/>
-
-                        </form>
                     </div>
                 </div>
             </div>

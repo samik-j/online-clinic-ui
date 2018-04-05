@@ -315,6 +315,7 @@ table#profile-appointment td.status-symbol {
 .add-appointment .time-input .input {
     width: 30px;
     margin: 5px;
+    font-size: 15px;
 }
 
 /* DOCTOR INFORMATION */
