@@ -12,7 +12,8 @@ class AddAppointmentPage extends React.Component {
         this.state = {
             date: this.props.match.params.date,
             hour: '',
-            minutes: ''
+            minutes: '',
+            status: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,14 +21,34 @@ class AddAppointmentPage extends React.Component {
 
     handleHourChange = (event) => {
         this.setState({
-            hour: event.target.value
+            hour: event.target.value,
+            status: ''
         });
     };
 
     handleMinutesChange = (event) => {
         this.setState({
-            minutes: event.target.value
+            minutes: event.target.value,
+            status: ''
         });
+    };
+
+    addedNotification = () => {
+        if (this.state.status === '') {
+            return (
+                <p className="notification"> </p>
+            );
+        } else if (this.state.status === 'success') {
+            return (
+                <p className="notification">
+                    Appointment added {this.state.hour}:{this.state.minutes}
+                </p>
+            );
+        } else if (this.state.status === 'fail') {
+            return (
+                <p className="notification">Failed to add</p>
+            );
+        }
     };
 
     handleSubmit (event) {
@@ -36,9 +57,15 @@ class AddAppointmentPage extends React.Component {
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
             date: this.state.date,
             time: time,
-        }).then(
-            this.props.history.push(`/profiles/doctors/${this.props.match.params.doctorId}`)
-        );
+        }).then(() => {
+            this.setState({
+                status: 'success'
+            });
+        }).catch(error => {
+            this.setState({
+                status: 'fail'
+            });
+        });
 
         event.preventDefault();
     }
@@ -46,7 +73,7 @@ class AddAppointmentPage extends React.Component {
     hourDropDown = () => {
         return (
             <div className="time-input">
-                <select id="specialty" name="specialty" className="form-control"
+                <select id="hour" name="hour" className="form-control dropdown"
                         value={this.state.hour} onChange={this.handleHourChange}>
                     <option hidden value=""></option>
                     <option value="00">0</option>
@@ -81,7 +108,7 @@ class AddAppointmentPage extends React.Component {
     minutesDropDown = () => {
         return (
             <div className="time-input">
-                <select id="specialty" name="specialty" className="form-control"
+                <select id="minutes" name="minutes" className="form-control dropdown"
                         value={this.state.minutes} onChange={this.handleMinutesChange}>
                     <option hidden value=""></option>
                     <option value="00">00</option>
@@ -116,11 +143,12 @@ class AddAppointmentPage extends React.Component {
                                     <div className="weekday">{moment(this.state.date).format('dddd')}</div>
                                     <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
                                     <form onSubmit={this.handleSubmit}>
-                                        <div className="time">
+                                        <div>
                                             {this.hourDropDown()}
                                             :
                                             {this.minutesDropDown()}
                                         </div>
+                                        {this.addedNotification()}
                                         <input className="btn btn-primary" type="submit" value="Add"/>
                                     </form>
                                 </div>
