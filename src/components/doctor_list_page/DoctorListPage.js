@@ -49,7 +49,7 @@ class DoctorListPage extends React.Component {
                 <div className="doctor-list-header">
                     <div className="page-width">
                         <div className="specialty-drop-down">
-                            <select id="specialty" name="specialty" className="form-control"
+                            <select id="specialty" name="specialty" className="form-control dropdown"
                                     value={this.state.specialty} onChange={this.handleSpecialtyChange}>
                                 <option hidden value="">search by specialty</option>
                                 <option value="GYNAECOLOGIST">gynaecologist</option>
