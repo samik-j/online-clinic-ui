@@ -307,15 +307,19 @@ table#profile-appointment td.status-symbol {
     text-align: center;
 }
 
-.add-appointment .time-input {
-    display: inline-block;
-    margin-bottom: 20px;
-}
+.add-appointment .time {
+     margin-bottom: 20px;
+ }
 
-.add-appointment .time-input .input {
-    width: 30px;
+.add-appointment .time .time-input {
+    display: inline-block;
+    width: 70px;
     margin: 5px;
     font-size: 15px;
+}
+
+.add-appointment .time .time-input:first-of-type {
+    margin-left: 0;
 }
 
 /* DOCTOR INFORMATION */
