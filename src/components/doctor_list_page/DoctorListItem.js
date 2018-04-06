@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const DoctorListItem = ({doctor}) => {
 
     return (
-        <div className="doctor-list">
+        <div className="border-box doctor-list">
             <img className="doctor-avatar"
                  src={'/img/doctor_avatar.jpg'}
                  alt="Doctor"/>

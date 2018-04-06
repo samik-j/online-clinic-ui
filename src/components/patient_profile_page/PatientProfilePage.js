@@ -39,14 +39,17 @@ class PatientProfilePage extends React.Component {
         if (this.state.expandedPastAppointments) {
             return (
                 <div>
-                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
+                         alt="Hide"/>
                     <PatientAppointmentsList patientId={this.state.patientId} current={false}/>
-                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
+                         alt="Hide"/>
                 </div>
             );
         } else {
             return (
-                <img className="expand-hide clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'}
+                <img className="expand-hide clickable arrow" onClick={this.togglePastAppointments}
+                     src={'/img/arrow_down.svg'}
                      alt="Expand"/>
             );
         }
@@ -54,17 +57,19 @@ class PatientProfilePage extends React.Component {
 
     render () {
         return (
-            <div className="page-width">
-                <div className="profile">
-                    <div className="border-box">
-                        <PatientInformation patient={this.state.patient}/>
-                    </div>
-                    <div className="border-box">
-                        <StatusLegend/>
-                        <div className="box-title">Current appointments</div>
-                        <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
-                        <div className="box-title">Past appointments</div>
-                        {this.pastAppointments()}
+            <div className="bg">
+                <div className="page-width">
+                    <div className="profile">
+                        <div className="border-box">
+                            <PatientInformation patient={this.state.patient}/>
+                        </div>
+                        <div className="border-box">
+                            <StatusLegend/>
+                            <div className="box-title">Current appointments</div>
+                            <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
+                            <div className="box-title">Past appointments</div>
+                            {this.pastAppointments()}
+                        </div>
                     </div>
                 </div>
             </div>

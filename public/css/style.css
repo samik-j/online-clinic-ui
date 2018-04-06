@@ -1,9 +1,9 @@
 :root {
     --main-color: #2cc0a6;
     --second-color: #337ab7;
-    --main-border: 1px solid var(--border-color);
-    --border-color: #c5c5c5;
-    --background-color: #f1f1f1;
+    --main-border: 1px solid var(--main-grey);
+    --main-grey: #c5c5c5;
+    --background-color: whitesmoke;
     --main-font: 'Roboto', serif;
 }
 
@@ -58,6 +58,68 @@ header .text {
     display: inline-block;
 }
 
+/* BORDER BOX */
+.border-box {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+.inline-box {
+    display: inline-block;
+}
+
+.inline-box:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.border-box .box-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--main-grey);
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: var(--main-border);
+}
+
+.border-box .box-title:not(:first-child) {
+    margin-top: 20px;
+}
+
+/* OTHER */
+.page-width {
+    max-width: 1000px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.width-400px {
+    width: 400px;
+}
+
+.width-auto {
+    width: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.bg {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: var(--background-color);
+}
+
 /* HOME PAGE */
 .home {
     background: var(--main-color);
@@ -81,15 +143,19 @@ header .text {
 }
 
 /* DOCTOR LIST PAGE */
+.doctor-list-header {
+    background: var(--main-color);
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+
 .specialty-drop-down {
     text-align: center;
-    margin: 20px;
+    width: 500px;
+    margin-top: 20px;
 }
 
 .doctor-list {
-    padding: 15px;
-    margin: 20px;
-    border: var(--main-border);
     max-height: 200px;
 }
 
@@ -130,7 +196,7 @@ header .text {
     text-align: center;
     vertical-align: top;
     margin: 5px;
-    width: 90px;
+    width: 100px;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -154,7 +220,7 @@ header .text {
     height: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
-    background: var(--border-color);
+    background: var(--main-grey);
 }
 
 .appointments-on-day .book-btn {
@@ -290,7 +356,7 @@ table#profile-appointment td.status-symbol {
 
 .status-legend .item {
     display: inline-block;
-    color: var(--border-color);
+    color: var(--main-grey);
 }
 
 .status-legend .item:not(:last-child) {
@@ -364,61 +430,5 @@ table#profile-appointment td.status-symbol {
 .appointment-info .info .weekday {
     font-size: 18px;
     font-weight: normal;
-    color: var(--border-color);
-}
-
-/* BORDER BOX */
-.border-box {
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: var(--main-border);
-}
-
-.inline-box {
-    display: inline-block;
-}
-
-.inline-box:not(:last-of-type) {
-    margin-right: 20px;
-}
-
-.border-box .box-title {
-    font-size: 20px;
-    font-weight: bolder;
-    color: var(--border-color);
-    margin-bottom: 20px;
-    text-align: left;
-    border-bottom: var(--main-border);
-}
-
-.border-box .box-title:not(:first-child) {
-    margin-top: 20px;
-}
-
-/* OTHER */
-.page-width {
-    max-width: 1000px;
-    min-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.flex {
-    display: flex;
-}
-
-.width-400px {
-    width: 400px;
-}
-
-.width-auto {
-    width: 100%;
-}
-
-.clickable {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    color: var(--main-grey);
 }

@@ -45,21 +45,29 @@ class DoctorListPage extends React.Component {
 
     render () {
         return (
-            <div className="page-width">
-                <div className="specialty-drop-down">
-                    <select id="specialty" name="specialty" className="form-control"
-                            value={this.state.specialty} onChange={this.handleSpecialtyChange}>
-                        <option hidden value="">search by specialty</option>
-                        <option value="GYNAECOLOGIST">gynaecologist</option>
-                        <option value="DERMATOLOGIST">dermatologist</option>
-                        <option value="PEDIATRICIAN">pediatrician</option>
-                        <option value="INTERNIST">internist</option>
-                        <option value="ENDOCRINOLOGIST">endocrinologist</option>
-                        <option value="GENERAL_PHYSICIAN">general physician</option>
-                        <option value="all">all</option>
-                    </select>
+            <div>
+                <div className="doctor-list-header">
+                    <div className="page-width">
+                        <div className="specialty-drop-down">
+                            <select id="specialty" name="specialty" className="form-control"
+                                    value={this.state.specialty} onChange={this.handleSpecialtyChange}>
+                                <option hidden value="">search by specialty</option>
+                                <option value="GYNAECOLOGIST">gynaecologist</option>
+                                <option value="DERMATOLOGIST">dermatologist</option>
+                                <option value="PEDIATRICIAN">pediatrician</option>
+                                <option value="INTERNIST">internist</option>
+                                <option value="ENDOCRINOLOGIST">endocrinologist</option>
+                                <option value="GENERAL_PHYSICIAN">general physician</option>
+                                <option value="all">all</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <DoctorList doctors={this.state.doctors}/>
+                <div className="bg">
+                    <div className="page-width">
+                        <DoctorList doctors={this.state.doctors}/>
+                    </div>
+                </div>
             </div>
         );
     }

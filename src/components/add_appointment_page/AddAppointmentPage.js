@@ -48,7 +48,7 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="specialty" name="specialty" className="form-control"
                         value={this.state.hour} onChange={this.handleHourChange}>
-                    <option hidden value=""> </option>
+                    <option hidden value=""></option>
                     <option value="00">0</option>
                     <option value="01">1</option>
                     <option value="02">2</option>
@@ -83,7 +83,7 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="specialty" name="specialty" className="form-control"
                         value={this.state.minutes} onChange={this.handleMinutesChange}>
-                    <option hidden value=""> </option>
+                    <option hidden value=""></option>
                     <option value="00">00</option>
                     <option value="05">05</option>
                     <option value="10">10</option>
@@ -103,25 +103,27 @@ class AddAppointmentPage extends React.Component {
 
     render () {
         return (
-            <div className="page-width">
-                <div className="border-box">
-                    <div className="box-title">Add appointment</div>
-                    <div className="add-appointment">
-                        <div className="appointment-info">
-                            <img className="icon"
-                                 src={'/img/calendar.svg'}
-                                 alt="callendar"/>
-                            <div className="info">
-                                <div className="weekday">{moment(this.state.date).format('dddd')}</div>
-                                <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
-                                <form onSubmit={this.handleSubmit}>
-                                    <div className="time">
-                                        {this.hourDropDown()}
-                                        :
-                                        {this.minutesDropDown()}
-                                    </div>
-                                    <input className="btn btn-primary" type="submit" value="Add"/>
-                                </form>
+            <div className="bg">
+                <div className="page-width">
+                    <div className="border-box">
+                        <div className="box-title">Add appointment</div>
+                        <div className="add-appointment">
+                            <div className="appointment-info">
+                                <img className="icon"
+                                     src={'/img/calendar.svg'}
+                                     alt="callendar"/>
+                                <div className="info">
+                                    <div className="weekday">{moment(this.state.date).format('dddd')}</div>
+                                    <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
+                                    <form onSubmit={this.handleSubmit}>
+                                        <div className="time">
+                                            {this.hourDropDown()}
+                                            :
+                                            {this.minutesDropDown()}
+                                        </div>
+                                        <input className="btn btn-primary" type="submit" value="Add"/>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
