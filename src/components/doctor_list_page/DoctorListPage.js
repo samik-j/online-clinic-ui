@@ -4,6 +4,8 @@ import axios from 'axios';
 //COMPONENTS
 import DoctorList from './DoctorList';
 
+import Select from 'react-select';
+
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
 class DoctorListPage extends React.Component {
@@ -43,30 +45,48 @@ class DoctorListPage extends React.Component {
         );
     }
 
+    handleSpecialtyChange2 = (specialty) => {
+        const newSpecialty = specialty.value;
+
+        const URL = newSpecialty === 'all' ? DOCTORS_URL : `${DOCTORS_URL}?specialty=${newSpecialty}`;
+
+        axios.get(URL).then(
+            response => {
+                this.setState({
+                    doctors: response.data,
+                    specialty: newSpecialty
+                });
+
+            }
+        );
+    };
+
     render () {
         return (
             <div>
                 <div className="doctor-list-header">
                     <div className="page-width">
                         <div className="specialty-drop-down">
-                            <select id="specialty" name="specialty" className="form-control dropdown"
-                                    value={this.state.specialty} onChange={this.handleSpecialtyChange}>
-                                <option hidden value="">search by specialty</option>
-                                <option value="GYNAECOLOGIST">gynaecologist</option>
-                                <option value="DERMATOLOGIST">dermatologist</option>
-                                <option value="PEDIATRICIAN">pediatrician</option>
-                                <option value="INTERNIST">internist</option>
-                                <option value="ENDOCRINOLOGIST">endocrinologist</option>
-                                <option value="GENERAL_PHYSICIAN">general physician</option>
-                                <option value="all">all</option>
-                            </select>
+                            <Select
+                                clearable={false}
+                                name="choose-specialty"
+                                placeholder="search by specialty"
+                                value={this.state.specialty}
+                                onChange={this.handleSpecialtyChange2}
+                                options={[
+                                    {value: 'DERMATOLOGIST', label: 'dermatologist'},
+                                    {value: 'INTERNIST', label: 'internist'},
+                                    {value: 'ENDOCRINOLOGIST', label: 'endocrinologist'},
+                                    {value: 'GENERAL_PHYSICIAN', label: 'general physician'},
+                                    {value: 'PEDIATRICIAN', label: 'pediatrician'},
+                                    {value: 'all', label: 'all'},
+                                ]}
+                            />
                         </div>
                     </div>
                 </div>
-                <div className="bg">
-                    <div className="page-width">
-                        <DoctorList doctors={this.state.doctors}/>
-                    </div>
+                <div className="page-width">
+                    <DoctorList doctors={this.state.doctors}/>
                 </div>
             </div>
         );

@@ -59,31 +59,29 @@ class BookAppointmentPage extends React.Component {
 
     render () {
         return (
-            <div className="bg">
-                <div className="page-width">
-                    <div className="flex">
-                        <div className="border-box inline-box width-auto">
-                            <div className="box-title">Book appointment</div>
-                            <AppointmentInformation appointment={this.state.appointment}/>
-                            <form onSubmit={this.handleSubmit}>
+            <div className="page-width">
+                <div className="flex">
+                    <div className="border-box inline-box width-auto">
+                        <div className="box-title">Book appointment</div>
+                        <AppointmentInformation appointment={this.state.appointment}/>
+                        <form onSubmit={this.handleSubmit}>
+                            <div>
                                 <div>
-                                    <div>
-                                        <label htmlFor="patientId">Patient Id:</label>
-                                        <input type="text" name="patientId" value={this.state.patientId}
-                                               onChange={this.handlePatientIdChange}/>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="reason">Reason:</label>
-                                        <input type="text" name="reason" value={this.state.reason}
-                                               onChange={this.handleReasonChange}/>
-                                    </div>
+                                    <label htmlFor="patientId">Patient Id:</label>
+                                    <input type="text" name="patientId" value={this.state.patientId}
+                                           onChange={this.handlePatientIdChange}/>
                                 </div>
-                                <input className="btn btn-primary" type="submit" value="Book"/>
-                            </form>
-                        </div>
-                        <div className="border-box inline-box width-400px">
-                            <DoctorInformation doctorId={this.state.doctorId}/>
-                        </div>
+                                <div>
+                                    <label htmlFor="reason">Reason:</label>
+                                    <input type="text" name="reason" value={this.state.reason}
+                                           onChange={this.handleReasonChange}/>
+                                </div>
+                            </div>
+                            <input className="btn btn-primary" type="submit" value="Book"/>
+                        </form>
+                    </div>
+                    <div className="border-box inline-box width-400px">
+                        <DoctorInformation doctorId={this.state.doctorId}/>
                     </div>
                 </div>
             </div>

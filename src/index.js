@@ -14,8 +14,6 @@ import BookAppointmentPage from './components/book_appointment_page/BookAppointm
 import BookedAppointmentSuccess from './components/book_appointment_page/BookedAppointmentSuccess';
 import NotFound from './components/NotFound';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
 const App = () => {
 
     return (
@@ -24,7 +22,8 @@ const App = () => {
                 <Header/>
                 <article>
                     <Switch>
-                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointmentPage}/>
+                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId"
+                               component={BookAppointmentPage}/>
                         <Route path="/doctors/:doctorId" component={DoctorPage}/>
                         <Route path="/doctors" component={DoctorListPage}/>
                         <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>

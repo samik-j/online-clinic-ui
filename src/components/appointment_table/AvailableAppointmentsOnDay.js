@@ -61,12 +61,13 @@ class AvailableAppointmentsOnDay extends React.Component {
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
-                            <div className="btn btn-default book-btn" key={appointment.id}>
-                                <Link
-                                    to={`/doctors/${this.state.doctorId}/book-appointment/${appointment.id}`}>
+                            <div key={appointment.id}>
+                                <Link className="btn btn-outline-primary2 book-btn"
+                                      to={`/doctors/${this.state.doctorId}/book-appointment/${appointment.id}`}>
                                     {appointment.time}
                                 </Link>
-                            </div>);
+                            </div>
+                        );
                     })}
                 </div>
             </div>

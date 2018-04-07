@@ -57,19 +57,17 @@ class PatientProfilePage extends React.Component {
 
     render () {
         return (
-            <div className="bg">
-                <div className="page-width">
-                    <div className="profile">
-                        <div className="border-box">
-                            <PatientInformation patient={this.state.patient}/>
-                        </div>
-                        <div className="border-box">
-                            <StatusLegend/>
-                            <div className="box-title">Current appointments</div>
-                            <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
-                            <div className="box-title">Past appointments</div>
-                            {this.pastAppointments()}
-                        </div>
+            <div className="page-width">
+                <div className="profile">
+                    <div className="border-box">
+                        <PatientInformation patient={this.state.patient}/>
+                    </div>
+                    <div className="border-box">
+                        <StatusLegend/>
+                        <div className="box-title">Current appointments</div>
+                        <PatientAppointmentsList patientId={this.state.patientId} current={true}/>
+                        <div className="box-title">Past appointments</div>
+                        {this.pastAppointments()}
                     </div>
                 </div>
             </div>

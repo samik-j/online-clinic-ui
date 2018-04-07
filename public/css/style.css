@@ -1,5 +1,6 @@
 :root {
     --main-color: #2cc0a6;
+    --main-color-dark: #2db19a;
     --second-color: #337ab7;
     --main-border: 1px solid var(--main-grey);
     --main-grey: #c5c5c5;
@@ -26,23 +27,20 @@ footer {
     text-align: center;
 }
 
-nav {
-    font-weight: bolder;
-    font-size: 15px;
-    color: black;
-    width: 200px;
-    padding: 20px;
-}
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
 
 article {
-    min-height: 200px;
+    min-height: 500px;
     margin: 0 auto;
     overflow: hidden;
+    background: var(--background-color);
+}
+
+/* BOOTSTRAP OVERRIDE */
+.btn-outline-primary2 {
+    color: #007bff;
+    background-color: white;
+    border-color: #007bff;
 }
 
 /* HEADER */
@@ -113,12 +111,6 @@ header .text {
     -ms-user-select: none;
 }
 
-.bg {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    background: var(--background-color);
-}
-
 /* HOME PAGE */
 .home {
     background: var(--main-color);
@@ -144,17 +136,11 @@ header .text {
 /* DOCTOR LIST PAGE */
 .doctor-list-header {
     background: var(--main-color);
-    padding-top: 1px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
-.specialty-drop-down{
-    width: 200px;
-    margin-top: 20px;
-}
-
-.specialty-drop-down .dropdown{
-    border-radius: 0px;
+.specialty-drop-down {
+    width: 300px;
 }
 
 .doctor-list {
@@ -163,7 +149,6 @@ header .text {
 
 .doctor-list .doctor-name {
     font-size: 20px;
-    font-weight: bolder;
     display: inline-block;
 }
 
@@ -177,6 +162,7 @@ header .text {
     vertical-align: top;
     display: inline-block;
     padding-left: 10px;
+    font-size: 15px;
 }
 
 /* APPOINTMENT LIST */
@@ -227,11 +213,11 @@ header .text {
 
 .appointments-on-day .book-btn {
     margin: 3px;
-    border: white;
     width: 70px;
     horiz-align: center;
-    color: var(--second-color);
-    font-weight: bolder;
+    padding: 5px;
+    font-size: 15px;
+    font-family: var(--main-font);
 }
 
 .appointments-on-day .appointment {
@@ -272,7 +258,6 @@ header .text {
 
 .profile .name {
     font-size: 30px;
-    font-weight: bolder;
     padding-right: 10px;
 }
 
@@ -288,7 +273,7 @@ header .text {
 
 /* DOCTOR PROFILE PAGE */
 .doctor .specialty {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* PROFILE PAGE APPOINTMENT LIST */
@@ -391,7 +376,6 @@ table#profile-appointment td.status-symbol {
     font-size: 15px;
 }
 
-
 .add-appointment .notification {
     font-size: 15px;
     font-weight: normal;
@@ -412,7 +396,6 @@ table#profile-appointment td.status-symbol {
 }
 
 .doctor-info .name {
-    font-weight: bolder;
 }
 
 /* APPOINTMENT INFORMATION */
@@ -434,8 +417,7 @@ table#profile-appointment td.status-symbol {
     display: inline-block;
     padding-left: 10px;
     text-align: left;
-    font-size: 22px;
-    font-weight: bolder;
+    font-size: 24px;
 }
 
 .appointment-info .info .weekday {

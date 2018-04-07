@@ -58,23 +58,21 @@ class DoctorProfilePage extends React.Component {
 
     render () {
         return (
-            <div className="bg">
-                <div className="page-width">
-                    <div className="doctor profile">
-                        <div className="border-box">
-                            <DoctorInformation doctor={this.state.doctor}/>
-                        </div>
-                        <div className="border-box">
-                            <div className="box-title">Appointments</div>
-                            <AppointmentList doctorId={this.state.doctorId} display={'all'}/>
-                        </div>
-                        <div className="border-box">
-                            <StatusLegend/>
-                            <div className="box-title">Current booked appointments</div>
-                            <DoctorAppointmentsList doctorId={this.state.doctorId} current={true}/>
-                            <div className="box-title">Past booked appointments</div>
-                            {this.pastAppointments()}
-                        </div>
+            <div className="page-width">
+                <div className="doctor profile">
+                    <div className="border-box">
+                        <DoctorInformation doctor={this.state.doctor}/>
+                    </div>
+                    <div className="border-box">
+                        <div className="box-title">Appointments</div>
+                        <AppointmentList doctorId={this.state.doctorId} display={'all'}/>
+                    </div>
+                    <div className="border-box">
+                        <StatusLegend/>
+                        <div className="box-title">Current booked appointments</div>
+                        <DoctorAppointmentsList doctorId={this.state.doctorId} current={true}/>
+                        <div className="box-title">Past booked appointments</div>
+                        {this.pastAppointments()}
                     </div>
                 </div>
             </div>

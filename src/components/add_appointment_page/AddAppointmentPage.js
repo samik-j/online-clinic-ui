@@ -36,7 +36,7 @@ class AddAppointmentPage extends React.Component {
     addedNotification = () => {
         if (this.state.status === '') {
             return (
-                <p className="notification"> </p>
+                <p className="notification"></p>
             );
         } else if (this.state.status === 'success') {
             return (
@@ -130,28 +130,26 @@ class AddAppointmentPage extends React.Component {
 
     render () {
         return (
-            <div className="bg">
-                <div className="page-width">
-                    <div className="border-box">
-                        <div className="box-title">Add appointment</div>
-                        <div className="add-appointment">
-                            <div className="appointment-info">
-                                <img className="icon"
-                                     src={'/img/calendar.svg'}
-                                     alt="callendar"/>
-                                <div className="info">
-                                    <div className="weekday">{moment(this.state.date).format('dddd')}</div>
-                                    <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
-                                    <form onSubmit={this.handleSubmit}>
-                                        <div>
-                                            {this.hourDropDown()}
-                                            :
-                                            {this.minutesDropDown()}
-                                        </div>
-                                        {this.addedNotification()}
-                                        <input className="btn btn-primary" type="submit" value="Add"/>
-                                    </form>
-                                </div>
+            <div className="page-width">
+                <div className="border-box">
+                    <div className="box-title">Add appointment</div>
+                    <div className="add-appointment">
+                        <div className="appointment-info">
+                            <img className="icon"
+                                 src={'/img/calendar.svg'}
+                                 alt="calendar"/>
+                            <div className="info">
+                                <div className="weekday">{moment(this.state.date).format('dddd')}</div>
+                                <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div>
+                                        {this.hourDropDown()}
+                                        :
+                                        {this.minutesDropDown()}
+                                    </div>
+                                    {this.addedNotification()}
+                                    <input className="btn btn-primary" type="submit" value="Add"/>
+                                </form>
                             </div>
                         </div>
                     </div>
