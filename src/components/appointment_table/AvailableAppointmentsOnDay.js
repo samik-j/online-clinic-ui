@@ -62,7 +62,7 @@ class AvailableAppointmentsOnDay extends React.Component {
                     {this.state.appointments.map(appointment => {
                         return (
                             <div key={appointment.id}>
-                                <Link className="btn btn-outline-primary2 book-btn"
+                                <Link className="btn btn-outline-primary book-btn"
                                       to={`/doctors/${this.state.doctorId}/book-appointment/${appointment.id}`}>
                                     {appointment.time}
                                 </Link>

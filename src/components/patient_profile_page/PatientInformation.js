@@ -9,21 +9,21 @@ const PatientInformation = ({patient}) => {
                  alt="Patient"/>
             <div className="info">
                 <div className="name">{patient.firstName}&nbsp;{patient.lastName}</div>
-                <table>
+                <table id="profile-info">
                     <colgroup>
                         <col className="title"/>
                     </colgroup>
                     <tbody>
                     <tr>
-                        <th>EMAIL</th>
+                        <th>Email</th>
                         <td>{patient.email}</td>
                     </tr>
                     <tr>
-                        <th>PHONE</th>
+                        <th>Phone</th>
                         <td>{patient.phoneNumber}</td>
                     </tr>
                     <tr>
-                        <th>NHS NUMBER</th>
+                        <th>NHS Number</th>
                         <td>{patient.nhsNumber}</td>
                     </tr>
                     </tbody>

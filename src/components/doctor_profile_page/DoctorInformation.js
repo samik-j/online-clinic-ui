@@ -9,17 +9,17 @@ const DoctorInformation = ({doctor}) => {
                  alt="Doctor"/>
             <div className="info">
                 <div className="name">{doctor.firstName}&nbsp;{doctor.lastName}</div>
-                <table>
+                <table id="profile-info">
                     <colgroup>
                         <col className="title"/>
                     </colgroup>
                     <tbody>
                     <tr>
-                        <th>SPECIALTY</th>
+                        <th>Specialty</th>
                         <td>{doctor.specialty}</td>
                     </tr>
                     <tr>
-                        <th>EMAIL</th>
+                        <th>Email</th>
                         <td>{doctor.email}</td>
                     </tr>
                     </tbody>
