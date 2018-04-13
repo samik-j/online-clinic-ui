@@ -20,7 +20,7 @@ class AppointmentTable extends React.Component {
         };
     }
 
-    handleDateIncrement = (event) => {
+    handleDateIncrement = () => {
         this.setState((prevState) => ({
             date1: prevState.date1.add(3, 'days'),
             date2: prevState.date2.add(3, 'days'),
@@ -32,7 +32,7 @@ class AppointmentTable extends React.Component {
         }));
     };
 
-    handleDateSubtraction = (event) => {
+    handleDateSubtraction = () => {
         this.setState((prevState) => ({
             date1: prevState.date1.subtract(3, 'days'),
             date2: prevState.date2.subtract(3, 'days'),
