@@ -1,7 +1,7 @@
 :root {
     --main-color: #2cc0a6;
     --main-color-dark: #2db19a;
-    --second-color: #337ab7;
+    --second-color: #007bff;
     --main-border: 1px solid var(--main-grey);
     --main-grey: #c5c5c5;
     --background-color: whitesmoke;
@@ -425,8 +425,10 @@ table#profile-appointment td.status-symbol {
 }
 
 .appointment-info .info .link {
-    font-weight: normal;
     font-size: 15px;
+    font-weight: normal;
+    color: var(--second-color);
+    height: 20px;
 }
 
 .appointment-info .icon {
@@ -445,4 +447,25 @@ table#profile-appointment td.status-symbol {
     font-size: 18px;
     font-weight: normal;
     color: var(--main-grey);
+}
+
+form#book-appointment {
+    margin-left: calc(50% - 100px);
+}
+form#book-appointment label{
+    width: 100px;
+    text-align: right;
+    color: var(--main-grey);
+    vertical-align: top;
+    padding-top: 2px;
+}
+form#book-appointment input#patientId, textarea#reason{
+    margin-left: 10px;
+    width: calc(100% - 110px);
+}
+form#book-appointment textarea#reason{
+    height: 200px;
+}
+form#book-appointment input#book-btn{
+    margin-left: 110px;
 }

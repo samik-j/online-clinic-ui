@@ -64,20 +64,20 @@ class BookAppointmentPage extends React.Component {
                     <div className="border-box inline-box width-auto">
                         <div className="box-title">Book appointment</div>
                         <AppointmentInformation appointment={this.state.appointment}/>
-                        <form onSubmit={this.handleSubmit}>
+                        <form id="book-appointment" onSubmit={this.handleSubmit}>
                             <div>
                                 <div>
-                                    <label htmlFor="patientId">Patient Id:</label>
-                                    <input type="text" name="patientId" value={this.state.patientId}
+                                    <label htmlFor="patientId">Patient Id</label>
+                                    <input id="patientId" type="text" name="patientId" value={this.state.patientId}
                                            onChange={this.handlePatientIdChange}/>
                                 </div>
                                 <div>
-                                    <label htmlFor="reason">Reason:</label>
-                                    <input type="text" name="reason" value={this.state.reason}
+                                    <label htmlFor="reason">Reason</label>
+                                    <textarea id="reason" name="reason" maxLength="250" value={this.state.reason}
                                            onChange={this.handleReasonChange}/>
                                 </div>
                             </div>
-                            <input className="btn btn-primary" type="submit" value="Book"/>
+                            <input id="book-btn" className="btn btn-primary" type="submit" value="Book"/>
                         </form>
                     </div>
                     <div className="border-box inline-box width-400px">
