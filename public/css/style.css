@@ -163,7 +163,7 @@ header .text {
     font-size: 15px;
 }
 
-/* APPOINTMENT LIST */
+/* APPOINTMENT TABLE */
 .appointment-table {
     margin: auto;
     display: table;
@@ -246,6 +246,16 @@ header .text {
     margin: 10px;
 }
 
+.appointment-details {
+    width: 100%;
+    padding: 5px;
+}
+
+.description {
+    text-align: center;
+    color: var(--main-grey);
+}
+
 /* PROFILE PAGE*/
 .profile .avatar {
     height: 150px;
@@ -300,7 +310,7 @@ table#profile-info tr {
     background: white;
 }
 
-.profile .appointment-list .appointment:not(:last-of-type) {
+.appointment:not(:last-of-type) {
     margin-bottom: 10px;
 }
 

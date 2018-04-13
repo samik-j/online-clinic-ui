@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import AllAppointmentsOnDay from './AllAppointmentsOnDay';
 import AvailableAppointmentsOnDay from './AvailableAppointmentsOnDay';
 
 class AppointmentTable extends React.Component {
@@ -10,7 +9,6 @@ class AppointmentTable extends React.Component {
 
         this.state = {
             doctorId: props.doctorId,
-            display: props.display,
             date1: moment(),
             date2: moment().add(1, 'days'),
             date3: moment().add(2, 'days'),
@@ -18,7 +16,6 @@ class AppointmentTable extends React.Component {
             date5: moment().add(4, 'days'),
             date6: moment().add(5, 'days'),
             date7: moment().add(6, 'days'),
-
         };
     }
 
@@ -60,31 +57,17 @@ class AppointmentTable extends React.Component {
     };
 
     appointments = () => {
-        if (this.state.display === 'all') {
-            return (
-                <div className="appointments">
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
-                    <AllAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
-                </div>
-            );
-        } else if (this.state.display === 'available') {
-            return (
-                <div className="appointments">
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
-                    <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
-                </div>
-            );
-        }
+        return (
+            <div className="appointments">
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
+                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
+            </div>
+        );
     };
 
     render () {

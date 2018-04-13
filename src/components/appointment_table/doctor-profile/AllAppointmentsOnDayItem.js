@@ -1,6 +1,10 @@
 import React from 'react';
 
-const AllAppointmentsOnDayItem = ({appointment}) => {
+const AllAppointmentsOnDayItem = ({appointment, appointmentId}) => {
+
+    const sendAppointmentId = () => {
+        appointmentId(appointment.id);
+    };
 
     if (appointment.available === true) {
         return (
@@ -10,9 +14,9 @@ const AllAppointmentsOnDayItem = ({appointment}) => {
 
     } else {
         return (
-            <div className="appointment not-available" key={appointment.id}>
+            <button className="appointment not-available" key={appointment.id} onClick={sendAppointmentId}>
                 <div>{appointment.time}</div>
-            </div>
+            </button>
         );
     }
 };

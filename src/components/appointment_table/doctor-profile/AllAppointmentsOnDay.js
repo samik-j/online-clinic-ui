@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment/moment';
 import axios from 'axios/index';
 import { Link } from 'react-router-dom';
-import AppointmentsOnDayItem from './AllAppointmentsOnDayItem';
+import AllAppointmentsOnDayItem from './AllAppointmentsOnDayItem';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
@@ -14,7 +14,8 @@ class AllAppointmentsOnDay extends React.Component {
         this.state = {
             doctorId: props.doctorId,
             date: props.date,
-            appointments: []
+            appointments: [],
+            currentAppointmentId: ''
         };
     }
 
@@ -46,6 +47,14 @@ class AllAppointmentsOnDay extends React.Component {
             );
     }
 
+    showDetails = (event) => {
+        this.setState({
+            currentAppointmentId: event
+        });
+
+        this.props.details(event);
+    };
+
     isOnWeekend = () => {
         return moment(this.state.date).day() === 6 || moment(this.state.date).day() === 0;
     };
@@ -62,7 +71,8 @@ class AllAppointmentsOnDay extends React.Component {
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
-                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment}/>
+                            <AllAppointmentsOnDayItem key={appointment.id} appointment={appointment}
+                                                      appointmentId={(appointmentId) => this.showDetails(appointmentId)}/>
                         );
                     })}
                 </div>

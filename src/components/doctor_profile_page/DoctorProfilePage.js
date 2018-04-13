@@ -3,7 +3,7 @@ import axios from 'axios';
 import DoctorInformation from './DoctorInformation';
 import StatusLegend from '../StatusLegend';
 import DoctorAppointmentsList from './DoctorAppointmentList';
-import AppointmentList from '../appointment_table/AppointmentTable';
+import DoctorProfileAppointmentTable from '../appointment_table/doctor-profile/AppointmentTable';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
@@ -56,6 +56,7 @@ class DoctorProfilePage extends React.Component {
         }
     };
 
+
     render () {
         return (
             <div className="page-width">
@@ -65,7 +66,7 @@ class DoctorProfilePage extends React.Component {
                     </div>
                     <div className="border-box">
                         <div className="box-title">Appointments</div>
-                        <AppointmentList doctorId={this.state.doctorId} display={'all'}/>
+                        <DoctorProfileAppointmentTable doctorId={this.state.doctorId} display={'all'}/>
                     </div>
                     <div className="border-box">
                         <StatusLegend/>
