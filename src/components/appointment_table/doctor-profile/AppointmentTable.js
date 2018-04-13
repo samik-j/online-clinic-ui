@@ -3,6 +3,7 @@ import moment from 'moment';
 import AllAppointmentsOnDay from './AllAppointmentsOnDay';
 import axios from 'axios/index';
 import CurrentAppointmentBooked from './CurrentAppointmentBooked';
+import LeftArrow from '../LeftArrow';
 
 class AppointmentTable extends React.Component {
 
@@ -46,19 +47,6 @@ class AppointmentTable extends React.Component {
             date6: prevState.date6.subtract(3, 'days'),
             date7: prevState.date7.subtract(3, 'days'),
         }));
-    };
-
-    // could be a component
-    leftArrow = () => {
-        if (this.state.date1.dayOfYear() === moment().dayOfYear()) {
-            return (
-                <img className="clickable arrows"
-                     src={'/img/arrows_left_inactive.png'} alt="Arrows Left"/>
-            );
-        } else {
-            return <img className="clickable arrows" onClick={this.handleDateSubtraction}
-                        src={'/img/arrows_left.png'} alt="Arrows Left"/>;
-        }
     };
 
     showDetails = (appointmentId) => {
@@ -109,7 +97,7 @@ class AppointmentTable extends React.Component {
         return (
             <div>
                 <div className="appointment-table">
-                    {this.leftArrow()}
+                    <LeftArrow date={this.state.date1} click={this.handleDateSubtraction}/>
                     {this.appointments()}
                     <img className="clickable arrows" onClick={this.handleDateIncrement}
                          src={'/img/arrows_right.png'} alt="Arrows Right"/>

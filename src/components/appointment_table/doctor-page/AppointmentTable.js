@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import AvailableAppointmentsOnDay from './AvailableAppointmentsOnDay';
+import LeftArrow from '../LeftArrow';
 
 class AppointmentTable extends React.Component {
 
@@ -43,19 +44,6 @@ class AppointmentTable extends React.Component {
         }));
     };
 
-    // could be a component
-    leftArrow = () => {
-        if (this.state.date1.dayOfYear() === moment().dayOfYear()) {
-            return (
-                <img className="clickable arrows"
-                     src={'/img/arrows_left_inactive.png'} alt="Arrows Left"/>
-            );
-        } else {
-            return <img className="clickable arrows" onClick={this.handleDateSubtraction}
-                        src={'/img/arrows_left.png'} alt="Arrows Left"/>;
-        }
-    };
-
     appointments = () => {
         return (
             <div className="appointments">
@@ -73,7 +61,7 @@ class AppointmentTable extends React.Component {
     render () {
         return (
             <div className="appointment-table">
-                {this.leftArrow()}
+                <LeftArrow date={this.state.date1} click={this.handleDateSubtraction}/>
                 {this.appointments()}
                 <img className="clickable arrows" onClick={this.handleDateIncrement}
                      src={'/img/arrows_right.png'} alt="Arrows Right"/>
