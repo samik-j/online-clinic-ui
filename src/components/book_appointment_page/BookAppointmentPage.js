@@ -16,7 +16,8 @@ class BookAppointmentPage extends React.Component {
             doctorId: this.props.match.params.doctorId,
             appointment: '',
             patientId: '',
-            reason: ''
+            reason: '',
+            booked: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,11 +52,41 @@ class BookAppointmentPage extends React.Component {
             patientId: this.state.patientId,
             reason: this.state.reason
         }).then(
-            response => this.props.history.push(`/appointments-booked/${response.data.id}`)
+            // response => this.props.history.push(`/appointments-booked/${response.data.id}`)
+            () =>
+                this.setState({
+                    booked: true
+                })
         );
 
         event.preventDefault();
     }
+
+    booking = () => {
+        if (!this.state.booked) {
+            return (
+                <form id="book-appointment" onSubmit={this.handleSubmit}>
+                    <div>
+                        <div>
+                            <label htmlFor="patientId">Patient Id</label>
+                            <input id="patientId" type="text" name="patientId" value={this.state.patientId}
+                                   onChange={this.handlePatientIdChange}/>
+                        </div>
+                        <div>
+                            <label htmlFor="reason">Reason</label>
+                            <textarea id="reason" name="reason" maxLength="250" value={this.state.reason}
+                                      onChange={this.handleReasonChange}/>
+                        </div>
+                    </div>
+                    <input id="book-btn" className="btn btn-primary" type="submit" value="Book"/>
+                </form>
+            );
+        } else {
+            return (
+                <div>booked</div>
+            );
+        }
+    };
 
     render () {
         return (
@@ -64,21 +95,7 @@ class BookAppointmentPage extends React.Component {
                     <div className="border-box inline-box width-auto">
                         <div className="box-title">Book appointment</div>
                         <AppointmentInformation appointment={this.state.appointment}/>
-                        <form id="book-appointment" onSubmit={this.handleSubmit}>
-                            <div>
-                                <div>
-                                    <label htmlFor="patientId">Patient Id</label>
-                                    <input id="patientId" type="text" name="patientId" value={this.state.patientId}
-                                           onChange={this.handlePatientIdChange}/>
-                                </div>
-                                <div>
-                                    <label htmlFor="reason">Reason</label>
-                                    <textarea id="reason" name="reason" maxLength="250" value={this.state.reason}
-                                           onChange={this.handleReasonChange}/>
-                                </div>
-                            </div>
-                            <input id="book-btn" className="btn btn-primary" type="submit" value="Book"/>
-                        </form>
+                        {this.booking()}
                     </div>
                     <div className="border-box inline-box width-400px">
                         <DoctorInformation doctorId={this.state.doctorId}/>
