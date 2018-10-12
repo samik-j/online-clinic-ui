@@ -75,31 +75,7 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="hour" name="hour" className="form-control dropdown"
                         value={this.state.hour} onChange={this.handleHourChange}>
-                    <option hidden value=""></option>
-                    <option value="00">0</option>
-                    <option value="01">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
+                    {this.getOptions(24, 1)}
                 </select>
             </div>
         );
@@ -110,22 +86,23 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="minutes" name="minutes" className="form-control dropdown"
                         value={this.state.minutes} onChange={this.handleMinutesChange}>
-                    <option hidden value=""></option>
-                    <option value="00">00</option>
-                    <option value="05">05</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                    <option value="40">40</option>
-                    <option value="45">45</option>
-                    <option value="50">50</option>
-                    <option value="55">55</option>
+                    {this.getOptions(60, 5)}
                 </select>
             </div>
         );
+    };
+
+    getOptions = (range, increment) => {
+        let options =[];
+        options.push(<option hidden value=""></option>);
+        for (let i = 0; i < range && i < 10; i += increment) {
+            options.push(<option value={"0" + i} key={i}>0{i}</option>);
+        }
+        for (let i = 10; i < range; i += increment) {
+            options.push(<option value={i} key={i}>{i}</option>);
+        }
+
+        return options;
     };
 
     render () {
