@@ -74,10 +74,7 @@ class AddAppointmentPage extends React.Component {
     hourDropdown = () => {
         return (
             <div className="time-input">
-                <select id="hour" name="hour" className="form-control dropdown"
-                        value={this.state.hour} onChange={this.handleHourChange}>
-                    <DropdownOptions range={24} increment={1}/>
-                </select>
+                <DropdownOptions range={24} increment={1} time={(time) => this.handleHourChange(time)}/>
             </div>
         );
     };
@@ -85,10 +82,7 @@ class AddAppointmentPage extends React.Component {
     minutesDropdown = () => {
         return (
             <div className="time-input">
-                <select id="minutes" name="minutes" className="form-control dropdown"
-                        value={this.state.minutes} onChange={this.handleMinutesChange}>
-                    <DropdownOptions range={60} increment={5}/>
-                </select>
+                <DropdownOptions range={60} increment={5} time={(time) => this.handleMinutesChange(time)}/>
             </div>
         );
     };
