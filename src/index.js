@@ -39,9 +39,6 @@ const App = () => {
                         <ul>
                             <Link to="/doctors">SEARCH DOCTORS</Link>
                         </ul>
-                        <ul>
-                            <Link to="/doctorCreationPage">ADD DOCTOR</Link>
-                        </ul>
                     </nav>
                 </div>
                 <footer>Created by Joanna Senczuk</footer>
