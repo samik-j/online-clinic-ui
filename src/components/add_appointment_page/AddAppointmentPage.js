@@ -7,7 +7,7 @@ const URL = 'http://localhost:8080/doctors';
 
 class AddAppointmentPage extends React.Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -52,7 +52,7 @@ class AddAppointmentPage extends React.Component {
         }
     };
 
-    handleSubmit (event) {
+    handleSubmit(event) {
         let time = '' + this.state.hour + ':' + this.state.minutes;
 
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
@@ -73,21 +73,17 @@ class AddAppointmentPage extends React.Component {
 
     hourDropdown = () => {
         return (
-            <div className="time-input">
-                <DropdownOptions range={24} increment={1} time={(time) => this.handleHourChange(time)}/>
-            </div>
+            <DropdownOptions range={24} increment={1} time={(time) => this.handleHourChange(time)}/>
         );
     };
 
     minutesDropdown = () => {
         return (
-            <div className="time-input">
-                <DropdownOptions range={60} increment={5} time={(time) => this.handleMinutesChange(time)}/>
-            </div>
+            <DropdownOptions range={60} increment={5} time={(time) => this.handleMinutesChange(time)}/>
         );
     };
 
-    render () {
+    render() {
         return (
             <div className="page-width">
                 <div className="border-box">
