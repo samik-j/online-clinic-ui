@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
+import DropdownOptions from './DropdownOptions';
 
 const URL = 'http://localhost:8080/doctors';
 
@@ -75,7 +76,7 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="hour" name="hour" className="form-control dropdown"
                         value={this.state.hour} onChange={this.handleHourChange}>
-                    {this.getOptions(24, 1)}
+                    <DropdownOptions range={24} increment={1}/>
                 </select>
             </div>
         );
@@ -86,23 +87,10 @@ class AddAppointmentPage extends React.Component {
             <div className="time-input">
                 <select id="minutes" name="minutes" className="form-control dropdown"
                         value={this.state.minutes} onChange={this.handleMinutesChange}>
-                    {this.getOptions(60, 5)}
+                    <DropdownOptions range={60} increment={5}/>
                 </select>
             </div>
         );
-    };
-
-    getOptions = (range, increment) => {
-        let options =[];
-        options.push(<option hidden value=""></option>);
-        for (let i = 0; i < range && i < 10; i += increment) {
-            options.push(<option value={"0" + i} key={i}>0{i}</option>);
-        }
-        for (let i = 10; i < range; i += increment) {
-            options.push(<option value={i} key={i}>{i}</option>);
-        }
-
-        return options;
     };
 
     render () {
