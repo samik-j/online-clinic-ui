@@ -70,7 +70,7 @@ class AddAppointmentPage extends React.Component {
         event.preventDefault();
     }
 
-    hourDropDown = () => {
+    hourDropdown = () => {
         return (
             <div className="time-input">
                 <select id="hour" name="hour" className="form-control dropdown"
@@ -105,7 +105,7 @@ class AddAppointmentPage extends React.Component {
         );
     };
 
-    minutesDropDown = () => {
+    minutesDropdown = () => {
         return (
             <div className="time-input">
                 <select id="minutes" name="minutes" className="form-control dropdown"
@@ -143,9 +143,9 @@ class AddAppointmentPage extends React.Component {
                                 <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
-                                        {this.hourDropDown()}
+                                        {this.hourDropdown()}
                                         :
-                                        {this.minutesDropDown()}
+                                        {this.minutesDropdown()}
                                     </div>
                                     {this.addedNotification()}
                                     <input className="btn btn-primary" type="submit" value="Add"/>
