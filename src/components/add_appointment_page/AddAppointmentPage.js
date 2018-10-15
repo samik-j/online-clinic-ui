@@ -71,18 +71,6 @@ class AddAppointmentPage extends React.Component {
         event.preventDefault();
     }
 
-    hourDropdown = () => {
-        return (
-            <DropdownOptions range={24} increment={1} time={(time) => this.handleHourChange(time)}/>
-        );
-    };
-
-    minutesDropdown = () => {
-        return (
-            <DropdownOptions range={60} increment={5} time={(time) => this.handleMinutesChange(time)}/>
-        );
-    };
-
     render() {
         return (
             <div className="page-width">
@@ -98,9 +86,9 @@ class AddAppointmentPage extends React.Component {
                                 <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
-                                        {this.hourDropdown()}
+                                        <DropdownOptions range={24} increment={1} onChange={this.handleHourChange}/>
                                         :
-                                        {this.minutesDropdown()}
+                                        <DropdownOptions range={60} increment={5} onChange={this.handleMinutesChange}/>
                                     </div>
                                     {this.addedNotification()}
                                     <input className="btn btn-primary" type="submit" value="Add"/>
