@@ -14,36 +14,36 @@ class AddAppointmentPage extends React.Component {
             date: this.props.match.params.date,
             hour: '',
             minutes: '',
-            status: ''
+            responseStatus: ''
         };
     }
 
     handleHourChange = (event) => {
         this.setState({
             hour: event.target.value,
-            status: ''
+            responseStatus: ''
         });
     };
 
     handleMinutesChange = (event) => {
         this.setState({
             minutes: event.target.value,
-            status: ''
+            responseStatus: ''
         });
     };
 
     addedNotification = () => {
-        if (this.state.status === '') {
+        if (this.state.responseStatus === '') {
             return (
                 <p className="notification"></p>
             );
-        } else if (this.state.status === 'success') {
+        } else if (this.state.responseStatus === 'success') {
             return (
                 <p className="notification">
                     Appointment added {this.state.hour}:{this.state.minutes}
                 </p>
             );
-        } else if (this.state.status === 'fail') {
+        } else if (this.state.responseStatus === 'fail') {
             return (
                 <p className="notification">Failed to add</p>
             );
@@ -58,11 +58,11 @@ class AddAppointmentPage extends React.Component {
             time: time,
         }).then(() => {
             this.setState({
-                status: 'success'
+                responseStatus: 'success'
             });
         }).catch(error => {
             this.setState({
-                status: 'fail'
+                responseStatus: 'fail'
             });
         });
 

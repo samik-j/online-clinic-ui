@@ -13,7 +13,7 @@ const CurrentAppointmentBooked = ({appointment}) => {
                     <td className="time">{appointment.time}</td>
                     <td className="doctor">{appointment.patientName}</td>
                     <td className="reason">{appointment.reason}</td>
-                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.status}/></td>
+                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.responseStatus}/></td>
                 </tr>
                 </tbody>
             </table>

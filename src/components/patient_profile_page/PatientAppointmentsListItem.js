@@ -16,7 +16,7 @@ const PatientAppointmentsListItem = ({appointment}) => {
                     <td className="doctor"><Link to={`/doctors/${appointment.doctorId}`}>{appointment.doctorName}</Link>
                     </td>
                     <td className="reason">{appointment.reason}</td>
-                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.status}/></td>
+                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.responseStatus}/></td>
                 </tr>
                 </tbody>
             </table>
