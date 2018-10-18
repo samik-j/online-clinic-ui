@@ -16,8 +16,6 @@ class AddAppointmentPage extends React.Component {
             minutes: '',
             status: ''
         };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleHourChange = (event) => {
@@ -52,7 +50,7 @@ class AddAppointmentPage extends React.Component {
         }
     };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         let time = '' + this.state.hour + ':' + this.state.minutes;
 
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
@@ -69,7 +67,7 @@ class AddAppointmentPage extends React.Component {
         });
 
         event.preventDefault();
-    }
+    };
 
     render() {
         return (
