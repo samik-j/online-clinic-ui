@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
 import DropdownOptions from './DropdownOptions';
+import Notification from "./Notification";
 
 const URL = 'http://localhost:8080/doctors';
 
@@ -30,24 +31,6 @@ class AddAppointmentPage extends React.Component {
             minutes: event.target.value,
             responseStatus: ''
         });
-    };
-
-    addedNotification = () => {
-        if (this.state.responseStatus === '') {
-            return (
-                <p className="notification"></p>
-            );
-        } else if (this.state.responseStatus === 'success') {
-            return (
-                <p className="notification">
-                    Appointment added {this.state.hour}:{this.state.minutes}
-                </p>
-            );
-        } else if (this.state.responseStatus === 'fail') {
-            return (
-                <p className="notification">Failed to add</p>
-            );
-        }
     };
 
     handleSubmit = (event) => {
@@ -88,7 +71,9 @@ class AddAppointmentPage extends React.Component {
                                         :
                                         <DropdownOptions range={60} increment={5} onChange={this.handleMinutesChange}/>
                                     </div>
-                                    {this.addedNotification()}
+                                    <Notification responseStatus={this.state.responseStatus}
+                                                  successMessage={"Appointment added " + this.state.hour + ":" + this.state.minutes}
+                                                  failMessage={"Failed to add"}/>
                                     <input className="btn btn-primary" type="submit" value="Add"/>
                                 </form>
                             </div>
