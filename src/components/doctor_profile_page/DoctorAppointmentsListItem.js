@@ -14,7 +14,7 @@ const DoctorAppointmentsListItem = ({appointment}) => {
                     <td className="time">{appointment.time}</td>
                     <td className="doctor">{appointment.patientName}</td>
                     <td className="reason">{appointment.reason}</td>
-                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.responseStatus}/></td>
+                    <td className="status-symbol"><AppointmentStatusIcon status={appointment.status}/></td>
                 </tr>
                 </tbody>
             </table>
