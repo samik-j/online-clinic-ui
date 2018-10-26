@@ -59,9 +59,7 @@ class AddAppointment extends React.Component {
                     <div className="box-title">Add appointment</div>
                     <div className="add-appointment">
                         <div className="appointment-info">
-                            <img className="icon"
-                                 src={'/img/calendar.svg'}
-                                 alt="calendar"/>
+                            <img className="icon" src={'/img/calendar.svg'} alt="calendar"/>
                             <div className="info">
                                 <div className="weekday">{moment(this.state.date).format('dddd')}</div>
                                 <div>{moment(this.state.date).format('DD MMMM YYYY')}</div>

@@ -28,9 +28,7 @@ class DoctorInformation extends React.Component {
     render () {
         return (
             <div className="doctor-info">
-                <img className="avatar"
-                     src={'/img/doctor_avatar.jpg'}
-                     alt="Doctor"/>
+                <img className="avatar" src={'/img/doctor_avatar.jpg'} alt="Doctor"/>
                 <div className="info">
                     <Link to={`/doctors/${this.state.doctor.id}`}>
                         <div className="name">{this.state.doctor.firstName}&nbsp;{this.state.doctor.lastName}</div>

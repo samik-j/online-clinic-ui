@@ -99,8 +99,7 @@ class AppointmentTable extends React.Component {
                 <div className="appointment-table">
                     <LeftArrow date={this.state.date1} click={this.handleDateSubtraction}/>
                     {this.appointments()}
-                    <img className="clickable arrows" onClick={this.handleDateIncrement}
-                         src={'/img/arrows_right.png'} alt="Arrows Right"/>
+                    <img className="clickable arrows" onClick={this.handleDateIncrement} src={'/img/arrows_right.png'} alt="Arrows Right"/>
                 </div>
                 {this.details()}
 

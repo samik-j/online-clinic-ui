@@ -7,10 +7,7 @@ const Header = () => {
         <header>
             <div className="page-width">
                 <Link to="/">
-                    <img className="logo"
-                         src={'/img/caduceus2.png'}
-                         alt="Caduceus"/>
-
+                    <img className="logo" src={'/img/caduceus2.png'} alt="Caduceus"/>
                     <div className="text">Online Clinic</div>
                 </Link>
             </div>

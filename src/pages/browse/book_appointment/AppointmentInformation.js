@@ -6,9 +6,7 @@ const AppointmentInformation = ({appointment}) => {
 
     return (
         <div className="appointment-info">
-            <img className="icon"
-                 src={'/img/calendar.svg'}
-                 alt="callendar"/>
+            <img className="icon" src={'/img/calendar.svg'} alt="callendar"/>
             <div className="info">
                 <div className="weekday">{moment(appointment.date).format('dddd')}</div>
                 <div>{moment(appointment.date).format('DD MMMM YYYY')}</div>

@@ -4,9 +4,7 @@ const Information = ({patient}) => {
 
     return (
         <div>
-            <img className="avatar"
-                 src={'/img/patient_avatar.jpg'}
-                 alt="Patient"/>
+            <img className="avatar" src={'/img/patient_avatar.jpg'} alt="Patient"/>
             <div className="info">
                 <div className="name">{patient.firstName}&nbsp;{patient.lastName}</div>
                 <table id="profile-info">

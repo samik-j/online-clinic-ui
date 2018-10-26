@@ -74,8 +74,7 @@ class BookAppointment extends React.Component {
                         </div>
                         <div>
                             <label htmlFor="reason">Reason</label>
-                            <textarea id="reason" name="reason" maxLength="250" value={this.state.reason}
-                                      onChange={this.handleReasonChange}/>
+                            <textarea id="reason" name="reason" maxLength="250" value={this.state.reason} onChange={this.handleReasonChange}/>
                         </div>
                     </div>
                     <input id="book-btn" className="btn btn-primary" type="submit" value="Book"/>

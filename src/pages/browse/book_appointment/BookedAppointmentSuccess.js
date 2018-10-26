@@ -31,12 +31,9 @@ class BookedAppointmentSuccess extends React.Component {
                 <div className="page-width">
                     <div className="border-box">
                         <div className="appointment-info">
-                            <img className="icon"
-                                 src={'/img/calendar.svg'}
-                                 alt="callendar"/>
+                            <img className="icon" src={'/img/calendar.svg'} alt="callendar"/>
                             <div className="info">
-                                <div
-                                    className="weekday">{moment(this.state.appointmentBooked.date).format('dddd')}</div>
+                                <div className="weekday">{moment(this.state.appointmentBooked.date).format('dddd')}</div>
                                 <div>{moment(this.state.appointmentBooked.date).format('DD MMMM YYYY')}</div>
                                 <div>{this.state.appointmentBooked.time}</div>
                                 <div>{this.state.appointmentBooked.patientName}</div>
