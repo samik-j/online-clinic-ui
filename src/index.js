@@ -22,15 +22,14 @@ const App = () => {
                 <Header/>
                 <article>
                     <Switch>
-                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId"
-                               component={BookAppointmentPage}/>
-                        <Route path="/doctors/:doctorId" component={DoctorPage}/>
-                        <Route path="/doctors" component={DoctorListPage}/>
-                        <Route path="/profiles/patients/:patientId" component={PatientProfilePage}/>
-                        <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage}/>
-                        <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage}/>
-                        <Route path="/appointments-booked/:appointmentId" component={BookedAppointmentSuccess}/>
-                        <Route path="/" component={Home}/>
+                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointmentPage} exact/>
+                        <Route path="/doctors/:doctorId" component={DoctorPage} exact/>
+                        <Route path="/doctors" component={DoctorListPage} exact/>
+                        <Route path="/profiles/patients/:patientId" component={PatientProfilePage} exact/>
+                        <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage} exact/>
+                        <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage} exact/>
+                        <Route path="/appointments-booked/:appointmentId" component={BookedAppointmentSuccess} exact/>
+                        <Route path="/" component={Home} exact/>
                         <Route path="*" component={NotFound}/>
                     </Switch>
                 </article>
