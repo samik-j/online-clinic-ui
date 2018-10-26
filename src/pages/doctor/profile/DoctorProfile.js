@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import DoctorInformation from './DoctorInformation';
-import StatusLegend from '../StatusLegend';
+import StatusLegend from '../../../components/StatusLegend';
 import DoctorAppointmentsList from './DoctorAppointmentList';
-import DoctorProfileAppointmentTable from '../appointment_table/doctor-profile/AppointmentTable';
+import DoctorProfileAppointmentTable from './appointment_table/AppointmentTable';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
-class DoctorProfilePage extends React.Component {
+class DoctorProfile extends React.Component {
 
     constructor (props) {
         super(props);
@@ -40,18 +40,14 @@ class DoctorProfilePage extends React.Component {
         if (this.state.expandedPastAppointments) {
             return (
                 <div>
-                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
-                         alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
                     <DoctorAppointmentsList doctorId={this.state.doctorId} current={false}/>
-                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
-                         alt="Hide"/>
+                    <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'} alt="Hide"/>
                 </div>
             );
         } else {
             return (
-                <img className="expand-hide clickable arrow" onClick={this.togglePastAppointments}
-                     src={'/img/arrow_down.svg'}
-                     alt="Expand"/>
+                <img className="expand-hide clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_down.svg'} alt="Expand"/>
             );
         }
     };
@@ -81,4 +77,4 @@ class DoctorProfilePage extends React.Component {
     }
 }
 
-export default DoctorProfilePage;
+export default DoctorProfile;

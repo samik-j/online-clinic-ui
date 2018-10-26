@@ -3,7 +3,7 @@ import moment from 'moment';
 import AllAppointmentsOnDay from './AllAppointmentsOnDay';
 import axios from 'axios/index';
 import CurrentAppointmentBooked from './CurrentAppointmentBooked';
-import LeftArrow from '../LeftArrow';
+import LeftArrow from '../../../../components/LeftArrow';
 
 class AppointmentTable extends React.Component {
 

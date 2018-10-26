@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import AvailableAppointmentsOnDay from './AvailableAppointmentsOnDay';
-import LeftArrow from '../LeftArrow';
+import LeftArrow from '../../../../components/LeftArrow';
 
 class AppointmentTable extends React.Component {
 

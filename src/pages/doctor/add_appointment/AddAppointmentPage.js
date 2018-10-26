@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
-import DropdownOptions from './DropdownOptions';
-import Notification from "./Notification";
+import DropdownOptions from '../../../components/DropdownOptions';
+import Notification from "../../../components/Notification";
 
 const URL = 'http://localhost:8080/doctors';
 

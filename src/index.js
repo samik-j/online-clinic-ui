@@ -4,15 +4,15 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 //COMPONENTS
 import Header from './components/Header';
-import Home from './components/Home';
-import DoctorListPage from './components/doctor_list_page/DoctorListPage';
-import DoctorPage from './components/doctor_page/DoctorPage';
-import PatientProfilePage from './components/patient_profile_page/PatientProfilePage';
-import DoctorProfilePage from './components/doctor_profile_page/DoctorProfilePage';
-import AddAppointmentPage from './components/add_appointment_page/AddAppointmentPage';
-import BookAppointmentPage from './components/book_appointment_page/BookAppointmentPage';
-import BookedAppointmentSuccess from './components/book_appointment_page/BookedAppointmentSuccess';
-import NotFound from './components/NotFound';
+import Home from './pages/Home';
+import DoctorListPage from './pages/browse/doctor_list/DoctorListPage';
+import DoctorPage from './pages/browse/doctor/DoctorPage';
+import PatientProfile from './pages/patient/profile/PatientProfile';
+import DoctorProfile from './pages/doctor/profile/DoctorProfile';
+import AddAppointmentPage from './pages/doctor/add_appointment/AddAppointmentPage';
+import BookAppointmentPage from './pages/browse/book_appointment/BookAppointmentPage';
+import BookedAppointmentSuccess from './pages/browse/book_appointment/BookedAppointmentSuccess';
+import NotFound from './pages/NotFound';
 
 const App = () => {
 
@@ -25,9 +25,9 @@ const App = () => {
                         <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointmentPage} exact/>
                         <Route path="/doctors/:doctorId" component={DoctorPage} exact/>
                         <Route path="/doctors" component={DoctorListPage} exact/>
-                        <Route path="/profiles/patients/:patientId" component={PatientProfilePage} exact/>
+                        <Route path="/profiles/patients/:patientId" component={PatientProfile} exact/>
                         <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage} exact/>
-                        <Route path="/profiles/doctors/:doctorId" component={DoctorProfilePage} exact/>
+                        <Route path="/profiles/doctors/:doctorId" component={DoctorProfile} exact/>
                         <Route path="/appointments-booked/:appointmentId" component={BookedAppointmentSuccess} exact/>
                         <Route path="/" component={Home} exact/>
                         <Route path="*" component={NotFound}/>

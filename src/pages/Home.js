@@ -7,9 +7,7 @@ const Home = () => {
             <div className="page-width home-text">
                 <div>Search for a doctor and make an appointment online</div>
                 <Link to={'/doctors'}>
-                    <img className="search-icon"
-                         src={'/img/search-icon.png'}
-                         alt="Search"/>
+                    <img className="search-icon" src={'/img/search-icon.png'} alt="Search"/>
                 </Link>
             </div>
         </div>

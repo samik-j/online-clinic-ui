@@ -2,11 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import PatientAppointmentsList from './PatientAppointmentsList';
 import PatientInformation from './PatientInformation';
-import StatusLegend from '../StatusLegend';
+import StatusLegend from '../../../components/StatusLegend';
 
 const PATIENTS_URL = 'http://localhost:8080/patients';
 
-class PatientProfilePage extends React.Component {
+class PatientProfile extends React.Component {
 
     constructor (props) {
         super(props);
@@ -76,4 +76,4 @@ class PatientProfilePage extends React.Component {
 
 }
 
-export default PatientProfilePage;
+export default PatientProfile;

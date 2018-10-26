@@ -1,12 +1,11 @@
 import React from 'react';
 import moment from 'moment/moment';
-import PropTypes from 'prop-types';
-import AppointmentStatusIcon from '../AppointmentStatusIcon';
+import AppointmentStatusIcon from '../../../../components/AppointmentStatusIcon';
 
-const DoctorAppointmentsListItem = ({appointment}) => {
+const CurrentAppointmentBooked = ({appointment}) => {
 
     return (
-        <div className="appointment">
+        <div className="appointment-details">
             <table id="profile-appointment">
                 <tbody>
                 <tr>
@@ -22,8 +21,4 @@ const DoctorAppointmentsListItem = ({appointment}) => {
     );
 };
 
-DoctorAppointmentsListItem.propTypes = {
-    appointment: PropTypes.object.isRequired
-};
-
-export default DoctorAppointmentsListItem;
+export default CurrentAppointmentBooked;
