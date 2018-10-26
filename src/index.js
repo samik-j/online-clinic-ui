@@ -9,8 +9,8 @@ import DoctorListPage from './pages/browse/doctor_list/DoctorListPage';
 import DoctorPage from './pages/browse/doctor/DoctorPage';
 import PatientProfile from './pages/patient/profile/PatientProfile';
 import DoctorProfile from './pages/doctor/profile/DoctorProfile';
-import AddAppointmentPage from './pages/doctor/add_appointment/AddAppointmentPage';
-import BookAppointmentPage from './pages/browse/book_appointment/BookAppointmentPage';
+import AddAppointment from './pages/doctor/add_appointment/AddAppointment';
+import BookAppointment from './pages/browse/book_appointment/BookAppointment';
 import BookedAppointmentSuccess from './pages/browse/book_appointment/BookedAppointmentSuccess';
 import NotFound from './pages/NotFound';
 
@@ -22,11 +22,11 @@ const App = () => {
                 <Header/>
                 <article>
                     <Switch>
-                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointmentPage} exact/>
+                        <Route path="/doctors/:doctorId/book-appointment/:appointmentId" component={BookAppointment} exact/>
                         <Route path="/doctors/:doctorId" component={DoctorPage} exact/>
                         <Route path="/doctors" component={DoctorListPage} exact/>
                         <Route path="/profiles/patients/:patientId" component={PatientProfile} exact/>
-                        <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointmentPage} exact/>
+                        <Route path="/profiles/doctors/:doctorId/add-appointment/:date" component={AddAppointment} exact/>
                         <Route path="/profiles/doctors/:doctorId" component={DoctorProfile} exact/>
                         <Route path="/appointments-booked/:appointmentId" component={BookedAppointmentSuccess} exact/>
                         <Route path="/" component={Home} exact/>

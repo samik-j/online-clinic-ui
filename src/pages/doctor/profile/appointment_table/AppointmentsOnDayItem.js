@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AllAppointmentsOnDayItem = ({appointment, appointmentId}) => {
+const AppointmentsOnDayItem = ({appointment, appointmentId}) => {
 
     const sendAppointmentId = () => {
         appointmentId(appointment.id);
@@ -21,4 +21,4 @@ const AllAppointmentsOnDayItem = ({appointment, appointmentId}) => {
     }
 };
 
-export default AllAppointmentsOnDayItem;
+export default AppointmentsOnDayItem;

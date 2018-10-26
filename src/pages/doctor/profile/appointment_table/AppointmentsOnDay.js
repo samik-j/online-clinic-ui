@@ -2,11 +2,11 @@ import React from 'react';
 import moment from 'moment/moment';
 import axios from 'axios/index';
 import { Link } from 'react-router-dom';
-import AllAppointmentsOnDayItem from './AllAppointmentsOnDayItem';
+import AppointmentsOnDayItem from './AppointmentsOnDayItem';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 
-class AllAppointmentsOnDay extends React.Component {
+class AppointmentsOnDay extends React.Component {
 
     constructor (props) {
         super(props);
@@ -71,8 +71,8 @@ class AllAppointmentsOnDay extends React.Component {
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
-                            <AllAppointmentsOnDayItem key={appointment.id} appointment={appointment}
-                                                      appointmentId={(appointmentId) => this.showDetails(appointmentId)}/>
+                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment}
+                                                   appointmentId={(appointmentId) => this.showDetails(appointmentId)}/>
                         );
                     })}
                 </div>
@@ -85,4 +85,4 @@ class AllAppointmentsOnDay extends React.Component {
     }
 }
 
-export default AllAppointmentsOnDay;
+export default AppointmentsOnDay;

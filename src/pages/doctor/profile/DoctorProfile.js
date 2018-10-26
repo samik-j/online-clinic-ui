@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import DoctorInformation from './DoctorInformation';
+import Information from './Information';
 import StatusLegend from '../../../components/StatusLegend';
-import DoctorAppointmentsList from './DoctorAppointmentList';
+import DoctorAppointmentsList from './AppointmentList';
 import DoctorProfileAppointmentTable from './appointment_table/AppointmentTable';
 
 const DOCTORS_URL = 'http://localhost:8080/doctors';
@@ -58,7 +58,7 @@ class DoctorProfile extends React.Component {
             <div className="page-width">
                 <div className="doctor profile">
                     <div className="border-box">
-                        <DoctorInformation doctor={this.state.doctor}/>
+                        <Information doctor={this.state.doctor}/>
                     </div>
                     <div className="border-box">
                         <div className="box-title">Appointments</div>

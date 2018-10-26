@@ -7,7 +7,7 @@ import DoctorInformation from './DoctorInformation';
 const DOCTORS_URL = 'http://localhost:8080/doctors';
 const APPOINTMENTS_URL = 'http://localhost:8080/appointmentsBooked';
 
-class BookAppointmentPage extends React.Component {
+class BookAppointment extends React.Component {
 
     constructor (props) {
         super(props);
@@ -106,4 +106,4 @@ class BookAppointmentPage extends React.Component {
     }
 }
 
-export default BookAppointmentPage;
+export default BookAppointment;

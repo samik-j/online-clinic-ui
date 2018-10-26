@@ -6,7 +6,7 @@ import Notification from "../../../components/Notification";
 
 const URL = 'http://localhost:8080/doctors';
 
-class AddAppointmentPage extends React.Component {
+class AddAppointment extends React.Component {
 
     constructor(props) {
         super(props);
@@ -85,4 +85,4 @@ class AddAppointmentPage extends React.Component {
     }
 }
 
-export default AddAppointmentPage;
+export default AddAppointment;

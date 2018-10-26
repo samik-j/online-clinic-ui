@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PatientInformation = ({patient}) => {
+const Information = ({patient}) => {
 
     return (
         <div>
@@ -33,4 +33,4 @@ const PatientInformation = ({patient}) => {
     );
 };
 
-export default PatientInformation;
+export default Information;

@@ -1,26 +1,26 @@
 import React from 'react';
 import axios from 'axios/index';
-import DoctorAppointmentsListItem from './DoctorAppointmentsListItem';
+import AppointmentsListItem from './AppointmentsListItem';
 
 const APPOINTMENTS_BOOKED_URL = 'http://localhost:8080/appointmentsBooked';
 
-class DoctorAppointmentsList extends React.Component {
+class AppointmentsList extends React.Component {
 
     constructor (props) {
         super(props);
 
         this.state = {
-            doctorId: props.doctorId,
+            patientId: props.patientId,
             current: props.current,
             appointments: []
         };
     }
 
     componentDidMount () {
-        const doctorId = this.state.doctorId;
+        const patientId = this.state.patientId;
         const current = this.state.current;
 
-        axios.get(`${APPOINTMENTS_BOOKED_URL}?current=${current}&doctorId=${doctorId}`)
+        axios.get(`${APPOINTMENTS_BOOKED_URL}?current=${current}&patientId=${patientId}`)
             .then(
                 response => {
                     this.setState({
@@ -36,7 +36,7 @@ class DoctorAppointmentsList extends React.Component {
                 {
                     this.state.appointments.map((appointment) => {
                         return (
-                            <DoctorAppointmentsListItem key={appointment.id} appointment={appointment}/>
+                            <AppointmentsListItem key={appointment.id} appointment={appointment}/>
                         );
                     })
                 }
@@ -45,4 +45,4 @@ class DoctorAppointmentsList extends React.Component {
     }
 }
 
-export default DoctorAppointmentsList;
+export default AppointmentsList;
