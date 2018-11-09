@@ -17,30 +17,12 @@ class DoctorListPage extends React.Component {
             doctors: [],
             specialty: ''
         };
-
-        this.handleSpecialtyChange = this.handleSpecialtyChange.bind(this);
     }
 
     componentDidMount () {
         axios.get(DOCTORS_URL).then(
             response => {
                 this.setState({doctors: response.data});
-            }
-        );
-    }
-
-    handleSpecialtyChange (event) {
-        const newSpecialty = event.target.value;
-
-        const URL = newSpecialty === 'all' ? DOCTORS_URL : `${DOCTORS_URL}?specialty=${newSpecialty}`;
-
-        axios.get(URL).then(
-            response => {
-                this.setState({
-                    doctors: response.data,
-                    specialty: newSpecialty
-                });
-
             }
         );
     }

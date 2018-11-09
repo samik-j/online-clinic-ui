@@ -19,8 +19,6 @@ class BookAppointment extends React.Component {
             reason: '',
             booked: false
         };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount () {
@@ -46,7 +44,7 @@ class BookAppointment extends React.Component {
         });
     };
 
-    handleSubmit (event) {
+    handleSubmit = (event) => {
         axios.post(`${APPOINTMENTS_URL}`, {
             appointmentId: this.state.appointment.id,
             patientId: this.state.patientId,
@@ -60,7 +58,7 @@ class BookAppointment extends React.Component {
         );
 
         event.preventDefault();
-    }
+    };
 
     booking = () => {
         if (!this.state.booked) {
