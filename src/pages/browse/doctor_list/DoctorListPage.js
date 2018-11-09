@@ -27,7 +27,7 @@ class DoctorListPage extends React.Component {
         );
     }
 
-    handleSpecialtyChange2 = (specialty) => {
+    handleSpecialtyChange = (specialty) => {
         const newSpecialty = specialty.value;
 
         const URL = newSpecialty === 'all' ? DOCTORS_URL : `${DOCTORS_URL}?specialty=${newSpecialty}`;
@@ -54,7 +54,7 @@ class DoctorListPage extends React.Component {
                                 name="choose-specialty"
                                 placeholder="search by specialty"
                                 value={this.state.specialty}
-                                onChange={this.handleSpecialtyChange2}
+                                onChange={this.handleSpecialtyChange}
                                 options={[
                                     {value: 'DERMATOLOGIST', label: 'dermatologist'},
                                     {value: 'INTERNIST', label: 'internist'},
