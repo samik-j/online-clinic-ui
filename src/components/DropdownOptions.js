@@ -6,7 +6,7 @@ const DropdownOptions = ({range, increment, onChange}) => {
     options.push(<option hidden value=""></option>);
     for (let i = 0; i < range; i += increment) {
         if (i < 10) {
-            let value = "0" + i;
+            let value = '0' + i;
             options.push(<option value={value} key={value}>{value}</option>);
         } else {
             options.push(<option value={i} key={i}>{i}</option>);

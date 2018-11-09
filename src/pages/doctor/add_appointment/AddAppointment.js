@@ -34,7 +34,7 @@ class AddAppointment extends React.Component {
     };
 
     handleSubmit = (event) => {
-        let time = '' + this.state.hour + ':' + this.state.minutes;
+        let time = this.state.hour + ':' + this.state.minutes;
 
         axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
             date: this.state.date,
