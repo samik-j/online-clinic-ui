@@ -4,7 +4,7 @@ import moment from 'moment/moment';
 
 const APPOINTMENTS_URL = 'http://localhost:8080/appointmentsBooked';
 
-class BookedAppointmentSuccess extends React.Component {
+class BookAppointmentSuccess extends React.Component {
 
     constructor (props) {
         super(props);
@@ -47,4 +47,4 @@ class BookedAppointmentSuccess extends React.Component {
     }
 }
 
-export default BookedAppointmentSuccess;
+export default BookAppointmentSuccess;
