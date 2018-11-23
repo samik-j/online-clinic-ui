@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
 import axios from 'axios';
+
 import DropdownOptions from '../../../components/DropdownOptions';
 import Notification from "../../../components/Notification";
 
-const URL = 'http://localhost:8080/doctors';
+import {DOCTORS_URL} from "../../../urls";
 
 class AddAppointment extends React.Component {
 
@@ -36,7 +37,7 @@ class AddAppointment extends React.Component {
     handleSubmit = (event) => {
         let time = this.state.hour + ':' + this.state.minutes;
 
-        axios.post(`${URL}/${this.props.match.params.doctorId}/appointments`, {
+        axios.post(`${DOCTORS_URL}/${this.props.match.params.doctorId}/appointments`, {
             date: this.state.date,
             time: time,
         }).then(() => {

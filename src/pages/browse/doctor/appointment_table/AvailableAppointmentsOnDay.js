@@ -3,7 +3,7 @@ import moment from 'moment';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
+import {DOCTORS_URL} from "../../../../urls";
 
 class AvailableAppointmentsOnDay extends React.Component {
 

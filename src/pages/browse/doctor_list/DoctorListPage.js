@@ -3,10 +3,9 @@ import axios from 'axios';
 
 //COMPONENTS
 import DoctorList from './DoctorList';
-
 import Select from 'react-select';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
+import {DOCTORS_URL} from "../../../urls";
 
 class DoctorListPage extends React.Component {
 

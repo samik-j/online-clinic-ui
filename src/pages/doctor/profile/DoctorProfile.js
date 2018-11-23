@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+
 import Information from './Information';
 import StatusLegend from '../../../components/StatusLegend';
 import DoctorAppointmentsList from './AppointmentList';
 import DoctorProfileAppointmentTable from './appointment_table/AppointmentTable';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
+import {DOCTORS_URL} from "../../../urls";
 
 class DoctorProfile extends React.Component {
 

@@ -4,8 +4,7 @@ import axios from 'axios/index';
 import AppointmentInformation from './AppointmentInformation';
 import DoctorInformation from './DoctorInformation';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
-const APPOINTMENTS_URL = 'http://localhost:8080/appointmentsBooked';
+import {APPOINTMENTS_BOOKED_URL, DOCTORS_URL} from "../../../urls";
 
 class BookAppointment extends React.Component {
 
@@ -45,7 +44,7 @@ class BookAppointment extends React.Component {
     };
 
     handleSubmit = (event) => {
-        axios.post(`${APPOINTMENTS_URL}`, {
+        axios.post(`${APPOINTMENTS_BOOKED_URL}`, {
             appointmentId: this.state.appointment.id,
             patientId: this.state.patientId,
             reason: this.state.reason

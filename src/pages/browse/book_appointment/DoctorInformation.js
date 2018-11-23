@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios/index';
 import { Link } from 'react-router-dom';
 
-const DOCTORS_URL = 'http://localhost:8080/doctors';
+import {DOCTORS_URL} from "../../../urls";
+
 
 class DoctorInformation extends React.Component {
 

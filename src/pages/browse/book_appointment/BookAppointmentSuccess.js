@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios/index';
 import moment from 'moment/moment';
 
-const APPOINTMENTS_URL = 'http://localhost:8080/appointmentsBooked';
+import {APPOINTMENTS_BOOKED_URL} from "../../../urls";
 
 class BookAppointmentSuccess extends React.Component {
 
@@ -15,7 +15,7 @@ class BookAppointmentSuccess extends React.Component {
     }
 
     componentDidMount () {
-        axios.get(`${APPOINTMENTS_URL}/${this.props.match.params.appointmentId}`)
+        axios.get(`${APPOINTMENTS_BOOKED_URL}/${this.props.match.params.appointmentId}`)
             .then(
                 response => {
                     this.setState({

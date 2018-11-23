@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios/index';
+
 import AppointmentsListItem from './AppointmentsListItem';
 
-const APPOINTMENTS_BOOKED_URL = 'http://localhost:8080/appointmentsBooked';
+import {APPOINTMENTS_BOOKED_URL} from "../../../urls";
+
 
 class AppointmentsList extends React.Component {
 
