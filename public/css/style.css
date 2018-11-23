@@ -41,6 +41,15 @@ article {
     border-color: #007bff;
 }
 
+.btn-primary {
+    border-radius: 0px;
+    min-width: 100px;
+    padding: 8px 40px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
 /* HEADER */
 header .logo {
     vertical-align: center;
@@ -129,12 +138,6 @@ header .text {
 
 .search-icon {
     height: 80px;
-}
-
-.button {
-    border-radius: 0px;
-    min-width: 100px;
-    padding: 8px 40px;
 }
 
 /* DOCTOR LIST PAGE */
