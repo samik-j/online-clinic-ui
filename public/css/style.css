@@ -182,7 +182,7 @@ header .text {
     text-align: center;
     vertical-align: top;
     margin: 5px;
-    width: 100px;
+    width: 110px;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -210,25 +210,24 @@ header .text {
 }
 
 .appointments-on-day .book-btn {
-    margin: 3px;
-    width: 70px;
+    margin: 5px 3px;
+    width: 80px;
     horiz-align: center;
-    padding: 5px;
+    padding: 2px;
     font-size: 15px;
     font-family: var(--main-font);
 }
 
 .appointments-on-day .appointment {
     display: inline-block;
-    padding: 1px 12px;
-    font-size: 14px;
+    padding: 2px;
+    font-size: 15px;
     line-height: 1.42857143;
     text-align: center;
-    border: 1px solid transparent;
     border-radius: 4px;
-    margin: 2px;
-    width: 70px;
+    width: 80px;
     horiz-align: center;
+    font-family: var(--main-font);
 }
 
 .appointments-on-day .available {
