@@ -73,7 +73,7 @@ class AddAppointment extends React.Component {
                                     <Notification responseStatus={this.state.responseStatus}
                                                   successMessage={"Appointment added " + this.state.hour + ":" + this.state.minutes}
                                                   failMessage={"Failed to add"}/>
-                                    <input className="btn btn-primary" type="submit" value="Add"/>
+                                    <input className="btn btn-primary button" type="submit" value="Add"/>
                                 </form>
                             </div>
                         </div>

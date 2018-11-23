@@ -131,6 +131,12 @@ header .text {
     height: 80px;
 }
 
+.button {
+    border-radius: 0px;
+    min-width: 100px;
+    padding: 8px 40px;
+}
+
 /* DOCTOR LIST PAGE */
 .doctor-list-header {
     background: var(--main-color);
