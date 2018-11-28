@@ -217,18 +217,10 @@ header .text {
     background: var(--main-grey);
 }
 
-.appointments-on-day .book-btn {
-    margin: 5px 3px;
-    width: 80px;
-    horiz-align: center;
-    padding: 2px;
-    font-size: 15px;
-    font-family: var(--main-font);
-}
-
-.appointments-on-day .appointment {
+.appointment {
     display: inline-block;
     padding: 2px;
+    margin: 5px;
     font-size: 15px;
     line-height: 1.42857143;
     text-align: center;
@@ -238,12 +230,12 @@ header .text {
     font-family: var(--main-font);
 }
 
-.appointments-on-day .available {
+.available {
     color: var(--second-color);
     background: white;
 }
 
-.appointments-on-day .not-available {
+.not-available {
     color: white;
     background: var(--second-color);
 }
