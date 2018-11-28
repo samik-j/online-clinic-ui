@@ -1,9 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import AppointmentsOnDay from './AppointmentsOnDay';
 import axios from 'axios/index';
+
+import AppointmentsOnDay from './AppointmentsOnDay';
 import CurrentAppointmentBooked from './CurrentAppointmentBooked';
 import ArrowLeft from '../../../../components/ArrowLeft';
+import ArrowRight from "../../../../components/ArrowRight";
 
 class AppointmentTable extends React.Component {
 
@@ -97,9 +99,9 @@ class AppointmentTable extends React.Component {
         return (
             <div>
                 <div className="appointment-table">
-                    <ArrowLeft date={this.state.date1} click={this.handleDateSubtraction}/>
+                    <ArrowLeft date={this.state.date1} onClick={this.handleDateSubtraction}/>
                     {this.appointments()}
-                    <img className="clickable arrows" onClick={this.handleDateIncrement} src={'/img/arrows_right.png'} alt="Arrows Right"/>
+                    <ArrowRight date={this.state.date7} onClick={this.handleDateIncrement}/>
                 </div>
                 {this.details()}
 
