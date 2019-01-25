@@ -1,13 +1,9 @@
 import React from 'react';
 import moment from 'moment';
-import axios from 'axios/index';
 
 import AppointmentsOnDay from './AppointmentsOnDay';
-import CurrentAppointmentBooked from './CurrentAppointmentBooked';
 import ArrowLeft from '../../../../components/ArrowLeft';
 import ArrowRight from "../../../../components/ArrowRight";
-
-import {APPOINTMENTS_BOOKED_URL} from "../../../../urls";
 
 class AppointmentTable extends React.Component {
 
@@ -21,10 +17,7 @@ class AppointmentTable extends React.Component {
             date4: moment().add(3, 'days'),
             date5: moment().add(4, 'days'),
             date6: moment().add(5, 'days'),
-            date7: moment().add(6, 'days'),
-
-            showDetailsId: ''
-
+            date7: moment().add(6, 'days')
         };
     }
 
@@ -48,50 +41,20 @@ class AppointmentTable extends React.Component {
             date4: prevState.date4.subtract(3, 'days'),
             date5: prevState.date5.subtract(3, 'days'),
             date6: prevState.date6.subtract(3, 'days'),
-            date7: prevState.date7.subtract(3, 'days'),
+            date7: prevState.date7.subtract(3, 'days')
         }));
-    };
-
-    showDetails = (appointmentId) => {
-        axios.get(`${APPOINTMENTS_BOOKED_URL}?appointmentId=${appointmentId}`)
-            .then(
-                response => {
-                    this.setState({
-                        showDetailsId: response.data
-                    });
-                }
-            );
-    };
-
-    details = () => {
-        if (this.state.showDetailsId === '') {
-            return (
-                <div className="description">Click on a booked appointment to see the details</div>
-            );
-        } else {
-            return (
-                <CurrentAppointmentBooked appointment={this.state.showDetailsId}/>
-            );
-        }
     };
 
     appointments = () => {
         return (
             <div className="appointments">
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date1}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date2}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date3}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date4}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date5}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date6}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date7}
-                                   details={(appointmentId) => this.showDetails(appointmentId)}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date1}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date2}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date3}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date4}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date5}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date6}/>
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date7}/>
             </div>
         );
     };
@@ -104,8 +67,6 @@ class AppointmentTable extends React.Component {
                     {this.appointments()}
                     <ArrowRight date={this.state.date7} onClick={this.handleDateIncrement}/>
                 </div>
-                {this.details()}
-
             </div>
         );
     }

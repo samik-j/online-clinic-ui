@@ -40,14 +40,6 @@ class AppointmentsOnDay extends React.Component {
             );
     };
 
-    showDetails = (event) => {
-        this.setState({
-            currentAppointmentId: event
-        });
-
-        this.props.details(event);
-    };
-
     isOnWeekend = () => {
         return moment(this.props.date).day() === 6 || moment(this.props.date).day() === 0;
     };
@@ -64,8 +56,7 @@ class AppointmentsOnDay extends React.Component {
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
-                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment}
-                                                   appointmentId={(appointmentId) => this.showDetails(appointmentId)}/>
+                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment}/>
                         );
                     })}
                 </div>
