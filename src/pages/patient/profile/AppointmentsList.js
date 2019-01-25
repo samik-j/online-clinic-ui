@@ -12,15 +12,13 @@ class AppointmentsList extends React.Component {
         super(props);
 
         this.state = {
-            patientId: props.patientId,
-            current: props.current,
             appointments: []
         };
     }
 
     componentDidMount () {
-        const patientId = this.state.patientId;
-        const current = this.state.current;
+        const patientId = this.props.patientId;
+        const current = this.props.current;
 
         axios.get(`${APPOINTMENTS_BOOKED_URL}?current=${current}&patientId=${patientId}`)
             .then(

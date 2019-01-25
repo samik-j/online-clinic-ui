@@ -12,7 +12,6 @@ class BookAppointment extends React.Component {
         super(props);
 
         this.state = {
-            doctorId: this.props.match.params.doctorId,
             appointment: '',
             patientId: '',
             reason: '',
@@ -94,7 +93,7 @@ class BookAppointment extends React.Component {
                         {this.booking()}
                     </div>
                     <div className="border-box inline-box width-400px">
-                        <DoctorInformation doctorId={this.state.doctorId}/>
+                        <DoctorInformation doctorId={this.props.match.params.doctorId}/>
                     </div>
                 </div>
             </div>

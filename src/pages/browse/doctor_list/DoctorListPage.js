@@ -9,8 +9,8 @@ import {DOCTORS_URL} from "../../../urls";
 
 class DoctorListPage extends React.Component {
 
-    constructor (props) {
-        super(props);
+    constructor () {
+        super();
 
         this.state = {
             doctors: [],

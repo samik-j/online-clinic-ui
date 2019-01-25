@@ -14,7 +14,6 @@ class PatientProfile extends React.Component {
 
         this.state = {
             patient: '',
-            patientId: this.props.match.params.patientId,
             expandedPastAppointments: false
         };
     }
@@ -42,7 +41,7 @@ class PatientProfile extends React.Component {
                 <div>
                     <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
                          alt="Hide"/>
-                    <AppointmentsList patientId={this.state.patientId} current={false}/>
+                    <AppointmentsList patientId={this.props.match.params.patientId} current={false}/>
                     <img className="clickable arrow" onClick={this.togglePastAppointments} src={'/img/arrow_up.svg'}
                          alt="Hide"/>
                 </div>
@@ -66,7 +65,7 @@ class PatientProfile extends React.Component {
                     <div className="border-box">
                         <StatusLegend/>
                         <div className="box-title">Current appointments</div>
-                        <AppointmentsList patientId={this.state.patientId} current={true}/>
+                        <AppointmentsList patientId={this.props.match.params.patientId} current={true}/>
                         <div className="box-title">Past appointments</div>
                         {this.pastAppointments()}
                     </div>

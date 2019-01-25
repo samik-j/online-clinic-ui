@@ -1,9 +1,9 @@
 import React from 'react';
 import DoctorListItem from './DoctorListItem';
 
-const DoctorList = (props) => {
+const DoctorList = ({doctors}) => {
 
-    const doctors = props.doctors.map((doctor) => {
+    const doctorList = doctors.map((doctor) => {
             return (
                 <DoctorListItem key={doctor.id} doctor={doctor}/>
             )
@@ -12,7 +12,7 @@ const DoctorList = (props) => {
 
     return (
         <div>
-            {doctors}
+            {doctorList}
         </div>
     )
 };

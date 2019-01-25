@@ -10,7 +10,6 @@ class AppointmentTable extends React.Component {
         super(props);
 
         this.state = {
-            doctorId: props.doctorId,
             date1: moment(),
             date2: moment().add(1, 'days'),
             date3: moment().add(2, 'days'),
@@ -48,13 +47,13 @@ class AppointmentTable extends React.Component {
     appointments = () => {
         return (
             <div className="appointments">
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}/>
-                <AvailableAppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date1}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date2}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date3}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date4}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date5}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date6}/>
+                <AvailableAppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date7}/>
             </div>
         );
     };

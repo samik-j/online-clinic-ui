@@ -7,13 +7,14 @@ import CurrentAppointmentBooked from './CurrentAppointmentBooked';
 import ArrowLeft from '../../../../components/ArrowLeft';
 import ArrowRight from "../../../../components/ArrowRight";
 
+import {APPOINTMENTS_BOOKED_URL} from "../../../../urls";
+
 class AppointmentTable extends React.Component {
 
     constructor (props) {
         super(props);
 
         this.state = {
-            doctorId: props.doctorId,
             date1: moment(),
             date2: moment().add(1, 'days'),
             date3: moment().add(2, 'days'),
@@ -52,7 +53,7 @@ class AppointmentTable extends React.Component {
     };
 
     showDetails = (appointmentId) => {
-        axios.get(`http://localhost:8080/appointmentsBooked?appointmentId=${appointmentId}`)
+        axios.get(`${APPOINTMENTS_BOOKED_URL}?appointmentId=${appointmentId}`)
             .then(
                 response => {
                     this.setState({
@@ -77,19 +78,19 @@ class AppointmentTable extends React.Component {
     appointments = () => {
         return (
             <div className="appointments">
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date1}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date1}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date2}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date2}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date3}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date3}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date4}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date4}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date5}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date5}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date6}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date6}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
-                <AppointmentsOnDay doctorId={this.state.doctorId} date={this.state.date7}
+                <AppointmentsOnDay doctorId={this.props.doctorId} date={this.state.date7}
                                    details={(appointmentId) => this.showDetails(appointmentId)}/>
             </div>
         );

@@ -13,8 +13,6 @@ class AppointmentsOnDay extends React.Component {
         super(props);
 
         this.state = {
-            doctorId: props.doctorId,
-            date: props.date,
             appointments: [],
             currentAppointmentId: ''
         };
@@ -29,8 +27,8 @@ class AppointmentsOnDay extends React.Component {
     }
 
     loadAppointments = () => {
-        const DOCTOR_ID = this.state.doctorId;
-        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
+        const DOCTOR_ID = this.props.doctorId;
+        const DATE_URL = moment(this.props.date).format('YYYY-MM-DD');
 
         axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?date=${DATE_URL}`)
             .then(
@@ -51,7 +49,7 @@ class AppointmentsOnDay extends React.Component {
     };
 
     isOnWeekend = () => {
-        return moment(this.state.date).day() === 6 || moment(this.state.date).day() === 0;
+        return moment(this.props.date).day() === 6 || moment(this.props.date).day() === 0;
     };
 
     render () {
@@ -60,8 +58,8 @@ class AppointmentsOnDay extends React.Component {
         return (
             <div className="appointments-on-day">
                 <div className="date">
-                    <div>{moment(this.state.date).format('DD.MM')}</div>
-                    <div>{moment(this.state.date).format('ddd')}</div>
+                    <div>{moment(this.props.date).format('DD.MM')}</div>
+                    <div>{moment(this.props.date).format('ddd')}</div>
                 </div>
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
@@ -71,7 +69,7 @@ class AppointmentsOnDay extends React.Component {
                         );
                     })}
                 </div>
-                <AddAppointmentModal date={this.state.date} doctorId={this.state.doctorId} loadAppointments={this.loadAppointments}/>
+                <AddAppointmentModal date={this.props.date} doctorId={this.props.doctorId} loadAppointments={this.loadAppointments}/>
             </div>
         );
     }

@@ -11,15 +11,13 @@ class AvailableAppointmentsOnDay extends React.Component {
         super(props);
 
         this.state = {
-            doctorId: props.doctorId,
-            date: props.date,
             appointments: []
         };
     }
 
     componentDidMount () {
-        const DOCTOR_ID = this.state.doctorId;
-        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
+        const DOCTOR_ID = this.props.doctorId;
+        const DATE_URL = moment(this.props.date).format('YYYY-MM-DD');
 
         axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true&date=${DATE_URL}`)
             .then(
@@ -32,8 +30,8 @@ class AvailableAppointmentsOnDay extends React.Component {
     }
 
     componentWillReceiveProps () {
-        const DOCTOR_ID = this.state.doctorId;
-        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
+        const DOCTOR_ID = this.props.doctorId;
+        const DATE_URL = moment(this.props.date).format('YYYY-MM-DD');
 
         axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?available=true&date=${DATE_URL}`)
             .then(
@@ -46,7 +44,7 @@ class AvailableAppointmentsOnDay extends React.Component {
     }
 
     isOnWeekend = () => {
-        return moment(this.state.date).day() === 6 || moment(this.state.date).day() === 0;
+        return moment(this.props.date).day() === 6 || moment(this.props.date).day() === 0;
     };
 
     render () {
@@ -55,15 +53,15 @@ class AvailableAppointmentsOnDay extends React.Component {
         return (
             <div className="appointments-on-day">
                 <div className="date">
-                    <div>{moment(this.state.date).format('DD.MM')}</div>
-                    <div>{moment(this.state.date).format('ddd')}</div>
+                    <div>{moment(this.props.date).format('DD.MM')}</div>
+                    <div>{moment(this.props.date).format('ddd')}</div>
                 </div>
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
                             <div key={appointment.id}>
                                 <Link className="btn btn-outline-primary appointment"
-                                      to={`/doctors/${this.state.doctorId}/book-appointment/${appointment.id}`}>
+                                      to={`/doctors/${this.props.doctorId}/book-appointment/${appointment.id}`}>
                                     {appointment.time}
                                 </Link>
                             </div>
