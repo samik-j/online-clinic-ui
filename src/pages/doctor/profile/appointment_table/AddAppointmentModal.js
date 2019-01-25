@@ -23,8 +23,10 @@ class AddAppointmentModal extends React.Component {
         return (
             <div>
                 <img className="clickable add-btn" src={'/img/add.svg'} onClick={this.toggle} alt="add"/>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} dialogClassName="modal">
-                    <ModalHeader toggle={this.toggle}>Add Appointment</ModalHeader>
+                <Modal isOpen={this.state.modal} modalTransition={{ timeout: 0 }} backdropTransition={{ timeout: 0 }} toggle={this.toggle} className={this.props.className} dialogClassName="modal">
+                    <ModalHeader toggle={this.toggle}>
+                        <div className="box-title width-620px">Add Appointment</div>
+                        </ModalHeader>
                     <ModalBody>
                         <AddAppointment date={this.props.date} doctorId={this.props.doctorId}/>
                     </ModalBody>

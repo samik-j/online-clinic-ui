@@ -6,6 +6,7 @@
     --main-grey: #c5c5c5;
     --background-color: whitesmoke;
     --main-font: 'Roboto', serif;
+    --box-padding: 20px;
 }
 
 header {
@@ -49,10 +50,22 @@ article {
     background-color: var(--second-color);
 }
 
-/* REACTSTRAP OVERRIDES */
+/* MODAL */
 .modal-content {
     border-radius: 0px;
     border-width: 0px;
+    width: 700px;
+}
+
+.modal-header {
+    border-bottom: 0px;
+    padding: var(--box-padding);
+}
+
+.modal-dialog {
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 350px);
 }
 
 /* HEADER */
@@ -70,7 +83,7 @@ header .text {
 
 /* BORDER BOX */
 .border-box {
-    padding: 20px;
+    padding: var(--box-padding);
     margin-top: 20px;
     margin-bottom: 20px;
     background: white;
@@ -84,7 +97,7 @@ header .text {
     margin-right: 20px;
 }
 
-.border-box .box-title {
+.box-title {
     font-size: 20px;
     font-family: var(--main-font);
     color: var(--main-grey);
@@ -110,6 +123,10 @@ header .text {
 
 .width-400px {
     width: 400px;
+}
+
+.width-620px {
+    width: 620px;
 }
 
 .width-auto {
