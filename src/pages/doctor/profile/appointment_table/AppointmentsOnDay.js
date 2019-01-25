@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment/moment';
 import axios from 'axios/index';
 
-import { Link } from 'react-router-dom';
 import AppointmentsOnDayItem from './AppointmentsOnDayItem';
+import AddAppointmentModal from "./AddAppointmentModal";
 
 import {DOCTORS_URL} from "../../../../urls";
 
@@ -21,20 +21,14 @@ class AppointmentsOnDay extends React.Component {
     }
 
     componentDidMount () {
-        const DOCTOR_ID = this.state.doctorId;
-        const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
-
-        axios.get(`${DOCTORS_URL}/${DOCTOR_ID}/appointments?date=${DATE_URL}`)
-            .then(
-                response => {
-                    this.setState({
-                        appointments: response.data
-                    });
-                }
-            );
+        this.loadAppointments()
     }
 
     componentWillReceiveProps () {
+        this.loadAppointments()
+    }
+
+    loadAppointments = () => {
         const DOCTOR_ID = this.state.doctorId;
         const DATE_URL = moment(this.state.date).format('YYYY-MM-DD');
 
@@ -46,7 +40,7 @@ class AppointmentsOnDay extends React.Component {
                     });
                 }
             );
-    }
+    };
 
     showDetails = (event) => {
         this.setState({
@@ -77,10 +71,7 @@ class AppointmentsOnDay extends React.Component {
                         );
                     })}
                 </div>
-                <Link
-                    to={`/profiles/doctors/${this.state.doctorId}/add-appointment/${moment(this.state.date).format('YYYY-MM-DD')}`}>
-                    <img className="clickable add-btn" src={'/img/add.svg'} alt="add"/>
-                </Link>
+                <AddAppointmentModal date={this.state.date} doctorId={this.state.doctorId} loadAppointments={this.loadAppointments}/>
             </div>
         );
     }

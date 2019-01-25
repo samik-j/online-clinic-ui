@@ -49,6 +49,12 @@ article {
     background-color: var(--second-color);
 }
 
+/* REACTSTRAP OVERRIDES */
+.modal-content {
+    border-radius: 0px;
+    border-width: 0px;
+}
+
 /* HEADER */
 header .logo {
     vertical-align: center;
