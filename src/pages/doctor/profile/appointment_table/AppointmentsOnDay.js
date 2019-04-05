@@ -19,14 +19,14 @@ class AppointmentsOnDay extends React.Component {
     }
 
     componentDidMount () {
-        this.loadAppointments()
+        this.updateAppointments()
     }
 
     componentWillReceiveProps () {
-        this.loadAppointments()
+        this.updateAppointments()
     }
 
-    loadAppointments = () => {
+    updateAppointments = () => {
         const DOCTOR_ID = this.props.doctorId;
         const DATE_URL = moment(this.props.date).format('YYYY-MM-DD');
 
@@ -56,11 +56,11 @@ class AppointmentsOnDay extends React.Component {
                 <div className={dayStyle}>
                     {this.state.appointments.map(appointment => {
                         return (
-                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment}/>
+                            <AppointmentsOnDayItem key={appointment.id} appointment={appointment} onClick={this.appointmentInfo}/>
                         );
                     })}
                 </div>
-                <AddAppointmentModal date={this.props.date} doctorId={this.props.doctorId} loadAppointments={this.loadAppointments}/>
+                <AddAppointmentModal date={this.props.date} doctorId={this.props.doctorId} updateAppointments={this.updateAppointments}/>
             </div>
         );
     }

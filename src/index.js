@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 //COMPONENTS
 import Header from './components/Header';
@@ -33,13 +33,6 @@ const App = () => {
                         <Route path="*" component={NotFound}/>
                     </Switch>
                 </article>
-                <div className="page-width">
-                    <nav>
-                        <ul>
-                            <Link to="/doctors">SEARCH DOCTORS</Link>
-                        </ul>
-                    </nav>
-                </div>
                 <footer>Created by Joanna Senczuk</footer>
             </div>
         </BrowserRouter>

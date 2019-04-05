@@ -15,6 +15,10 @@ const AppointmentStatusIcon = ({status}) => {
         return (
             <img src={'/img/status_confirmed.svg'} alt="status_confirmed"/>
         );
+    } else {
+        return (
+            <div></div>
+        )
     }
 };
 

@@ -446,13 +446,6 @@ table#profile-appointment td.status-symbol {
     margin-left: calc(50% - 90px);
 }
 
-.appointment-info .info .link {
-    font-size: 15px;
-    font-weight: normal;
-    color: var(--second-color);
-    height: 20px;
-}
-
 .appointment-info .icon {
     width: 90px;
     vertical-align: top;
@@ -463,12 +456,37 @@ table#profile-appointment td.status-symbol {
     padding-left: 10px;
     text-align: left;
     font-size: 24px;
+    width: calc(100% - 130px);
+    margin-right: 40px;
 }
 
 .appointment-info .info .weekday {
     font-size: 18px;
     font-weight: normal;
     color: var(--main-grey);
+}
+
+.appointment-info .info .status {
+    width: 30px;
+}
+
+.appointment-info .info .title {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--main-grey);
+}
+
+.appointment-info .info .reason {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.appointment-info .info .link {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--second-color);
+    height: 20px;
 }
 
 form#book-appointment {

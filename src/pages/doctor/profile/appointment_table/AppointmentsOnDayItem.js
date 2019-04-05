@@ -1,4 +1,5 @@
 import React from 'react';
+import AppointmentInfoModal from "./appointment_information/AppointmentInfoModal";
 
 const AppointmentsOnDayItem = ({appointment}) => {
 
@@ -10,9 +11,7 @@ const AppointmentsOnDayItem = ({appointment}) => {
 
     } else {
         return (
-            <button className="appointment not-available" key={appointment.id}>
-                <div>{appointment.time}</div>
-            </button>
+            <AppointmentInfoModal appointment={appointment}/>
         );
     }
 };
