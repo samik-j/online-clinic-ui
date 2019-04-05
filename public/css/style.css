@@ -2,7 +2,7 @@
     --main-color: #2cc0a6;
     --main-color-dark: #2db19a;
     --second-color: #007bff;
-    --confirmed-color: #2cc0a6;
+    --confirmed-color: #007bff;
     --not-confirmed-color: #ffe30c;
     --main-border: 1px solid var(--main-grey);
     --main-grey: #c5c5c5;
@@ -50,6 +50,7 @@ article {
     padding: 8px 40px;
     color: white;
     background-color: var(--second-color);
+    margin-top: 20px;
 }
 
 /* MODAL */

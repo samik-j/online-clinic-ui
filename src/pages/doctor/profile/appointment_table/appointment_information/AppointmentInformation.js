@@ -4,6 +4,20 @@ import AppointmentStatusIcon from "../../../../../components/AppointmentStatusIc
 
 const AppointmentInformation = ({appointment}) => {
 
+    let confirmButton = () => {
+        if (appointment.status === "NOT_CONFIRMED") {
+            return (
+                <button className="btn btn-primary">
+                    Confirm Appointment
+                </button>
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
+    }
+
     return (
         <div className="appointment-info">
             <img className="icon" src={'/img/calendar.svg'} alt="callendar"/>
@@ -19,6 +33,7 @@ const AppointmentInformation = ({appointment}) => {
                 <div className="patient">{appointment.patientName}</div>
                 <div className="title">Reason</div>
                 <div className="reason">{appointment.reason}</div>
+                {confirmButton()}
             </div>
         </div>
     );
