@@ -2,6 +2,8 @@
     --main-color: #2cc0a6;
     --main-color-dark: #2db19a;
     --second-color: #007bff;
+    --confirmed-color: #2cc0a6;
+    --not-confirmed-color: #ffe30c;
     --main-border: 1px solid var(--main-grey);
     --main-grey: #c5c5c5;
     --background-color: whitesmoke;
@@ -46,7 +48,7 @@ article {
     border-radius: 0px;
     min-width: 100px;
     padding: 8px 40px;
-    color: #fff;
+    color: white;
     background-color: var(--second-color);
 }
 
@@ -261,6 +263,18 @@ header .text {
 .not-available {
     color: white;
     background: var(--second-color);
+}
+
+.not-available-confirmed {
+    color: white;
+    background: var(--confirmed-color);
+    border: 0px;
+}
+
+.not-available-not-confirmed {
+    color: white;
+    background: var(--not-confirmed-color);
+    border: 0px;
 }
 
 .appointments-on-day .add-btn {

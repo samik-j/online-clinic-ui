@@ -13,11 +13,14 @@ class AppointmentInfoModal extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.getAppointment();
+    }
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal
         });
-        this.getAppointment();
     };
 
     getAppointment = () => {
@@ -32,10 +35,21 @@ class AppointmentInfoModal extends React.Component {
             );
     };
 
+    appointmentStyle = () => {
+        if (this.state.appointment.status === 'NOT_CONFIRMED') {
+            return "btn appointment not-available-not-confirmed"
+        } else if (this.state.appointment.status === 'CONFIRMED'){
+            return "btn appointment not-available-confirmed"
+        } else {
+            return "btn appointment not-available"
+        }
+    };
+
     render() {
+
         return (
             <div>
-                <button className="appointment not-available" onClick={this.toggle}>
+                <button className={this.appointmentStyle()} onClick={this.toggle}>
                     <div>{this.props.appointment.time}</div>
                 </button>
                 <Modal isOpen={this.state.modal} modalTransition={{ timeout: 0 }} backdropTransition={{ timeout: 0 }} toggle={this.toggle} className={this.props.className} dialogclassname="modal">
