@@ -447,6 +447,7 @@ table#profile-appointment td.status-symbol {
     font-weight: normal;
     color: var(--second-color);
     height: 20px;
+    white-space: pre-wrap;
 }
 
 /* DOCTOR INFORMATION */

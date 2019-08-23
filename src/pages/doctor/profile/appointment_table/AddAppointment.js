@@ -15,7 +15,8 @@ class AddAppointment extends React.Component {
         this.state = {
             hour: '',
             minutes: '',
-            responseStatus: ''
+            responseStatus: '',
+            responseErrorMessage: ''
         };
     }
 
@@ -34,7 +35,7 @@ class AddAppointment extends React.Component {
     };
 
     handleSubmit = (event) => {
-         let time = this.state.hour + ':' + this.state.minutes;
+        let time = this.state.hour + ':' + this.state.minutes;
 
         axios.post(`${DOCTORS_URL}/${this.props.doctorId}/appointments`, {
             date: moment(this.props.date).format('YYYY-MM-DD'),
@@ -45,7 +46,8 @@ class AddAppointment extends React.Component {
             });
         }).catch(error => {
             this.setState({
-                responseStatus: 'fail'
+                responseStatus: 'fail',
+                responseErrorMessage: error.response.data.validationErrors === undefined ? "" : error.response.data.validationErrors
             });
         });
 
@@ -68,8 +70,8 @@ class AddAppointment extends React.Component {
                                                  onChange={this.handleMinutesChange}/>
                             </div>
                             <Notification responseStatus={this.state.responseStatus}
-                                          successMessage={"Appointment added " + this.state.hour + ":" + this.state.minutes}
-                                          failMessage={"Failed to add"}/>
+                                          successMessage={`Appointment added ${this.state.hour}:${this.state.minutes}`}
+                                          failMessage={`Failed to add\n${this.state.responseErrorMessage}`}/>
                             <input className="btn btn-primary" type="submit" value="Add"/>
                         </form>
                     </div>
