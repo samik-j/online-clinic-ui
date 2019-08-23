@@ -19,7 +19,12 @@ header {
     font-weight: bold;
     text-align: left;
     height: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
+
+
 
 footer {
     background: var(--main-color);
@@ -44,8 +49,11 @@ article {
     border-color: var(--second-color);
 }
 
+.btn {
+    border-radius: 0;
+}
+
 .btn-primary {
-    border-radius: 0px;
     min-width: 100px;
     padding: 8px 40px;
     color: white;
